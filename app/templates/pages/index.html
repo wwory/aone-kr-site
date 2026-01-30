@@ -1,0 +1,156 @@
+{% extends "base.html" %}
+
+{% block title %}AONE - Baby is Our Future{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section id="hero" class="hero-section scroll-section" data-snap="true">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <div class="hero-text-group hero-stack">
+            <p class="hero-subtitle fw-light">EVERY MOMENT WITH BABY</p>
+            <h1 class="hero-title fw-bold">아이와 함께하는 모든 일상이 설렘이 되도록</h1>
+            <p class="hero-description">편안한 육아, 행복한 기억.<br>에이원은 가족이 안전한 세상을 만듭니다.</p>
+            <div class="scroll-indicator">
+                <span>SCROLL</span>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 5v14M5 12l7 7 7-7"/>
+                </svg>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- COMPANY Section -->
+<section id="company" class="section-company scroll-section snap-section" data-snap="true">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-label">COMPANY</span>
+            <h2 class="section-title">아이와 가족을 위한 전문성</h2>
+            <p class="section-description">AONE은 아이와 가족의 건강하고 안전한 일상을 위해 최선을 다합니다.</p>
+        </div>
+        <div class="row g-4 mt-4">
+            <div class="col-md-4">
+                <div class="company-card">
+                    <div class="card-icon"></div>
+                    <h3 class="card-title">브랜드 포트폴리오</h3>
+                    <p class="card-description">다양한 프리미엄 브랜드를 통해 아이와 가족의 모든 니즈를 충족합니다.</p>
+                    <a href="{{ url_for('brand.brand') }}" class="card-link">자세히 보기</a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="company-card">
+                    <div class="card-icon"></div>
+                    <h3 class="card-title">안전 기준 그 이상</h3>
+                    <p class="card-description">국제 안전 기준을 넘어서는 엄격한 품질 관리로 신뢰를 구축합니다.</p>
+                    <a href="{{ url_for('company.company') }}" class="card-link">자세히 보기</a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="company-card">
+                    <div class="card-icon"></div>
+                    <h3 class="card-title">지속 가능한 솔루션</h3>
+                    <p class="card-description">환경을 생각하는 지속 가능한 제품과 서비스를 제공합니다.</p>
+                    <a href="{{ url_for('csr.csr') }}" class="card-link">자세히 보기</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- BRAND Section -->
+<section id="brand" class="section-brand scroll-section snap-section" data-snap="true">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-label">BRAND</span>
+            <h2 class="section-title">일상을 채우는 aone 브랜드</h2>
+            <p class="section-description">아이와 가족의 행복한 일상을 위한 프리미엄 브랜드를 만나보세요.</p>
+        </div>
+        <div class="row g-4 mt-5">
+            <div class="col-md-4">
+                <div class="brand-card" data-brand="ryan">
+                    <div class="brand-card-content">
+                        <h3 class="brand-name">리안</h3>
+                        <p class="brand-name-en">RYAN</p>
+                        <div class="brand-description">
+                            <p>아이의 안전과 편안함을 최우선으로 생각하는 유아용품 브랜드입니다.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="brand-card" data-brand="joie">
+                    <div class="brand-card-content">
+                        <h3 class="brand-name">조이</h3>
+                        <p class="brand-name-en">Joie</p>
+                        <div class="brand-description">
+                            <p>세계적인 디자인과 안전성을 갖춘 프리미엄 유아용품 브랜드입니다.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="brand-card" data-brand="tavo">
+                    <div class="brand-card-content">
+                        <h3 class="brand-name">타보펫츠</h3>
+                        <p class="brand-name-en">Tavo Pets</p>
+                        <div class="brand-description">
+                            <p>반려동물과 가족이 함께하는 행복한 일상을 만들어가는 브랜드입니다.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CSR Section -->
+<section id="csr" class="section-csr scroll-section snap-section" data-snap="true">
+    <div class="container">
+        <div class="csr-card">
+            <span class="section-label">CSR</span>
+            <h2 class="csr-title">아이의 오늘을 지키는 일이<br>모두의 내일을 밝힙니다</h2>
+            <p class="csr-description">
+                AONE은 아이와 가족의 건강하고 행복한 미래를 위해 지속 가능한 사회적 책임을 실천합니다. 
+                안전한 제품 개발과 환경 보호, 그리고 지역 사회와의 협력을 통해 더 나은 내일을 만들어가고 있습니다. 
+                우리의 모든 노력은 아이들의 오늘을 지키고, 모두의 내일을 밝히기 위한 것입니다.
+            </p>
+            <a href="{{ url_for('csr.csr') }}" class="btn-csr">자세히 보기</a>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT Section -->
+<section id="contact" class="section-contact scroll-section snap-section" data-snap="true">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-label">CONTACT</span>
+            <h2 class="section-title">aone과의 연결 방법</h2>
+            <p class="section-description">궁금한 사항이 있으시면 언제든지 연락주세요.</p>
+        </div>
+        <div class="row g-4 mt-4">
+            <div class="col-md-4">
+                <div class="contact-card">
+                    <h3 class="contact-title">기업 및 제휴 문의</h3>
+                    <p class="contact-description">비즈니스 제안 및 파트너십에 대한 문의를 받고 있습니다.</p>
+                    <a href="mailto:business@aone.com" class="contact-link">자세히 보기</a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="contact-card">
+                    <h3 class="contact-title">오시는 길</h3>
+                    <p class="contact-description">AONE 본사 위치 및 교통편 안내를 확인하실 수 있습니다.</p>
+                    <a href="{{ url_for('contact.contact') }}" class="contact-link">자세히 보기</a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="contact-card">
+                    <h3 class="contact-title">온라인 소통</h3>
+                    <p class="contact-description">소셜 미디어를 통해 AONE의 최신 소식을 만나보세요.</p>
+                    <a href="{{ url_for('contact.contact') }}" class="contact-link">자세히 보기</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

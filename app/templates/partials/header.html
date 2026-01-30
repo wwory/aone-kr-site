@@ -1,0 +1,125 @@
+<header id="main-header" class="navbar navbar-expand-lg navbar-dark fixed-top site-header">
+    <div class="header-container">
+        <div class="header-row">
+            <div class="header-left">
+                <a class="navbar-brand" href="{{ url_for('main.index') }}">
+                    <img src="{{ url_for('static', filename='img/aone_logo.png') }}" alt="AONE" class="logo-img">
+                </a>
+            </div>
+
+            <div class="header-center d-none d-lg-flex">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('main.index') }}#company">COMPANY</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('main.index') }}#brand">BRAND</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('pr.pr') }}">PR</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('main.index') }}#csr">CSR</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('recruit.recruit') }}">RECRUIT</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('main.index') }}#contact">CONTACT</a>
+                    </li>
+                    <li class="nav-item dropdown d-none d-lg-block">
+                        <a class="nav-link dropdown-toggle" href="#" id="shopDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            SHOP
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="shopDropdown">
+                            <li><a class="dropdown-item" href="https://www.aonebaby.com/" target="_blank" rel="noopener">AONEBABY</a></li>
+                            <li><a class="dropdown-item" href="https://www.ryanbaby.co.kr/" target="_blank" rel="noopener">RYAN</a></li>
+                            <li><a class="dropdown-item" href="https://www.joiebaby.co.kr/" target="_blank" rel="noopener">Joie</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="header-right">
+                <!-- Language Dropdown (desktop only) -->
+                <div class="lang-dropdown d-none d-lg-block" id="langDropdown">
+                    <button type="button" class="lang-btn" id="langBtn" aria-haspopup="true" aria-expanded="false">
+                        <span class="lang-label">KR</span>
+                        <span class="lang-caret" aria-hidden="true"></span>
+                    </button>
+                    <div class="lang-panel" id="langMenu" role="menu" aria-labelledby="langBtn" aria-hidden="true">
+                        <button type="button" class="lang-item is-active" data-lang="KR" role="menuitem">KR</button>
+                        <button type="button" class="lang-item" data-lang="EN" role="menuitem">EN</button>
+                        <button type="button" class="lang-item" data-lang="CN" role="menuitem">CN</button>
+                    </div>
+                </div>
+
+                <button class="navbar-toggler hamburger d-lg-none" id="hamburgerBtn" type="button" data-bs-toggle="collapse" data-bs-target="#mobileMenu" aria-controls="mobileMenu" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </div>
+
+        <div class="collapse navbar-collapse d-lg-none" id="mobileMenu">
+            <!-- Mobile Language Selector -->
+            <div class="mobile-lang-selector d-lg-none mb-3">
+                <div class="lang-dropdown">
+                    <button type="button" class="lang-btn" id="mLangBtn" aria-haspopup="true" aria-expanded="false">
+                        <span class="lang-label">KR</span>
+                        <span class="lang-caret" aria-hidden="true"></span>
+                    </button>
+                    <div class="lang-panel" id="mLangMenu" role="menu" aria-labelledby="mLangBtn" aria-hidden="true">
+                        <button type="button" class="lang-item is-active" data-lang="KR" role="menuitem">KR</button>
+                        <button type="button" class="lang-item" data-lang="EN" role="menuitem">EN</button>
+                        <button type="button" class="lang-item" data-lang="CN" role="menuitem">CN</button>
+                    </div>
+                </div>
+            </div>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('main.index') }}#company">COMPANY</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('main.index') }}#brand">BRAND</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('pr.pr') }}">PR</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('main.index') }}#csr">CSR</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('recruit.recruit') }}">RECRUIT</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('main.index') }}#contact">CONTACT</a>
+                </li>
+ <!-- ✅ (교체) Mobile SHOP -->
+<li class="nav-item d-lg-none mobile-pill-wrap">
+    <button
+      class="mobile-pill-btn"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#shopCollapse"
+      aria-expanded="false"
+      aria-controls="shopCollapse"
+    >
+      <span>SHOP</span>
+      <span class="pill-caret" aria-hidden="true">▼</span>
+    </button>
+  
+    <div class="collapse" id="shopCollapse">
+      <div class="mobile-pill-panel">
+        <a class="mobile-pill-link" href="https://www.aonebaby.com/" target="_blank" rel="noopener">AONEBABY</a>
+        <a class="mobile-pill-link" href="https://www.ryanbaby.co.kr/" target="_blank" rel="noopener">RYAN</a>
+        <a class="mobile-pill-link" href="https://www.joiebaby.co.kr/" target="_blank" rel="noopener">Joie</a>
+      </div>
+    </div>
+  </li>
+  
+            </ul>
+        </div>
+    </div>
+</header>
