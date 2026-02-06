@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block title %}CI소개 - COMPANY - AONE{% endblock %}
+
+{% block content %}
+<nav class="company-breadcrumb" aria-label="Breadcrumb">
+    <div class="container">
+        <a href="{{ url_for('company.company') }}">COMPANY</a>
+        <span aria-hidden="true">/</span>
+        <span>CI소개</span>
+    </div>
+</nav>
+
+<section class="page-header page-header--sub">
+    <div class="container">
+        <h1>CI소개</h1>
+        <p>CI & Business Area</p>
+    </div>
+</section>
+
+<section class="company-ci page-content">
+    <div class="container container-wide">
+        <h2 class="company-section-title reveal" data-delay="0">CI & AREA</h2>
+        <div class="ci-logo-block reveal" data-delay="80">
+            <img src="{{ url_for('static', filename='img/aone_logo.png') }}" alt="AONE" class="ci-logo-img">
+            <p class="ci-tagline">a baby but the only ONE</p>
+        </div>
+        <div class="ci-colors reveal" data-delay="120">
+            <div class="ci-color-swatch ci-color-swatch--primary"><span>ORANGE</span><code>#F36F21</code></div>
+            <div class="ci-color-swatch ci-color-swatch--dark"><span>BLACK</span><code>#222</code></div>
+        </div>
+    </div>
+</section>
+
+<section class="company-business page-content section-alt">
+    <div class="container container-wide">
+        <h2 class="company-section-title reveal" data-delay="0">BUSINESS AREA</h2>
+        <div class="business-diagram reveal" data-delay="80">
+            <div class="business-center">AONE</div>
+            <div class="business-branches">
+                <div class="business-branch"><strong>국내 브랜드</strong><span>RYAN</span></div>
+                <div class="business-branch"><strong>글로벌/수입 브랜드</strong><span>Joie · NUNA · TEAMTEX · Pali</span></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="company-back-wrap">
+    <div class="container">
+        <a href="{{ url_for('company.company') }}" class="company-back-link">← COMPANY</a>
+    </div>
+</div>
+{% endblock %}

@@ -10,25 +10,25 @@
             <div class="header-center d-none d-lg-flex">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('main.index') }}#company">COMPANY</a>
+                        <a class="nav-link{% if request.endpoint and request.endpoint.startswith('company') %} is-active{% endif %}" href="{{ url_for('company.company') }}">COMPANY</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('main.index') }}#brand">BRAND</a>
+                        <a class="nav-link{% if request.endpoint and request.endpoint.startswith('brand') %} is-active{% endif %}" href="{{ url_for('brand.brand') }}">BRAND</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('pr.pr') }}">PR</a>
+                        <a class="nav-link{% if request.endpoint and request.endpoint.startswith('pr') %} is-active{% endif %}" href="{{ url_for('pr.pr') }}">PR</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('main.index') }}#csr">CSR</a>
+                        <a class="nav-link{% if request.endpoint and request.endpoint.startswith('csr') %} is-active{% endif %}" href="{{ url_for('csr.csr') }}">CSR</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('recruit.recruit') }}">RECRUIT</a>
+                        <a class="nav-link{% if request.endpoint and request.endpoint.startswith('recruit') %} is-active{% endif %}" href="{{ url_for('recruit.recruit') }}">RECRUIT</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('main.index') }}#contact">CONTACT</a>
+                        <a class="nav-link{% if request.endpoint and request.endpoint.startswith('contact') %} is-active{% endif %}" href="{{ url_for('contact.contact') }}">CONTACT</a>
                     </li>
                     <li class="nav-item dropdown d-none d-lg-block">
-                        <a class="nav-link dropdown-toggle" href="#" id="shopDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link nav-link-shop dropdown-toggle" href="#" id="shopDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             SHOP
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="shopDropdown">
@@ -79,22 +79,22 @@
             </div>
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('main.index') }}#company">COMPANY</a>
+                    <a class="nav-link{% if request.endpoint and request.endpoint.startswith('company') %} is-active{% endif %}" href="{{ url_for('company.company') }}">COMPANY</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('main.index') }}#brand">BRAND</a>
+                    <a class="nav-link{% if request.endpoint and request.endpoint.startswith('brand') %} is-active{% endif %}" href="{{ url_for('brand.brand') }}">BRAND</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('pr.pr') }}">PR</a>
+                    <a class="nav-link{% if request.endpoint and request.endpoint.startswith('pr') %} is-active{% endif %}" href="{{ url_for('pr.pr') }}">PR</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('main.index') }}#csr">CSR</a>
+                    <a class="nav-link{% if request.endpoint and request.endpoint.startswith('csr') %} is-active{% endif %}" href="{{ url_for('csr.csr') }}">CSR</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('recruit.recruit') }}">RECRUIT</a>
+                    <a class="nav-link{% if request.endpoint and request.endpoint.startswith('recruit') %} is-active{% endif %}" href="{{ url_for('recruit.recruit') }}">RECRUIT</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('main.index') }}#contact">CONTACT</a>
+                    <a class="nav-link{% if request.endpoint and request.endpoint.startswith('contact') %} is-active{% endif %}" href="{{ url_for('contact.contact') }}">CONTACT</a>
                 </li>
  <!-- ✅ (교체) Mobile SHOP -->
 <li class="nav-item d-lg-none mobile-pill-wrap">

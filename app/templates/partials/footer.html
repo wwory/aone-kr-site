@@ -1,16 +1,29 @@
-<footer class="footer">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-md-6">
-                <p class="copyright">© 2026 aone Co., Ltd. All rights reserved</p>
-            </div>
-            <div class="col-md-6 text-md-end">
-                <p class="footer-links">
-                    <span>Family Best Lifestyle Company</span>
-                    <span class="separator">|</span>
-                    <a href="#">Privacy & Policy</a>
-                </p>
+<footer class="site-footer">
+    <div class="footer-grid">
+        <div class="footer-col footer-about">
+            <a href="{{ url_for('main.index') }}" class="footer-logo">
+                <img src="{{ url_for('static', filename='img/aone_logo.png') }}" alt="AONE" class="footer-logo-img">
+            </a>
+            <p class="footer-desc">Family Best Lifestyle Company.<br>아이와 가족을 위한 프리미엄 유아용품을 만듭니다.</p>
+            <!-- CEO / 주소 등은 필요 시 여기 추가 -->
+        </div>
+        <div class="footer-col footer-contact">
+            <h3 class="footer-title">Company Info</h3>
+            <p class="footer-address">㈜에이원 대표 : 이의환 | 대표번호 : 1800-8561</p>
+            <p class="footer-address">주소 : 서울 강남구 도산대로55길 48, aone청담 4층</p>
+            <p class="footer-address">사업자 등록번호 : 201-86-18451</p>
+            <p class="footer-tel">통신판매업신고번호 : 제 2010-서울중구-1686</p>
+        </div>
+        <div class="footer-col footer-shop">
+            <h3 class="footer-title">Official Shoppingmall</h3>
+            <div class="footer-shop-btns">
+                <a href="https://www.aonebaby.com/" target="_blank" rel="noopener" class="btn-footer-shop">AONEBABY</a>
+                <a href="https://www.ryanbaby.co.kr/" target="_blank" rel="noopener" class="btn-footer-shop">RYAN</a>
+                <a href="https://www.joiebaby.co.kr/" target="_blank" rel="noopener" class="btn-footer-shop">JOIE</a>
             </div>
         </div>
+    </div>
+    <div class="footer-bottom">
+        <p class="copyright">© 2026 AONE Co., Ltd. All rights reserved.</p>
     </div>
 </footer>
