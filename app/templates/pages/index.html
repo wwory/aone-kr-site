@@ -2,155 +2,173 @@
 
 {% block title %}AONE - Baby is Our Future{% endblock %}
 
+{% block body_class %}page-index{% endblock %}
+
 {% block content %}
-<!-- Hero Section -->
-<section id="hero" class="hero-section scroll-section" data-snap="true">
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-        <div class="hero-text-group hero-stack">
-            <p class="hero-subtitle fw-light">EVERY MOMENT WITH BABY</p>
-            <h1 class="hero-title fw-bold">아이와 함께하는 모든 일상이 설렘이 되도록</h1>
-            <p class="hero-description">편안한 육아, 행복한 기억.<br>에이원은 가족이 안전한 세상을 만듭니다.</p>
-            <div class="scroll-indicator">
-                <span>SCROLL</span>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M12 5v14M5 12l7 7 7-7"/>
-                </svg>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- COMPANY Section -->
-<section id="company" class="section-company scroll-section snap-section" data-snap="true">
-    <div class="container">
-        <div class="section-header">
-            <span class="section-label">COMPANY</span>
-            <h2 class="section-title">아이와 가족을 위한 전문성</h2>
-            <p class="section-description">AONE은 아이와 가족의 건강하고 안전한 일상을 위해 최선을 다합니다.</p>
-        </div>
-        <div class="row g-4 mt-4">
-            <div class="col-md-4">
-                <div class="company-card">
-                    <div class="card-icon"></div>
-                    <h3 class="card-title">브랜드 포트폴리오</h3>
-                    <p class="card-description">다양한 프리미엄 브랜드를 통해 아이와 가족의 모든 니즈를 충족합니다.</p>
-                    <a href="{{ url_for('brand.brand') }}" class="card-link">자세히 보기</a>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="company-card">
-                    <div class="card-icon"></div>
-                    <h3 class="card-title">안전 기준 그 이상</h3>
-                    <p class="card-description">국제 안전 기준을 넘어서는 엄격한 품질 관리로 신뢰를 구축합니다.</p>
-                    <a href="{{ url_for('company.company') }}" class="card-link">자세히 보기</a>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="company-card">
-                    <div class="card-icon"></div>
-                    <h3 class="card-title">지속 가능한 솔루션</h3>
-                    <p class="card-description">환경을 생각하는 지속 가능한 제품과 서비스를 제공합니다.</p>
-                    <a href="{{ url_for('csr.csr') }}" class="card-link">자세히 보기</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- BRAND Section -->
-<section id="brand" class="section-brand scroll-section snap-section" data-snap="true">
-    <div class="container">
-        <div class="section-header">
-            <span class="section-label">BRAND</span>
-            <h2 class="section-title">일상을 채우는 aone 브랜드</h2>
-            <p class="section-description">아이와 가족의 행복한 일상을 위한 프리미엄 브랜드를 만나보세요.</p>
-        </div>
-        <div class="row g-4 mt-5">
-            <div class="col-md-4">
-                <div class="brand-card" data-brand="ryan">
-                    <div class="brand-card-content">
-                        <h3 class="brand-name">리안</h3>
-                        <p class="brand-name-en">RYAN</p>
-                        <div class="brand-description">
-                            <p>아이의 안전과 편안함을 최우선으로 생각하는 유아용품 브랜드입니다.</p>
+<!-- Hero: 풀블리드, 데스크탑 좌텍스트/우세로이미지, 모바일 이미지+오버레이+철학 -->
+<!-- 기존 문구 보존: EVERY MOMENT WITH BABY -->
+<section id="hero" class="hero-section hero-fullbleed">
+    <div class="hero-wrap">
+        <div class="hero-grid hero-grid-fullbleed">
+            <div class="hero-visual hero-visual-fullbleed">
+                <div class="hero-carousel" id="heroCarousel" aria-roledescription="carousel">
+                    <div class="hero-carousel-track" id="heroCarouselTrack" style="transform: translateX(-12.5%);">
+                        <div class="hero-carousel-slide" data-clone="last">
+                            <img src="{{ url_for('static', filename='img/main_06.jpg') }}" alt="AONE" class="hero-img" onerror="this.style.display='none'">
+                        </div>
+                        <div class="hero-carousel-slide">
+                            <img src="{{ url_for('static', filename='img/main_01.jpg') }}" alt="AONE" class="hero-img" onerror="this.style.display='none'">
+                        </div>
+                        <div class="hero-carousel-slide">
+                            <img src="{{ url_for('static', filename='img/main_02.jpg') }}" alt="AONE" class="hero-img" onerror="this.style.display='none'">
+                        </div>
+                        <div class="hero-carousel-slide">
+                            <img src="{{ url_for('static', filename='img/main_03.jpg') }}" alt="AONE" class="hero-img" onerror="this.style.display='none'">
+                        </div>
+                        <div class="hero-carousel-slide">
+                            <img src="{{ url_for('static', filename='img/main_04.jpg') }}" alt="AONE" class="hero-img" onerror="this.style.display='none'">
+                        </div>
+                        <div class="hero-carousel-slide">
+                            <img src="{{ url_for('static', filename='img/main_05.jpg') }}" alt="AONE" class="hero-img" onerror="this.style.display='none'">
+                        </div>
+                        <div class="hero-carousel-slide">
+                            <img src="{{ url_for('static', filename='img/main_06.jpg') }}" alt="AONE" class="hero-img" onerror="this.style.display='none'">
+                        </div>
+                        <div class="hero-carousel-slide" data-clone="first">
+                            <img src="{{ url_for('static', filename='img/main_01.jpg') }}" alt="AONE" class="hero-img" onerror="this.style.display='none'">
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-4">
-                <div class="brand-card" data-brand="joie">
-                    <div class="brand-card-content">
-                        <h3 class="brand-name">조이</h3>
-                        <p class="brand-name-en">Joie</p>
-                        <div class="brand-description">
-                            <p>세계적인 디자인과 안전성을 갖춘 프리미엄 유아용품 브랜드입니다.</p>
-                        </div>
-                    </div>
+                <span class="hero-img-fallback" aria-hidden="true"></span>
+                <span class="hero-overlay-gradient" aria-hidden="true"></span>
+                <div class="hero-carousel-dots" id="heroCarouselDots" aria-label="이미지 슬라이드">
+                    <button type="button" class="hero-carousel-dot is-active" data-index="0" aria-label="1번 슬라이드" aria-current="true"></button>
+                    <button type="button" class="hero-carousel-dot" data-index="1" aria-label="2번 슬라이드"></button>
+                    <button type="button" class="hero-carousel-dot" data-index="2" aria-label="3번 슬라이드"></button>
+                    <button type="button" class="hero-carousel-dot" data-index="3" aria-label="4번 슬라이드"></button>
+                    <button type="button" class="hero-carousel-dot" data-index="4" aria-label="5번 슬라이드"></button>
+                    <button type="button" class="hero-carousel-dot" data-index="5" aria-label="6번 슬라이드"></button>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="brand-card" data-brand="tavo">
-                    <div class="brand-card-content">
-                        <h3 class="brand-name">타보펫츠</h3>
-                        <p class="brand-name-en">Tavo Pets</p>
-                        <div class="brand-description">
-                            <p>반려동물과 가족이 함께하는 행복한 일상을 만들어가는 브랜드입니다.</p>
+            <div class="hero-copy">
+                <div class="hero-text-group">
+                    <div class="hero-copy-inner">
+                        <h1 class="hero-title-block reveal" data-delay="0">
+                            <span class="hero-title-line" data-i18n="hero_title_1">BABY IS OUR</span>
+                            <span class="hero-title-line" data-i18n="hero_title_2">FUTURE</span>
+                        </h1>
+                        <p class="hero-lead reveal" data-delay="120" data-i18n="hero_lead">대한민국 1등 육아 파트너.<br>검증된 자체 기술력과 엄선된 글로벌 브랜드를 만나보세요.</p>
+                        <div class="hero-cta reveal" data-delay="240">
+                            <a href="{{ url_for('main.index') }}#brands-magnetic" class="btn-hero btn-hero-primary" data-i18n="hero_cta_primary">View Brands</a>
+                            <a href="{{ url_for('company.company') }}" class="btn-hero btn-hero-outline" data-i18n="hero_cta_outline">About Company</a>
+                        </div>
+                    </div>
+                    <div class="hero-who">
+                        <div class="hero-who-head reveal" data-delay="360">
+                            <h2 class="hero-who-title" data-i18n="hero_who_title">Who we are</h2>
+                            <span class="hero-who-sub" data-i18n="hero_who_sub">Our Philosophy</span>
+                        </div>
+                        <div class="hero-philosophy-grid">
+                            <div class="philosophy-item reveal" data-delay="480">
+                            <img src="{{ url_for('static', filename='img/icons/icon-honesty.svg') }}" alt="" class="philosophy-icon-img" width="32" height="32">
+                            <div class="philosophy-text">
+                                <span class="philosophy-en" data-i18n="philosophy_honesty_en">Honesty</span>
+                                <span class="philosophy-key" data-i18n="philosophy_honesty_key">진심을 담은 약속</span>
+                                <span class="philosophy-desc" data-i18n="philosophy_honesty_desc">보이지 않는 과정까지 정직하게, 부모의 마음으로 만듭니다.</span>
+                            </div>
+                            </div>
+                            <div class="philosophy-item reveal" data-delay="600">
+                                <img src="{{ url_for('static', filename='img/icons/icon-quality.svg') }}" alt="" class="philosophy-icon-img" width="32" height="32">
+                            <div class="philosophy-text">
+                                <span class="philosophy-en" data-i18n="philosophy_quality_en">Quality</span>
+                                <span class="philosophy-key" data-i18n="philosophy_quality_key">안전을 향한 고집</span>
+                                <span class="philosophy-desc" data-i18n="philosophy_quality_desc">가장 소중한 우리 아이를 위해 작은 디테일도 놓치지 않습니다.</span>
+                            </div>
+                            </div>
+                            <div class="philosophy-item reveal" data-delay="720">
+                                <img src="{{ url_for('static', filename='img/icons/icon-people.svg') }}" alt="" class="philosophy-icon-img" width="32" height="32">
+                            <div class="philosophy-text">
+                                <span class="philosophy-en" data-i18n="philosophy_people_en">People</span>
+                                <span class="philosophy-key" data-i18n="philosophy_people_key">함께하는 행복</span>
+                                <span class="philosophy-desc" data-i18n="philosophy_people_desc">단순한 제품 판매를 넘어, 행복한 육아 문화를 만들어갑니다.</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <!--
+    <div class="scroll-indicator-minimal" aria-hidden="true">
+        <span>SCROLL</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+    </div>
+    -->
 </section>
 
-<!-- CSR Section -->
-<section id="csr" class="section-csr scroll-section snap-section" data-snap="true">
-    <div class="container">
-        <div class="csr-card">
-            <span class="section-label">CSR</span>
-            <h2 class="csr-title">아이의 오늘을 지키는 일이<br>모두의 내일을 밝힙니다</h2>
-            <p class="csr-description">
-                AONE은 아이와 가족의 건강하고 행복한 미래를 위해 지속 가능한 사회적 책임을 실천합니다. 
-                안전한 제품 개발과 환경 보호, 그리고 지역 사회와의 협력을 통해 더 나은 내일을 만들어가고 있습니다. 
-                우리의 모든 노력은 아이들의 오늘을 지키고, 모두의 내일을 밝히기 위한 것입니다.
-            </p>
-            <a href="{{ url_for('csr.csr') }}" class="btn-csr">자세히 보기</a>
+<!--
+기존 Our Brands: 프리미엄 스크롤 전환형 (보관용)
+<section id="brands" class="section-brands" aria-label="Our Brands">
+    ... (전체 구조 유지) ...
+</section>
+-->
+
+<!-- Our Brands: 3열 카드 -->
+<section id="brands-magnetic" class="section-brands-magnetic" aria-label="Our Brands">
+  <div class="container brands-mg-container">
+    <header class="brands-mg-header reveal" data-delay="0">
+      <a href="{{ url_for('brand.brand') }}" class="brands-mg-title-link">
+        <h2 class="brands-mg-title" data-i18n="brands_title">Our Brands</h2>
+      </a>
+    </header>
+    <div class="brands-mg-cards">
+      <a href="{{ url_for('brand.brand') }}#ryan" class="brands-mg-card reveal" data-delay="120">
+        <div class="brands-mg-card-logo">
+          <img src="{{ url_for('static', filename='img/ryan_logo.png') }}" alt="RYAN">
         </div>
+        <p class="brands-mg-card-desc" data-i18n="brand_ryan_desc">아이의 안전과 편안함을 최우선으로<br>하는 유아용품 브랜드입니다.</p>
+        <div class="brands-mg-card-visual">
+          <img src="{{ url_for('static', filename='img/brands/main_brands_ryan_01.jpg') }}" alt="" onerror="this.style.display='none'; this.nextElementSibling.classList.add('is-visible');">
+          <span class="brands-mg-card-fallback" aria-hidden="true">IMAGE PLACEHOLDER</span>
+        </div>
+        <span class="brands-mg-card-cta" data-i18n="brand_cta">View brand</span>
+      </a>
+      <a href="{{ url_for('brand.brand') }}#joie" class="brands-mg-card reveal" data-delay="240">
+        <div class="brands-mg-card-logo">
+          <img src="{{ url_for('static', filename='img/joie_logo.png') }}" alt="Joie">
+        </div>
+        <p class="brands-mg-card-desc" data-i18n="brand_joie_desc">세계적인 디자인과 안전성을 갖춘<br>프리미엄 유아용품 브랜드입니다.</p>
+        <div class="brands-mg-card-visual">
+          <img src="{{ url_for('static', filename='img/brands/main_brands_joie_01.jpg') }}" alt="" onerror="this.style.display='none'; this.nextElementSibling.classList.add('is-visible');">
+          <span class="brands-mg-card-fallback" aria-hidden="true">IMAGE PLACEHOLDER</span>
+        </div>
+        <span class="brands-mg-card-cta" data-i18n="brand_cta">View brand</span>
+      </a>
+      <a href="{{ url_for('brand.brand') }}#tavo" class="brands-mg-card reveal" data-delay="360">
+        <div class="brands-mg-card-logo">
+          <img src="{{ url_for('static', filename='img/tavopets_logo.png') }}" alt="Tavo Pets">
+        </div>
+        <p class="brands-mg-card-desc" data-i18n="brand_tavo_desc">반려동물과 가족이 함께하는 행복한<br>일상을 만들어가는 브랜드입니다.</p>
+        <div class="brands-mg-card-visual">
+          <img src="{{ url_for('static', filename='img/brands/main_brands_tavopets_01.jpg') }}" alt="" onerror="this.style.display='none'; this.nextElementSibling.classList.add('is-visible');">
+          <span class="brands-mg-card-fallback" aria-hidden="true">IMAGE PLACEHOLDER</span>
+        </div>
+        <span class="brands-mg-card-cta" data-i18n="brand_cta">View brand</span>
+      </a>
     </div>
+  </div>
 </section>
 
-<!-- CONTACT Section -->
-<section id="contact" class="section-contact scroll-section snap-section" data-snap="true">
-    <div class="container">
-        <div class="section-header">
-            <span class="section-label">CONTACT</span>
-            <h2 class="section-title">aone과의 연결 방법</h2>
-            <p class="section-description">궁금한 사항이 있으시면 언제든지 연락주세요.</p>
-        </div>
-        <div class="row g-4 mt-4">
-            <div class="col-md-4">
-                <div class="contact-card">
-                    <h3 class="contact-title">기업 및 제휴 문의</h3>
-                    <p class="contact-description">비즈니스 제안 및 파트너십에 대한 문의를 받고 있습니다.</p>
-                    <a href="mailto:business@aone.com" class="contact-link">자세히 보기</a>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="contact-card">
-                    <h3 class="contact-title">오시는 길</h3>
-                    <p class="contact-description">AONE 본사 위치 및 교통편 안내를 확인하실 수 있습니다.</p>
-                    <a href="{{ url_for('contact.contact') }}" class="contact-link">자세히 보기</a>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="contact-card">
-                    <h3 class="contact-title">온라인 소통</h3>
-                    <p class="contact-description">소셜 미디어를 통해 AONE의 최신 소식을 만나보세요.</p>
-                    <a href="{{ url_for('contact.contact') }}" class="contact-link">자세히 보기</a>
-                </div>
-            </div>
-        </div>
+<!-- CSR: 구멍(hole) 섹션 + 텍스트 sticky 고정, 배경은 body 고정 -->
+<section id="csr" class="section-csr section-csr-anchor csr-section csr-hole" aria-label="CSR">
+  <div class="csr-content">
+    <div class="csr-anchor-inner">
+      <span class="csr-anchor-label reveal" data-delay="0" data-i18n="csr_label">CSR</span>
+      <h2 class="csr-anchor-title reveal" data-delay="80" data-i18n="csr_title">아이의 오늘을 지키는 일이<br>모두의 내일을 밝힙니다</h2>
+      <p class="csr-anchor-desc reveal" data-delay="160" data-i18n="csr_desc">AONE은 아이와 가족의 건강하고 행복한 미래를 위해<br>지속 가능한 사회적 책임을 실천합니다.<br><br>안전한 제품 개발, 환경 보호, 지역 사회와의 상생을 통해<br>더 나은 내일을 만들어갑니다.</p>
+      <a href="{{ url_for('csr.csr') }}" class="csr-anchor-btn reveal" data-delay="240" data-i18n="csr_btn">CSR 이야기 보기 →</a>
     </div>
+  </div>
 </section>
 {% endblock %}

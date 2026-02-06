@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+
+{% block title %}기업이념 - COMPANY - AONE{% endblock %}
+
+{% block content %}
+<nav class="company-breadcrumb" aria-label="Breadcrumb">
+    <div class="container">
+        <a href="{{ url_for('company.company') }}">COMPANY</a>
+        <span aria-hidden="true">/</span>
+        <span>기업이념</span>
+    </div>
+</nav>
+
+<section class="page-header page-header--sub">
+    <div class="container">
+        <h1>기업이념</h1>
+        <p>Mission, Vision & Core Values</p>
+    </div>
+</section>
+
+<section id="ideology" class="company-section company-ideology">
+    <div class="ideology-inner container container-wide">
+        <div class="ideology-block ideology-mission">
+            <h2 class="ideology-block-title reveal" data-delay="0">MISSION</h2>
+            <p class="ideology-mission-text reveal" data-delay="80">Baby is Our Future.<br>아이와 가족의 건강하고 행복한 미래를 만듭니다.</p>
+            <div class="ideology-mission-visuals reveal" data-delay="160">
+                <div class="ideology-circle"><img src="{{ url_for('static', filename='img/main_01.jpg') }}" alt=""></div>
+                <div class="ideology-circle"><img src="{{ url_for('static', filename='img/main_02.jpg') }}" alt=""></div>
+                <div class="ideology-circle"><img src="{{ url_for('static', filename='img/main_03.jpg') }}" alt=""></div>
+            </div>
+        </div>
+
+        <div class="ideology-divider" aria-hidden="true"></div>
+
+        <div class="ideology-block ideology-vision">
+            <h2 class="ideology-block-title reveal" data-delay="0">VISION</h2>
+            <div class="ideology-vision-line" aria-hidden="true"></div>
+            <p class="ideology-vision-sub reveal" data-delay="80">아이와 가족을 위한 전문성</p>
+            <div class="ideology-vision-text reveal" data-delay="120">
+                <p>AONE은 검증된 자체 기술력과 엄선된 글로벌 브랜드를 통해, 대한민국 가정에 안전하고 품질 높은 유아·가족용품을 전합니다.</p>
+                <p>단순한 제품 판매를 넘어, 부모의 마음으로 정직하게 만들고, 아이의 안전을 최우선으로 하며, 함께하는 육아 문화를 만들어가고 있습니다.</p>
+            </div>
+        </div>
+
+        <div class="ideology-divider" aria-hidden="true"></div>
+
+        <div class="ideology-block ideology-values">
+            <h2 class="ideology-block-title reveal" data-delay="0">CORE VALUES</h2>
+            <p class="ideology-values-sub reveal" data-delay="80">우리가 지키는 세 가지</p>
+            <div class="ideology-values-grid">
+                <div class="ideology-value-item reveal" data-delay="120">
+                    <div class="ideology-value-icon"><img src="{{ url_for('static', filename='img/icons/icon-honesty.svg') }}" alt="" width="48" height="48"></div>
+                    <h3 class="ideology-value-name">Honesty</h3>
+                    <span class="ideology-value-sub">진심을 담은 약속</span>
+                    <p class="ideology-value-desc">보이지 않는 과정까지 정직하게, 부모의 마음으로 만듭니다.</p>
+                </div>
+                <div class="ideology-value-item reveal" data-delay="200">
+                    <div class="ideology-value-icon"><img src="{{ url_for('static', filename='img/icons/icon-quality.svg') }}" alt="" width="48" height="48"></div>
+                    <h3 class="ideology-value-name">Quality</h3>
+                    <span class="ideology-value-sub">안전을 향한 고집</span>
+                    <p class="ideology-value-desc">가장 소중한 우리 아이를 위해 작은 디테일도 놓치지 않습니다.</p>
+                </div>
+                <div class="ideology-value-item reveal" data-delay="280">
+                    <div class="ideology-value-icon"><img src="{{ url_for('static', filename='img/icons/icon-people.svg') }}" alt="" width="48" height="48"></div>
+                    <h3 class="ideology-value-name">People</h3>
+                    <span class="ideology-value-sub">함께하는 행복</span>
+                    <p class="ideology-value-desc">단순한 제품 판매를 넘어, 행복한 육아 문화를 만들어갑니다.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="company-back-wrap">
+    <div class="container">
+        <a href="{{ url_for('company.company') }}" class="company-back-link">← COMPANY</a>
+    </div>
+</div>
+{% endblock %}

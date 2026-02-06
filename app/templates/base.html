@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}AONE{% endblock %}</title>
     
+    <!-- Pretendard (전역 폰트) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" crossorigin="anonymous">
+    
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     
@@ -13,7 +16,7 @@
     
     {% block extra_head %}{% endblock %}
 </head>
-<body>
+<body class="{% block body_class %}{% endblock %}">
     {% include 'partials/header.html' %}
     
     <main>
@@ -21,6 +24,24 @@
     </main>
     
     {% include 'partials/footer.html' %}
+
+    <!-- 이미지 레이어 팝업 (클릭 시 큰 이미지, 좌우 화살표 이동, X·ESC로 닫기) -->
+    <div id="imgPopupLayer" class="img-popup-layer" role="dialog" aria-modal="true" aria-label="이미지 확대" hidden>
+        <div class="img-popup-layer__backdrop"></div>
+        <button type="button" class="img-popup-layer__arrow img-popup-layer__arrow--prev" aria-label="이전 이미지"></button>
+        <button type="button" class="img-popup-layer__arrow img-popup-layer__arrow--next" aria-label="다음 이미지"></button>
+        <div class="img-popup-layer__inner">
+            <button type="button" class="img-popup-layer__close" aria-label="닫기">&times;</button>
+            <img src="" alt="" class="img-popup-layer__img">
+        </div>
+    </div>
+
+    <!-- 우측 하단 TOP 이동 버튼 (전체 페이지 공통) -->
+    <button type="button" class="btn-top" id="btnTop" aria-label="맨 위로">
+      <span class="btn-top-icon" aria-hidden="true">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+      </span>
+    </button>
     
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
