@@ -671,6 +671,363 @@ section {
     background: var(--color-white);
 }
 
+/* ============================
+   RECRUIT 페이지
+   ============================ */
+
+/* 리크루트 히어로: 타이틀/서브/리드 크기를 컴퍼니·브랜드 서브·디스크립션과 통일 */
+.page-recruit .hero-fullbleed .hero-copy-inner .hero-title-line {
+  font-size: 2.5rem;
+}
+.page-recruit .hero-fullbleed .hero-title-sub {
+  font-size: 1rem;
+  margin: 0 0 0.5rem;
+}
+.page-recruit .hero-fullbleed .hero-lead {
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+@media (min-width: 768px) {
+  .page-recruit .hero-fullbleed .hero-copy-inner .hero-title-line {
+    font-size: 3rem;
+  }
+  .page-recruit .hero-fullbleed .hero-lead {
+    font-size: 1.0625rem;
+  }
+}
+@media (min-width: 992px) {
+  .page-recruit .hero-fullbleed .hero-copy-inner .hero-title-line {
+    font-size: 5.25rem;
+  }
+}
+
+/* 모바일: 버튼~이미지 하단 간격 + 해상도별 텍스트 크기 조절로 줄바꿈·버튼 하단 이탈 방지 */
+@media (max-width: 991.98px) {
+  .page-recruit .hero-fullbleed .hero-copy {
+    margin-top: -68vh;
+    padding-top: 68vh;
+  }
+  .page-recruit .hero-fullbleed .hero-copy-inner {
+    padding-bottom: calc(2.5rem + 12vh);
+  }
+  /* 서브·리드만 뷰포트에 따라 유동 크기 (타이틀은 고정) */
+  .page-recruit .hero-fullbleed .hero-title-sub {
+    font-size: clamp(0.8125rem, 1.5vw + 0.6rem, 1rem);
+    margin: 0 0 0.35rem;
+  }
+  .page-recruit .hero-fullbleed .hero-lead {
+    font-size: clamp(0.75rem, 1.5vw + 0.5rem, 1rem);
+    line-height: 1.55;
+    margin-bottom: 1.5rem;
+  }
+}
+@media (max-width: 413px) {
+  .page-recruit .hero-fullbleed .hero-title-sub {
+    font-size: 0.8125rem;
+  }
+  .page-recruit .hero-fullbleed .hero-lead {
+    font-size: 0.75rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+  }
+}
+@media (max-width: 360px) {
+  .page-recruit .hero-fullbleed .hero-title-sub {
+    font-size: 0.75rem;
+  }
+  .page-recruit .hero-fullbleed .hero-lead {
+    font-size: 0.6875rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* 채용 안내 */
+.section-recruit-intro {
+  background: #ffffff;
+}
+.section-recruit-intro .section-header {
+  max-width: 720px;
+  margin: 0 auto 2rem;
+  text-align: center;
+}
+.recruit-platform-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+}
+.btn-recruit-jobkorea {
+  background: #007EFF;
+  color: #fff;
+  border: 0;
+}
+.btn-recruit-jobkorea:hover {
+  background: #0066dd;
+  color: #fff;
+}
+.btn-recruit-saramin {
+  background: #2D67FF;
+  color: #fff;
+  border: 0;
+}
+.btn-recruit-saramin:hover {
+  background: #2557e0;
+  color: #fff;
+}
+
+/* 3) 인재상 카드 */
+.section-recruit-talent {
+  background: #f8f8f8;
+}
+.section-recruit-talent .section-header {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+.section-recruit-talent .section-header .company-section-title,
+.section-recruit-talent .section-header .company-section-sub {
+  text-align: center;
+}
+.recruit-talent-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+@media (min-width: 768px) {
+  .recruit-talent-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+.recruit-talent-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 1.75rem 1.5rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.recruit-talent-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+  border-color: rgba(0, 0, 0, 0.08);
+}
+.recruit-talent-icon {
+  margin-bottom: 1rem;
+}
+.recruit-talent-icon img {
+  display: block;
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+}
+.recruit-talent-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--color-dark);
+}
+.recruit-talent-desc {
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  color: var(--color-text-light);
+  margin: 0;
+}
+
+/* 4) 가족친화 인증 섹션: 히어로처럼 50:50, 왼쪽 이미지 / 오른쪽 텍스트+앰블럼 */
+.section-recruit-family {
+  background: #ffffff;
+}
+.section-recruit-family-inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: stretch;
+}
+@media (min-width: 768px) {
+  .section-recruit-family-inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    align-items: stretch;
+    min-height: 420px;
+  }
+}
+
+/* 왼쪽: 히어로 이미지 + 오버레이 */
+.recruit-family-visual {
+  position: relative;
+  width: 100%;
+  min-height: 240px;
+}
+@media (min-width: 768px) {
+  .recruit-family-visual {
+    min-height: 0;
+    height: 100%;
+  }
+}
+.recruit-family-img-wrap {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0;
+  aspect-ratio: 4 / 3;
+  background: #f0f0f0;
+  height: 100%;
+}
+@media (min-width: 768px) {
+  .recruit-family-img-wrap {
+    border-radius: 0;
+    aspect-ratio: auto;
+    min-height: 100%;
+  }
+}
+.recruit-family-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+@media (min-width: 768px) {
+  .recruit-family-img {
+    min-height: 100%;
+    object-position: center;
+  }
+}
+.recruit-family-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.08) 0%, rgba(0,0,0,0.25) 100%);
+  pointer-events: none;
+}
+
+/* 오른쪽: 텍스트 (히어로 카피처럼 세로 가운데 여백) */
+.recruit-family-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+  padding: 0;
+}
+@media (min-width: 768px) {
+  .recruit-family-text {
+    padding: 2.5rem 2rem 2.5rem 2.5rem;
+  }
+}
+.recruit-family-heading {
+  margin-bottom: 1.5rem;
+}
+
+/* PC: 앰블럼을 제목 위에 배치 */
+.recruit-family-emblem-desktop {
+  display: none;
+}
+@media (min-width: 768px) {
+  .recruit-family-emblem-desktop {
+    display: block;
+    width: 80px;
+    height: auto;
+    margin-bottom: 1rem;
+  }
+}
+
+/* 모바일: "가족친화 우수기업" 한 줄 유지, 오른쪽에 앰블럼 */
+.recruit-family-heading-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.375rem;
+}
+.recruit-family-heading-text {
+  flex: 1;
+  min-width: 0;
+}
+.recruit-family-heading .recruit-family-title {
+  white-space: nowrap;
+}
+.recruit-family-emblem-mobile {
+  flex-shrink: 0;
+  width: 88px;
+  height: auto;
+  display: block;
+}
+@media (max-width: 400px) {
+  .recruit-family-emblem-mobile {
+    width: 72px;
+  }
+}
+@media (max-width: 360px) {
+  .recruit-family-emblem-mobile {
+    width: 64px;
+  }
+}
+@media (max-width: 320px) {
+  .recruit-family-emblem-mobile {
+    width: 56px;
+  }
+}
+@media (min-width: 768px) {
+  .recruit-family-heading-row {
+    display: block;
+  }
+  .recruit-family-heading .recruit-family-title {
+    white-space: normal;
+  }
+  .recruit-family-emblem-mobile {
+    display: none;
+  }
+}
+
+.recruit-family-title.company-section-title,
+.recruit-family-sub.company-section-sub {
+  text-align: left;
+}
+.recruit-family-sub.company-section-sub {
+  margin-bottom: 1.5rem;
+}
+
+/* 리크루트 하단 섹션 reveal 스크롤 애니메이션 (stagger delay) */
+.page-recruit .section-recruit-intro .reveal[data-delay="0"],
+.page-recruit .section-recruit-talent .reveal[data-delay="0"],
+.page-recruit .section-recruit-family .reveal[data-delay="0"]   { transition-delay: 0ms; }
+.page-recruit .section-recruit-intro .reveal[data-delay="40"],
+.page-recruit .section-recruit-talent .reveal[data-delay="40"],
+.page-recruit .section-recruit-family .reveal[data-delay="40"]  { transition-delay: 40ms; }
+.page-recruit .section-recruit-intro .reveal[data-delay="80"],
+.page-recruit .section-recruit-talent .reveal[data-delay="80"],
+.page-recruit .section-recruit-family .reveal[data-delay="80"]  { transition-delay: 80ms; }
+.page-recruit .section-recruit-intro .reveal[data-delay="120"],
+.page-recruit .section-recruit-talent .reveal[data-delay="120"],
+.page-recruit .section-recruit-family .reveal[data-delay="120"] { transition-delay: 120ms; }
+.page-recruit .section-recruit-intro .reveal[data-delay="160"],
+.page-recruit .section-recruit-talent .reveal[data-delay="160"],
+.page-recruit .section-recruit-family .reveal[data-delay="160"] { transition-delay: 160ms; }
+@media (prefers-reduced-motion: reduce) {
+  .page-recruit .section-recruit-intro .reveal,
+  .page-recruit .section-recruit-intro .reveal.is-inview,
+  .page-recruit .section-recruit-talent .reveal,
+  .page-recruit .section-recruit-talent .reveal.is-inview,
+  .page-recruit .section-recruit-family .reveal,
+  .page-recruit .section-recruit-family .reveal.is-inview {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* 리크루트 모바일: 채용안내·가족친화 본문, 인재상 카드 텍스트만 크기 조절 (타이틀·서브는 유지) */
+@media (max-width: 991.98px) {
+  .page-recruit .section-recruit-intro .section-description,
+  .page-recruit .section-recruit-family .recruit-family-text .section-description {
+    font-size: 0.9375rem;
+    line-height: 1.7;
+  }
+  .page-recruit .section-recruit-talent .recruit-talent-title {
+    font-size: 1rem;
+  }
+  .page-recruit .section-recruit-talent .recruit-talent-desc {
+    font-size: 0.875rem;
+  }
+}
+
 .company-card {
     background: var(--color-white);
     padding: 2.5rem;
@@ -949,6 +1306,9 @@ section {
 .page-content {
     padding: 4rem 0;
 }
+.page-recruit #hero.hero-fullbleed {
+    background: #f8f8f8;
+}
 
 /* ----- COMPANY 페이지 전용 ----- */
 .section-alt {
@@ -1039,6 +1399,10 @@ section {
         z-index: 3;
         margin-top: 1.75rem;
     }
+    .company-hero .company-hero-lead {
+        font-size: clamp(0.875rem, 1.1vw, 1.125rem);
+        line-height: 1.6;
+    }
 }
 
 @media (min-width: 992px) {
@@ -1078,7 +1442,7 @@ section {
 }
 
 .company-hero-lead {
-    font-size: 1rem;
+    font-size: 1.125rem;
     line-height: 1.7;
     color: #555;
     margin: 0 0 2rem;
@@ -1086,7 +1450,7 @@ section {
 
 @media (min-width: 768px) {
     .company-hero-title { font-size: 3rem; }
-    .company-hero-lead { font-size: 1.0625rem; }
+    .company-hero-lead { font-size: 1.125rem; }
 }
 @media (min-width: 992px) {
     .company-hero-title { font-size: 5.25rem; }
@@ -1146,6 +1510,203 @@ section {
     }
 }
 
+/* COMPANY 히어로: Our Story 가로 타임라인 (숫자 카드 아래, 버튼 카드 위) */
+.company-our-story {
+    margin-top: 0;
+    margin-bottom: 2rem;
+    padding-top: 0.5rem;
+}
+
+.company-our-story-title {
+    font-size: 0.8125rem;
+    font-weight: var(--font-weight-heading);
+    letter-spacing: 0.05em;
+    color: var(--color-text-light);
+    margin: 0 0 1rem;
+    text-transform: uppercase;
+}
+
+.company-our-story-timeline {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    gap: 0;
+}
+
+.company-our-story-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1 1 0;
+    min-width: 0;
+    cursor: default;
+}
+
+.company-our-story-node {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    flex: 1 1 0;
+    min-width: 0;
+}
+
+.company-our-story-dot {
+    flex-shrink: 0;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 2px solid var(--color-gray-dark);
+    background: var(--color-white);
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.company-our-story-dot--accent {
+    border-color: var(--color-primary);
+    background: var(--color-primary);
+}
+
+.company-our-story-item:hover .company-our-story-dot {
+    border-color: var(--color-dark-light);
+}
+
+.company-our-story-item:hover .company-our-story-dot--accent {
+    border-color: var(--color-primary-light);
+    background: var(--color-primary-light);
+}
+
+.company-our-story-line {
+    flex: 1 1 0;
+    min-width: 8px;
+    height: 2px;
+    margin: 0 2px;
+    background: var(--color-gray-dark);
+    align-self: center;
+    transition: background-color 0.2s ease;
+}
+
+.company-our-story-line--hidden {
+    display: none;
+}
+
+.company-our-story-item:hover .company-our-story-line {
+    background: var(--color-dark-light);
+}
+
+.company-our-story-year {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin-top: 0.5rem;
+    line-height: 1.3;
+    text-align: center;
+}
+
+.company-our-story-keyword {
+    display: block;
+    font-size: 0.6875rem;
+    color: #999;
+    margin-top: 0.15rem;
+    line-height: 1.4;
+    text-align: center;
+}
+
+.company-our-story-item:hover .company-our-story-year,
+.company-our-story-item:hover .company-our-story-keyword {
+    color: var(--color-text);
+}
+
+.company-our-story-item:hover .company-our-story-keyword {
+    color: var(--color-text-light);
+}
+
+@media (min-width: 992px) {
+    .company-our-story {
+        margin-bottom: 2.5rem;
+    }
+    .company-our-story-title {
+        font-size: 0.875rem;
+    }
+    .company-our-story-keyword {
+        font-size: 0.75rem;
+    }
+}
+
+/* Our Story 모바일: 가로 스크롤, 터치 스크롤, 라인 가시성, 연도/텍스트 정렬, 키워드 2줄 */
+@media (max-width: 991.98px) {
+    .company-our-story {
+        margin-bottom: 1.5rem;
+        margin-left: -1.5rem;
+        margin-right: -1.5rem;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+    .company-our-story-timeline {
+        justify-content: space-evenly;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: thin;
+        padding-bottom: 0.5rem;
+    }
+    .company-our-story-timeline::-webkit-scrollbar {
+        height: 4px;
+    }
+    .company-our-story-timeline::-webkit-scrollbar-thumb {
+        background: var(--color-gray-dark);
+        border-radius: 2px;
+    }
+    .company-our-story-item {
+        flex: 0 0 52px;
+        min-width: 0;
+        text-align: center;
+    }
+    .company-our-story-node {
+        width: 100%;
+    }
+    .company-our-story-line {
+        flex: 1 1 0;
+        min-width: 10px;
+        height: 3px;
+        margin: 0;
+        background: var(--color-gray-dark);
+    }
+    .company-our-story-keyword {
+        max-width: 4.5em;
+        margin-left: auto;
+        margin-right: auto;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+        overflow: hidden;
+        word-break: keep-all;
+    }
+    .company-hero .company-our-story .company-our-story-title {
+        color: rgba(255, 255, 255, 0.85);
+    }
+    .company-hero .company-our-story .company-our-story-year,
+    .company-hero .company-our-story .company-our-story-keyword {
+        color: rgba(255, 255, 255, 0.9);
+    }
+    .company-hero .company-our-story .company-our-story-keyword {
+        color: rgba(255, 255, 255, 0.7);
+    }
+    .company-hero .company-our-story .company-our-story-dot {
+        border-color: rgba(255, 255, 255, 0.55);
+        background: rgba(255, 255, 255, 0.25);
+    }
+    .company-hero .company-our-story .company-our-story-dot--accent {
+        border-color: var(--color-primary);
+        background: var(--color-primary);
+    }
+    .company-hero .company-our-story .company-our-story-line {
+        background: rgba(255, 255, 255, 0.7);
+        height: 3px;
+    }
+}
+
 /* 좌측 하단: 4버튼 박스 (항상 2×2) */
 .company-hero-boxes {
     display: grid;
@@ -1153,12 +1714,12 @@ section {
     gap: 0.75rem;
 }
 
-/* 버튼: 입장 시 비활성화, 선택 시만 활성화 */
+/* 버튼: 입장 시 비활성화, 선택 시만 활성화, 우측 chevron으로 클릭 유도 */
 .company-box {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
     padding: 1.25rem 1rem;
     background: #f2f2f2;
     border: 1px solid rgba(0, 0, 0, 0.12);
@@ -1168,6 +1729,32 @@ section {
     text-align: left;
     font: inherit;
 }
+
+.company-box-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.company-box-chevron {
+    flex-shrink: 0;
+    margin-left: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(0, 0, 0, 0.4);
+    transition: color 0.2s ease;
+}
+
+.company-box-chevron svg {
+    display: block;
+    width: 20px;
+    height: 20px;
+}
+
+.company-box:hover .company-box-chevron { color: rgba(0, 0, 0, 0.6); }
+
+.company-box.is-active .company-box-chevron { color: rgba(255, 255, 255, 0.9); }
 
 .company-box:hover {
     background: #e8e8e8;
@@ -1246,6 +1833,7 @@ section {
 .company-hero .reveal[data-delay="120"] { transition-delay: 120ms; }
 .company-hero .reveal[data-delay="160"] { transition-delay: 160ms; }
 .company-hero .reveal[data-delay="240"] { transition-delay: 240ms; }
+.company-hero .reveal[data-delay="300"] { transition-delay: 300ms; }
 .company-hero .reveal[data-delay="360"] { transition-delay: 360ms; }
 .company-hero .reveal[data-delay="420"] { transition-delay: 420ms; }
 .company-hero .reveal[data-delay="480"] { transition-delay: 480ms; }
@@ -3384,23 +3972,50 @@ section {
   }
   .nav-link-shop::after { display: none; }
 
-  /* SHOP 드롭다운: 다국어 패널과 동일한 박스 스타일, 정렬은 왼쪽 유지 */
+  /* SHOP 드롭다운: 다국어 패널(.lang-panel)과 동일한 박스 스타일 + 밑으로 내려오는 전환 */
   #main-header .dropdown-menu {
+    display: block !important;
     background: #f8f8f8;
     border: 1px solid rgba(0, 0, 0, 0.06);
     border-radius: 16px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
     padding: 8px;
     margin-top: 8px;
+    min-width: 120px;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    opacity: 0;
+    transform: translateY(-6px);
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 160ms ease, transform 160ms ease, visibility 0s linear 160ms;
+  }
+  #main-header .dropdown-menu.show {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+    pointer-events: auto;
+    transition: opacity 160ms ease, transform 160ms ease;
   }
   #main-header .dropdown-menu .dropdown-item {
     border-radius: 12px;
-    padding: 10px 14px;
+    padding: 0 14px;
+    height: 36px;
+    display: flex;
+    align-items: center;
     color: rgba(0, 0, 0, 0.75);
-    transition: background 140ms ease;
+    font-size: 0.9rem;
+    transition: background 140ms ease, color 140ms ease;
   }
   #main-header .dropdown-menu .dropdown-item:hover {
     background: rgba(0, 0, 0, 0.04);
+  }
+  #main-header .dropdown-menu .dropdown-item:focus {
+    outline: none;
+    box-shadow: none;
+  }
+  #main-header .dropdown-menu .dropdown-item:focus-visible {
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.10);
   }
 }
 
@@ -4089,16 +4704,29 @@ main #csr.section-csr-dark {
   .hero-fullbleed .hero-copy-inner .hero-title-line { color: var(--color-white); }
   /* 모바일: BABY IS OUR / FUTURE = 각 페이지 상단 페이지명(.page-header h1)과 동일 크기 */
   .hero-fullbleed .hero-copy-inner .hero-title-line { font-size: 3rem; }
+  .hero-fullbleed .hero-copy-inner .hero-title-sub { color: rgba(255, 255, 255, 0.9); }
   .hero-fullbleed .hero-copy-inner .hero-lead { color: rgba(255, 255, 255, 0.95); }
+  /* 모바일: 히어로 CTA 버튼은 흰 배경 + 검은 텍스트, 텍스트 그림자 제거 */
+  .hero-fullbleed .hero-copy-inner .btn-hero-primary,
   .hero-fullbleed .hero-copy-inner .btn-hero-outline {
-    background: rgba(255, 255, 255, 0.15);
-    border-color: var(--color-white);
-    color: var(--color-white);
+    background: #ffffff;
+    color: #2c2c2c;
+    border: 0;
     text-shadow: none;
   }
+  .hero-fullbleed .hero-copy-inner .btn-hero-primary:hover,
   .hero-fullbleed .hero-copy-inner .btn-hero-outline:hover {
-    background: var(--color-white);
+    background: #f2f2f2;
     color: #2c2c2c;
+  }
+  /* 콘택트: 모바일에서도 길찾기(primary) 버튼은 PC와 동일한 색상 */
+  .hero-fullbleed--contact .hero-copy-inner .btn-hero-primary {
+    background: #2c2c2c;
+    color: var(--color-white);
+  }
+  .hero-fullbleed--contact .hero-copy-inner .btn-hero-primary:hover {
+    background: #F36F21;
+    color: var(--color-white);
   }
 }
 .hero-overlay-gradient {
@@ -4132,8 +4760,12 @@ main #csr.section-csr-dark {
               transform 800ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 #hero.hero-fullbleed .reveal[data-delay="0"]   { transition-delay: 0ms; }
+#hero.hero-fullbleed .reveal[data-delay="80"]  { transition-delay: 80ms; }
 #hero.hero-fullbleed .reveal[data-delay="120"] { transition-delay: 120ms; }
+#hero.hero-fullbleed .reveal[data-delay="160"] { transition-delay: 160ms; }
+#hero.hero-fullbleed .reveal[data-delay="200"] { transition-delay: 200ms; }
 #hero.hero-fullbleed .reveal[data-delay="240"] { transition-delay: 240ms; }
+#hero.hero-fullbleed .reveal[data-delay="280"] { transition-delay: 280ms; }
 #hero.hero-fullbleed .reveal[data-delay="360"] { transition-delay: 360ms; }
 #hero.hero-fullbleed .reveal[data-delay="480"] { transition-delay: 480ms; }
 #hero.hero-fullbleed .reveal[data-delay="600"] { transition-delay: 600ms; }
@@ -4168,6 +4800,12 @@ main #csr.section-csr-dark {
 }
 @media (min-width: 992px) {
   .hero-title-line { font-size: clamp(3.5rem, 4.5vw, 5.25rem); }
+}
+.hero-fullbleed .hero-title-sub {
+  font-size: 1rem;
+  color: var(--color-text-light);
+  margin: 0 0 1rem;
+  font-weight: var(--font-weight-caption);
 }
 
 /* 인덱스 히어로: 데스크톱에서는 BABY / IS OUR 한 줄, FUTURE 한 줄 (2줄) */
@@ -4228,6 +4866,7 @@ main #csr.section-csr-dark {
   background: #452200;
   color: var(--color-white);
   border: 0;
+  text-shadow: none;
 }
 .btn-hero-ryan:hover {
   background: #5c2e00;
@@ -4238,6 +4877,7 @@ main #csr.section-csr-dark {
   background: #f7a81b;
   color: #1a1a1a;
   border: 0;
+  text-shadow: none;
 }
 .btn-hero-joie:hover {
   background: #e09810;
@@ -4248,6 +4888,7 @@ main #csr.section-csr-dark {
   background: #1f3034;
   color: var(--color-white);
   border: 0;
+  text-shadow: none;
 }
 .btn-hero-tavo:hover {
   background: #2d454b;
@@ -4260,6 +4901,7 @@ main #csr.section-csr-dark {
   .hero-fullbleed .hero-copy-inner .btn-hero-joie,
   .hero-fullbleed .hero-copy-inner .btn-hero-tavo {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    text-shadow: none;
   }
 }
 

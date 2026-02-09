@@ -448,6 +448,16 @@
       }
     });
 
+    // RECRUIT 페이지: 채용안내·인재상·가족친화 섹션 reveal 요소 수집
+    ['.section-recruit-intro', '.section-recruit-talent', '.section-recruit-family'].forEach(function(sel) {
+      var parent = document.querySelector(sel);
+      if (parent) {
+        parent.querySelectorAll('.reveal').forEach(function(el) {
+          revealElements.push(el);
+        });
+      }
+    });
+
     // 3) IntersectionObserver로 관찰
     if (!reduceMotion && revealElements.length) {
       const revealObserver = new IntersectionObserver(
