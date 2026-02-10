@@ -362,6 +362,27 @@
       }
     });
 
+    // CSR 서브페이지 히어로: CSR / 사회공헌활동 / 하위 텍스트 순차 등장 (다른 카테고리와 동일한 느낌)
+    if (document.body.classList.contains('page-csr')) {
+      var csrHero = document.querySelector('.page-csr .csr-hero-intro');
+      if (csrHero) {
+        var csrHeroBlocks = csrHero.querySelectorAll('.hero-title-block, .hero-title-sub, .hero-lead');
+        csrHeroBlocks.forEach(function(el, idx) {
+          el.classList.add('reveal', 'reveal-hero');
+          if (reduceMotion) {
+            el.classList.add('is-inview');
+          } else {
+            // 인덱스 기준으로 약간씩 딜레이를 줘서 순차 등장
+            var delayMs = 80 * idx;
+            el.style.transitionDelay = delayMs + 'ms';
+            setTimeout(function() {
+              el.classList.add('is-inview');
+            }, delayMs);
+          }
+        });
+      }
+    }
+
     // 2) 스크롤 진입 시 reveal 대상 수집 (메인: #brand, #csr)
     const revealConfig = [
       { section: '#brand', header: '.section-header', cards: '.brand-tile', stagger: 80, compact: true },
@@ -448,8 +469,8 @@
       }
     });
 
-    // RECRUIT 페이지: 채용안내·인재상·가족친화 섹션 reveal 요소 수집
-    ['.section-recruit-intro', '.section-recruit-talent', '.section-recruit-family'].forEach(function(sel) {
+    // RECRUIT / CSR 페이지: 섹션 reveal 요소 수집
+    ['.section-recruit-intro', '.section-recruit-talent', '.section-recruit-family', '.section-csr-timeline'].forEach(function(sel) {
       var parent = document.querySelector(sel);
       if (parent) {
         parent.querySelectorAll('.reveal').forEach(function(el) {
