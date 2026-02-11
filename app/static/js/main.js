@@ -469,32 +469,76 @@
       }
     });
 
-    // RECRUIT / CSR 페이지: 섹션 reveal 요소 수집
+    // RECRUIT / CSR 페이지: 섹션 reveal 요소 수집 (CSR 웹 히어로는 제외하고 컨테이너 관찰로 별도 처리)
     ['.section-recruit-intro', '.section-recruit-talent', '.section-recruit-family', '.section-csr-timeline'].forEach(function(sel) {
       var parent = document.querySelector(sel);
       if (parent) {
+        var isCsrTimeline = sel === '.section-csr-timeline';
         parent.querySelectorAll('.reveal').forEach(function(el) {
+          if (isCsrTimeline && (el.closest('.csr-hero-intro') || el.closest('.csr-timeline-visual'))) return;
           revealElements.push(el);
         });
       }
     });
+    if (document.body.classList.contains('page-csr')) {
+      var csrHoleEnd = document.querySelector('.csr-hole-end');
+      if (csrHoleEnd) csrHoleEnd.querySelectorAll('.reveal').forEach(function(el) { revealElements.push(el); });
+    }
+
+    // 첫 페인트 후에 reveal 클래스 적용 (새로고침 시 간헐적 미동작 방지)
+    function afterFirstPaint(el, className, observer) {
+      requestAnimationFrame(function() {
+        requestAnimationFrame(function() {
+          el.classList.add(className);
+          if (observer) observer.unobserve(el);
+        });
+      });
+    }
 
     // 3) IntersectionObserver로 관찰
     if (!reduceMotion && revealElements.length) {
       const revealObserver = new IntersectionObserver(
         function(entries) {
           entries.forEach(function(entry) {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('is-inview');
-              revealObserver.unobserve(entry.target);
-            }
+            if (!entry.isIntersecting) return;
+            afterFirstPaint(entry.target, 'is-inview', revealObserver);
           });
         },
-        { rootMargin: '0px 0px -10% 0px', threshold: 0.15 }
+        { rootMargin: '0px 0px -10% 0px', threshold: 0.1 }
       );
       revealElements.forEach(function(el) { revealObserver.observe(el); });
     } else if (reduceMotion) {
       revealElements.forEach(function(el) { el.classList.add('is-inview'); });
+    }
+
+    // CSR 웹(데스크톱) 히어로: 컴퍼니/브랜드와 동일하게 컨테이너(.csr-timeline-inner) 관찰 후 is-visible (왼쪽 고정 이미지+오른쪽 텍스트 한 번에)
+    var csrTimelineInner = document.querySelector('.page-csr .csr-timeline-inner');
+    if (csrTimelineInner && !window.matchMedia('(prefers-reduced-motion: reduce)').matches && window.matchMedia('(min-width: 992px)').matches) {
+      function applyCsrDesktopHeroVisibleIfInView() {
+        var el = document.querySelector('.page-csr .csr-timeline-inner');
+        if (!el || el.classList.contains('is-visible')) return;
+        var rect = el.getBoundingClientRect();
+        if (rect.top >= window.innerHeight || rect.bottom <= 0) return;
+        setTimeout(function() { el.classList.add('is-visible'); }, 120);
+      }
+      var csrDesktopHeroObserver = new IntersectionObserver(
+        function(entries) {
+          entries.forEach(function(entry) {
+            if (!entry.isIntersecting) return;
+            var target = entry.target;
+            setTimeout(function() {
+              target.classList.add('is-visible');
+              csrDesktopHeroObserver.unobserve(target);
+            }, 120);
+          });
+        },
+        { rootMargin: '0px', threshold: 0.05 }
+      );
+      csrDesktopHeroObserver.observe(csrTimelineInner);
+      setTimeout(applyCsrDesktopHeroVisibleIfInView, 400);
+      window.addEventListener('pageshow', function(e) {
+        if (e.persisted) setTimeout(applyCsrDesktopHeroVisibleIfInView, 100);
+      });
     }
 
     // CSR 섹션: 배경 완전 고정 (진입 시에만 배경 노출)
@@ -1129,60 +1173,115 @@
     }
 
     // ============================================================
-    // Hero 항목별 reveal: #hero 진입 시 한 번만 is-visible
+    // Hero 항목별 reveal: #hero 진입 시 한 번만 is-visible (히어로는 첫 페인트 후 짧은 지연으로 안정화)
     // ============================================================
+    const heroRevealDelay = 120;
     const heroSection = document.getElementById('hero');
+    function applyHeroVisibleIfInView() {
+      var h = document.getElementById('hero');
+      if (!h || h.classList.contains('is-visible')) return;
+      var rect = h.getBoundingClientRect();
+      if (rect.top >= window.innerHeight || rect.bottom <= 0) return;
+      setTimeout(function() { h.classList.add('is-visible'); }, heroRevealDelay);
+    }
     if (heroSection && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       const heroObserver = new IntersectionObserver(
         function (entries) {
           entries.forEach(function (entry) {
             if (entry.isIntersecting) {
-              entry.target.classList.add('is-visible');
-              heroObserver.unobserve(entry.target);
+              var target = entry.target;
+              setTimeout(function() {
+                target.classList.add('is-visible');
+                heroObserver.unobserve(target);
+              }, heroRevealDelay);
             }
           });
         },
-        { rootMargin: '0px', threshold: 0.1 }
+        { rootMargin: '0px', threshold: 0.05 }
       );
       heroObserver.observe(heroSection);
+      if (document.body.classList.contains('page-csr')) {
+        setTimeout(applyHeroVisibleIfInView, 400);
+        window.addEventListener('pageshow', function(e) {
+          if (e.persisted) setTimeout(applyHeroVisibleIfInView, 100);
+        });
+      }
+      if (document.body.classList.contains('page-index') || document.body.classList.contains('page-contact') || document.body.classList.contains('page-recruit') || document.body.classList.contains('page-brand')) {
+        setTimeout(applyHeroVisibleIfInView, 400);
+        window.addEventListener('pageshow', function(e) {
+          if (e.persisted) setTimeout(applyHeroVisibleIfInView, 100);
+        });
+      }
     } else if (heroSection) {
       heroSection.classList.add('is-visible');
     }
 
-    // Company 페이지 히어로: 진입 시 좌측 텍스트·버튼 reveal
+    // Company 페이지 히어로: #hero와 동일하게 120ms 지연 + 폴백·pageshow
     const companyHeroSection = document.getElementById('company-hero');
+    function applyCompanyHeroVisibleIfInView() {
+      var el = document.getElementById('company-hero');
+      if (!el || el.classList.contains('is-visible')) return;
+      var rect = el.getBoundingClientRect();
+      if (rect.top >= window.innerHeight || rect.bottom <= 0) return;
+      setTimeout(function() { el.classList.add('is-visible'); }, heroRevealDelay);
+    }
     if (companyHeroSection && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       const companyHeroObserver = new IntersectionObserver(
         function (entries) {
           entries.forEach(function (entry) {
             if (entry.isIntersecting) {
-              entry.target.classList.add('is-visible');
-              companyHeroObserver.unobserve(entry.target);
+              var target = entry.target;
+              setTimeout(function() {
+                target.classList.add('is-visible');
+                companyHeroObserver.unobserve(target);
+              }, heroRevealDelay);
             }
           });
         },
-        { rootMargin: '0px', threshold: 0.1 }
+        { rootMargin: '0px', threshold: 0.05 }
       );
       companyHeroObserver.observe(companyHeroSection);
+      if (document.body.classList.contains('page-company')) {
+        setTimeout(applyCompanyHeroVisibleIfInView, 400);
+        window.addEventListener('pageshow', function(e) {
+          if (e.persisted) setTimeout(applyCompanyHeroVisibleIfInView, 100);
+        });
+      }
     } else if (companyHeroSection) {
       companyHeroSection.classList.add('is-visible');
     }
 
-    // Our Brands: 스크롤 진입 시 히어로와 동일하게 is-visible → reveal 애니메이션
+    // Our Brands(인덱스): #hero와 동일하게 120ms 지연 + 폴백·pageshow
     const brandsSection = document.getElementById('brands-magnetic');
+    function applyBrandsVisibleIfInView() {
+      var el = document.getElementById('brands-magnetic');
+      if (!el || el.classList.contains('is-visible')) return;
+      var rect = el.getBoundingClientRect();
+      if (rect.top >= window.innerHeight || rect.bottom <= 0) return;
+      setTimeout(function() { el.classList.add('is-visible'); }, heroRevealDelay);
+    }
     if (brandsSection && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       var brandsObserver = new IntersectionObserver(
         function (entries) {
           entries.forEach(function (entry) {
             if (entry.isIntersecting) {
-              entry.target.classList.add('is-visible');
-              brandsObserver.unobserve(entry.target);
+              var target = entry.target;
+              setTimeout(function() {
+                target.classList.add('is-visible');
+                brandsObserver.unobserve(target);
+              }, heroRevealDelay);
             }
           });
         },
-        { rootMargin: '0px', threshold: 0.1 }
+        { rootMargin: '0px', threshold: 0.05 }
       );
       brandsObserver.observe(brandsSection);
+      if (document.body.classList.contains('page-index')) {
+        setTimeout(applyBrandsVisibleIfInView, 400);
+        window.addEventListener('pageshow', function(e) {
+          if (e.persisted) setTimeout(applyBrandsVisibleIfInView, 100);
+        });
+      }
     } else if (brandsSection) {
       brandsSection.classList.add('is-visible');
     }

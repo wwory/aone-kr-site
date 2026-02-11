@@ -81,8 +81,9 @@ small,
     line-height: var(--line-height-small);
 }
 
-/* CSR 구멍(hole)용: index 페이지에서만 페이지 레벨 고정 배경 (CSR 구간에서만 구멍으로 드러남) */
-body.page-index::after {
+/* CSR 구멍(hole)용: index/CSR 페이지에서 페이지 레벨 고정 배경 (구멍 섹션에서만 드러남) */
+body.page-index::after,
+body.page-csr::after {
     content: "";
     position: fixed;
     top: 0;
@@ -104,7 +105,8 @@ body.page-index::after {
         scroll-behavior: smooth;
     }
     /* 모바일에서는 CSR 고정 배경 이미지 비노출 (구멍 효과 없음) */
-    body.page-index::after {
+    body.page-index::after,
+    body.page-csr::after {
         display: none;
     }
 }
@@ -1348,7 +1350,6 @@ section {
 .csr-timeline-visual-frame {
   border-radius: 0;
   overflow: hidden;
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.16);
 }
 .csr-timeline-img {
   display: block;
@@ -1384,6 +1385,37 @@ section {
     display: flex;
     flex-direction: column;
     justify-content: center;
+  }
+}
+
+/* CSR 웹(데스크톱) 히어로: 컴퍼니/인덱스와 동일 패턴 – 컨테이너에 is-visible, 왼쪽 이미지·오른쪽 텍스트 한 번에 reveal */
+@media (min-width: 992px) {
+  .page-csr .csr-timeline-inner .csr-hero-intro .reveal,
+  .page-csr .csr-timeline-inner .csr-timeline-visual .reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 800ms cubic-bezier(0.22, 1, 0.36, 1),
+                transform 800ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .page-csr .csr-timeline-inner .csr-hero-intro .reveal[data-delay="0"],
+  .page-csr .csr-timeline-inner .csr-timeline-visual .reveal[data-delay="0"]   { transition-delay: 0ms; }
+  .page-csr .csr-timeline-inner .csr-hero-intro .reveal[data-delay="80"]        { transition-delay: 80ms; }
+  .page-csr .csr-timeline-inner .csr-hero-intro .reveal[data-delay="160"]       { transition-delay: 160ms; }
+  .page-csr .csr-timeline-inner .csr-hero-intro .reveal[data-delay="240"]       { transition-delay: 240ms; }
+  .page-csr .csr-timeline-inner.is-visible .csr-hero-intro .reveal,
+  .page-csr .csr-timeline-inner.is-visible .csr-timeline-visual .reveal {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media (min-width: 992px) and (prefers-reduced-motion: reduce) {
+  .page-csr .csr-timeline-inner .csr-hero-intro .reveal,
+  .page-csr .csr-timeline-inner .csr-timeline-visual .reveal,
+  .page-csr .csr-timeline-inner.is-visible .csr-hero-intro .reveal,
+  .page-csr .csr-timeline-inner.is-visible .csr-timeline-visual .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
 }
 
@@ -6225,23 +6257,23 @@ main #csr.section-csr-dark {
   color: #1f1f1f;
   transform: translateY(-1px);
 }
-/* CSR 앵커: 스크롤 진입 시 순차 등장 */
-#csr.section-csr-anchor .reveal {
+/* CSR 앵커(인덱스·CSR 페이지 하단): 스크롤 진입 시 순차 등장 */
+.csr-section.section-csr-anchor .reveal {
   opacity: 0;
   transform: translateY(16px);
   transition: opacity 0.7s ease-out, transform 0.7s ease-out;
 }
-#csr.section-csr-anchor .reveal.is-inview {
+.csr-section.section-csr-anchor .reveal.is-inview {
   opacity: 1;
   transform: translateY(0);
 }
-#csr.section-csr-anchor .reveal[data-delay="0"]   { transition-delay: 0ms; }
-#csr.section-csr-anchor .reveal[data-delay="80"]  { transition-delay: 80ms; }
-#csr.section-csr-anchor .reveal[data-delay="160"] { transition-delay: 160ms; }
-#csr.section-csr-anchor .reveal[data-delay="240"] { transition-delay: 240ms; }
+.csr-section.section-csr-anchor .reveal[data-delay="0"]   { transition-delay: 0ms; }
+.csr-section.section-csr-anchor .reveal[data-delay="80"]  { transition-delay: 80ms; }
+.csr-section.section-csr-anchor .reveal[data-delay="160"] { transition-delay: 160ms; }
+.csr-section.section-csr-anchor .reveal[data-delay="240"] { transition-delay: 240ms; }
 @media (prefers-reduced-motion: reduce) {
-  #csr.section-csr-anchor .reveal,
-  #csr.section-csr-anchor .reveal.is-inview {
+  .csr-section.section-csr-anchor .reveal,
+  .csr-section.section-csr-anchor .reveal.is-inview {
     opacity: 1;
     transform: none;
   }
@@ -6267,8 +6299,8 @@ main #csr.section-csr-dark {
 .csr-section.csr-hole.section-csr-anchor {
   background: transparent;
 }
-/* CSR 구간 안에서만 어두운 오버레이 (가독성) */
-#csr.csr-hole::before {
+/* CSR 구간 안에서만 어두운 오버레이 (가독성) — index·CSR 페이지 하단 공통 */
+.csr-section.csr-hole::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -6303,7 +6335,7 @@ main #csr.section-csr-dark {
   .csr-section.csr-hole .csr-content {
     align-items: center;
   }
-  #csr.csr-hole::before {
+  .csr-section.csr-hole::before {
     display: none;
   }
 }
