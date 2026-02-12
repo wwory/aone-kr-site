@@ -57,7 +57,7 @@
                             <span class="hero-title-line" data-i18n="hero_title_1">BABY IS OUR</span>
                             <span class="hero-title-line" data-i18n="hero_title_2">FUTURE</span>
                         </h1>
-                        <p class="hero-lead reveal" data-delay="120" data-i18n="hero_lead">대한민국 1등 육아 파트너.<br>검증된 자체 기술력과 엄선된 글로벌 브랜드를 만나보세요.</p>
+                        <p class="hero-lead reveal" data-delay="120" data-i18n="hero_lead" data-i18n-mode="html">대한민국 1등 육아 파트너.<br>검증된 자체 기술력과 엄선된 글로벌 브랜드를 만나보세요.</p>
                         <div class="hero-cta reveal" data-delay="240">
                             <a href="{{ url_for('main.index') }}#brands-magnetic" class="btn-hero btn-hero-primary" data-i18n="hero_cta_primary">View Brands</a>
                             <a href="{{ url_for('company.company') }}" class="btn-hero btn-hero-outline" data-i18n="hero_cta_outline">About Company</a>
@@ -127,7 +127,7 @@
         <div class="brands-mg-card-logo">
           <img src="{{ url_for('static', filename='img/ryan_logo.png') }}" alt="RYAN">
         </div>
-        <p class="brands-mg-card-desc" data-i18n="brand_ryan_desc">아이의 안전과 편안함을 최우선으로<br>하는 유아용품 브랜드입니다.</p>
+        <p class="brands-mg-card-desc" data-i18n="brand_ryan_desc" data-i18n-mode="html">아이의 안전과 편안함을 최우선으로<br>하는 유아용품 브랜드입니다.</p>
         <div class="brands-mg-card-visual">
           <img src="{{ url_for('static', filename='img/brands/main_brands_ryan_01.jpg') }}" alt="" onerror="this.style.display='none'; this.nextElementSibling.classList.add('is-visible');">
           <span class="brands-mg-card-fallback" aria-hidden="true">IMAGE PLACEHOLDER</span>
@@ -138,7 +138,7 @@
         <div class="brands-mg-card-logo">
           <img src="{{ url_for('static', filename='img/joie_logo.png') }}" alt="Joie">
         </div>
-        <p class="brands-mg-card-desc" data-i18n="brand_joie_desc">세계적인 디자인과 안전성을 갖춘<br>프리미엄 유아용품 브랜드입니다.</p>
+        <p class="brands-mg-card-desc" data-i18n="brand_joie_desc" data-i18n-mode="html">세계적인 디자인과 안전성을 갖춘<br>프리미엄 유아용품 브랜드입니다.</p>
         <div class="brands-mg-card-visual">
           <img src="{{ url_for('static', filename='img/brands/main_brands_joie_01.jpg') }}" alt="" onerror="this.style.display='none'; this.nextElementSibling.classList.add('is-visible');">
           <span class="brands-mg-card-fallback" aria-hidden="true">IMAGE PLACEHOLDER</span>
@@ -149,7 +149,7 @@
         <div class="brands-mg-card-logo">
           <img src="{{ url_for('static', filename='img/tavopets_logo.png') }}" alt="Tavo Pets">
         </div>
-        <p class="brands-mg-card-desc" data-i18n="brand_tavo_desc">반려동물과 가족이 함께하는 행복한<br>일상을 만들어가는 브랜드입니다.</p>
+        <p class="brands-mg-card-desc" data-i18n="brand_tavo_desc" data-i18n-mode="html">반려동물과 가족이 함께하는 행복한<br>일상을 만들어가는 브랜드입니다.</p>
         <div class="brands-mg-card-visual">
           <img src="{{ url_for('static', filename='img/brands/main_brands_tavopets_01.jpg') }}" alt="" onerror="this.style.display='none'; this.nextElementSibling.classList.add('is-visible');">
           <span class="brands-mg-card-fallback" aria-hidden="true">IMAGE PLACEHOLDER</span>
@@ -165,8 +165,8 @@
   <div class="csr-content">
     <div class="csr-anchor-inner">
       <span class="csr-anchor-label reveal" data-delay="0" data-i18n="csr_label">CSR</span>
-      <h2 class="csr-anchor-title reveal" data-delay="80" data-i18n="csr_title">아이의 오늘을 지키는 일이<br>모두의 내일을 밝힙니다</h2>
-      <p class="csr-anchor-desc reveal" data-delay="160" data-i18n="csr_desc">AONE은 아이와 가족의 건강하고 행복한 미래를 위해<br>지속 가능한 사회적 책임을 실천합니다.<br><br>안전한 제품 개발, 환경 보호, 지역 사회와의 상생을 통해<br>더 나은 내일을 만들어갑니다.</p>
+      <h2 class="csr-anchor-title reveal" data-delay="80" data-i18n="csr_title" data-i18n-mode="html">아이의 오늘을 지키는 일이<br>모두의 내일을 밝힙니다</h2>
+      <p class="csr-anchor-desc reveal" data-delay="160" data-i18n="csr_desc" data-i18n-mode="html">AONE은 아이와 가족의 건강하고 행복한 미래를 위해<br>지속 가능한 사회적 책임을 실천합니다.<br><br>안전한 제품 개발, 환경 보호, 지역 사회와의 상생을 통해<br>더 나은 내일을 만들어갑니다.</p>
       <a href="{{ url_for('csr.csr') }}" class="csr-anchor-btn reveal" data-delay="240" data-i18n="csr_btn">CSR 이야기 보기 →</a>
     </div>
   </div>

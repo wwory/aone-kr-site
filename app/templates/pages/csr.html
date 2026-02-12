@@ -3,6 +3,7 @@
 {% block title %}CSR - AONE{% endblock %}
 
 {% block body_class %}page-csr{% endblock %}
+{% block data_page %}csr{% endblock %}
 
 {% block content %}
 <!-- 1. (모바일 전용) CSR 히어로: 브랜드 히어로와 동일 구조 -->
@@ -20,13 +21,12 @@
                 <div class="hero-text-group">
                     <div class="hero-copy-inner">
                         <h1 class="hero-title-block reveal" data-delay="0">
-                            <span class="hero-title-line">CSR</span>
+                            <span class="hero-title-line" data-i18n="hero_title">CSR</span>
                         </h1>
-                        <p class="hero-title-sub reveal" data-delay="80">사회공헌활동</p>
-                        <p class="hero-lead reveal" data-delay="120">
-                            세상의 모든 아이는 소중하며, 사랑받을 가치가 있습니다.<br>
-                            (주)에이원은 아이와 엄마가 함께하는 일상의 순간들이 더 오래, 더 행복하게 이어질 수 있도록<br>
-                            오랜 시간 신뢰받는 동반자가 되어왔습니다.
+                        <p class="hero-title-sub reveal" data-delay="80" data-i18n="hero_sub">사회공헌활동</p>
+                        <p class="hero-lead reveal" data-delay="120" data-i18n-mode="html">
+                            <span data-i18n="hero_lead_1">세상의 모든 아이는 소중하며, 사랑받을 가치가 있습니다.</span><br>
+                            <span data-i18n="hero_lead_2">(주)에이원은 아이와 엄마가 함께하는 일상의 순간들이 더 오래, 더 행복하게 이어질 수 있도록 오랜 시간 신뢰받는 동반자가 되어왔습니다.</span>
                         </p>
                     </div>
                 </div>
@@ -50,19 +50,19 @@
             <!-- 히어로 텍스트 블록 (AONE CSR STORY 위에 위치) -->
             <div class="csr-hero-intro">
                 <h1 class="hero-title-block reveal" data-delay="0">
-                    <span class="hero-title-line">CSR</span>
+                    <span class="hero-title-line" data-i18n="hero_title">CSR</span>
                 </h1>
-                <p class="hero-title-sub reveal" data-delay="80">사회공헌활동</p>
-                <p class="hero-lead reveal" data-delay="160">
-                    에이원은 단순한 유아용품을 넘어,<br>
-                    아이와 가족의 삶에 긍정적인 가치를 더하는 기업을 지향합니다.<br>
-                    정직·성실·최선이라는 철학을 바탕으로,<br>
-                    ‘세상의 모든 아이는 소중하다’는 신념을 사회 전반에 실천해 나가고 있습니다.
+                <p class="hero-title-sub reveal" data-delay="80" data-i18n="hero_sub">사회공헌활동</p>
+                <p class="hero-lead reveal" data-delay="160" data-i18n-mode="html">
+                    <span data-i18n="hero_intro_1">에이원은 단순한 유아용품을 넘어,</span><br>
+                    <span data-i18n="hero_intro_1b">아이와 가족의 삶에 긍정적인 가치를 더하는 기업을 지향합니다.</span><br>
+                    <span data-i18n="hero_intro_1c">정직·성실·최선이라는 철학을 바탕으로,</span><br>
+                    <span data-i18n="hero_intro_1d">‘세상의 모든 아이는 소중하다’는 신념을 사회 전반에 실천해 나가고 있습니다.</span>
                 </p>
-                <p class="hero-lead reveal" data-delay="240">
-                    음성 꽃동네 천사의 집 후원, 유아복지 관련 행사 지원, 다문화가정 지원 등<br>
-                    지속적인 사회공헌 활동을 통해 지역사회와 함께 성장하고 있으며,<br>
-                    앞으로도 아이들의 행복과 더 따뜻한 사회를 위한 다양한 지원을 이어갈 것입니다.
+                <p class="hero-lead reveal" data-delay="240" data-i18n-mode="html">
+                    <span data-i18n="hero_intro_2">음성 꽃동네 천사의 집 후원, 유아복지 관련 행사 지원, 다문화가정 지원 등</span><br>
+                    <span data-i18n="hero_intro_2b">지속적인 사회공헌 활동을 통해 지역사회와 함께 성장하고 있으며,</span><br>
+                    <span data-i18n="hero_intro_2c">앞으로도 아이들의 행복과 더 따뜻한 사회를 위한 다양한 지원을 이어갈 것입니다.</span>
                 </p>
 
                 <!-- 데스크톱: 아래 CSR STORY 존재를 알려주는 스크롤 인디케이터 (텍스트·화살표 클릭 시 스토리 섹션으로 스크롤) -->
@@ -88,8 +88,8 @@
             </div>
 
             <header class="csr-timeline-header">
-                <h2 class="company-section-title reveal" data-delay="0">AONE CSR STORY</h2>
-                <p class="company-section-sub reveal" data-delay="80">사회공헌 활동 연혁</p>
+                <h2 class="company-section-title reveal" data-delay="0" data-i18n="story_title">AONE CSR STORY</h2>
+                <p class="company-section-sub reveal" data-delay="80" data-i18n="story_sub">사회공헌 활동 연혁</p>
             </header>
 
             <div class="csr-timeline-list">
@@ -105,11 +105,7 @@
                             <div class="csr-timeline-media">
                                 <img src="{{ url_for('static', filename='img/csr/csr_2024.jpg') }}" alt="2024년 CSR 활동 이미지" loading="lazy">
                             </div>
-                            <p class="csr-timeline-text">
-                                (주)에이원은 희망의 집 기부를 진행하며,<br>
-                                아동과 가족을 위한 복지 환경 개선을 돕는 사회공헌 활동을 실천했습니다.<br>
-                                도움이 필요한 이웃들에게 실질적인 지원을 제공하고자 했습니다.
-                            </p>
+                            <p class="csr-timeline-text" data-i18n="csr_2024" data-i18n-mode="html">(주)에이원은 희망의 집 기부를 진행하며,<br>아동과 가족을 위한 복지 환경 개선을 돕는 사회공헌 활동을 실천했습니다.<br>도움이 필요한 이웃들에게 실질적인 지원을 제공하고자 했습니다.</p>
                         </div>
                     </div>
                 </article>
@@ -126,11 +122,7 @@
                             <div class="csr-timeline-media">
                                 <img src="{{ url_for('static', filename='img/csr/csr_2021.jpg') }}" alt="2021년 CSR 활동 이미지" loading="lazy">
                             </div>
-                            <p class="csr-timeline-text">
-                                (주)에이원은 희망브리지 전국재해구호협회를 통해<br>
-                                SBS 희망TV 모금방송에 참여하고, 도움이 필요한 곳에 유모차 기부를 진행했습니다.<br>
-                                영유아와 가족을 위한 실질적인 지원을 제공하며 사회공헌 활동을 이어갔습니다.
-                            </p>
+                            <p class="csr-timeline-text" data-i18n="csr_2021" data-i18n-mode="html">(주)에이원은 희망브리지 전국재해구호협회를 통해<br>SBS 희망TV 모금방송에 참여하고, 도움이 필요한 곳에 유모차 기부를 진행했습니다.<br>영유아와 가족을 위한 실질적인 지원을 제공하며 사회공헌 활동을 이어갔습니다.</p>
                         </div>
                     </div>
                 </article>
@@ -147,11 +139,7 @@
                             <div class="csr-timeline-media">
                                 <img src="{{ url_for('static', filename='img/csr/csr_2019.jpg') }}" alt="2019년 CSR 활동 이미지" loading="lazy">
                             </div>
-                            <p class="csr-timeline-text">
-                                (주)에이원은 음성 꽃동네 영유아층을 대상으로 기부금 및 물품 후원을 통해,<br>
-                                영유아 복지 향상과 보호 환경 조성을 위한 사회공헌 활동을 전개했습니다.<br>
-                                지역사회 복지기관과의 협력을 바탕으로 실질적인 도움이 될 수 있는 지원을 제공했습니다.
-                            </p>
+                            <p class="csr-timeline-text" data-i18n="csr_2019" data-i18n-mode="html">(주)에이원은 음성 꽃동네 영유아층을 대상으로 기부금 및 물품 후원을 통해,<br>영유아 복지 향상과 보호 환경 조성을 위한 사회공헌 활동을 전개했습니다.<br>지역사회 복지기관과의 협력을 바탕으로 실질적인 도움이 될 수 있는 지원을 제공했습니다.</p>
                         </div>
                     </div>
                 </article>
@@ -168,11 +156,7 @@
                             <div class="csr-timeline-media">
                                 <img src="{{ url_for('static', filename='img/csr/csr_2018.jpg') }}" alt="2018년 CSR 활동 이미지" loading="lazy">
                             </div>
-                            <p class="csr-timeline-text">
-                                (주)에이원은 음성 꽃동네 영유아를 대상으로 기부금과 물품을 전달하며,<br>
-                                영유아의 생활 환경 개선과 복지 증진을 위한 사회공헌 활동을 진행했습니다.<br>
-                                아이들이 보다 안전하고 안정적인 환경에서 성장할 수 있도록 지원했습니다.
-                            </p>
+                            <p class="csr-timeline-text" data-i18n="csr_2018" data-i18n-mode="html">(주)에이원은 음성 꽃동네 영유아를 대상으로 기부금과 물품을 전달하며,<br>영유아의 생활 환경 개선과 복지 증진을 위한 사회공헌 활동을 진행했습니다.<br>아이들이 보다 안전하고 안정적인 환경에서 성장할 수 있도록 지원했습니다.</p>
                         </div>
                     </div>
                 </article>
@@ -189,7 +173,7 @@
                             <div class="csr-timeline-media">
                                 <img src="{{ url_for('static', filename='img/csr/csr_2017.jpg') }}" alt="2017년 CSR 활동 이미지" loading="lazy">
                             </div>
-                            <p class="csr-timeline-text">
+                            <p class="csr-timeline-text" data-i18n="csr_2017" data-i18n-mode="html">
                                 ‘미혼모 아기들에 대한 지속적인 기부 캠페인’으로 잘 알려진 베이비박스 운영기관<br>
                                 ‘주사랑공동체’와 기부 협약식 체결.<br><br>
                                 향후 2년간 주사랑공동체에서 보호하고 있는 미혼모들에게 매월 육아보조금을 지원하고,<br>
@@ -211,7 +195,7 @@
                             <div class="csr-timeline-media">
                                 <img src="{{ url_for('static', filename='img/csr/csr_2016.jpg') }}" alt="2016년 CSR 활동 이미지" loading="lazy">
                             </div>
-                            <p class="csr-timeline-text">
+                            <p class="csr-timeline-text" data-i18n="csr_2016" data-i18n-mode="html">
                                 ‘에이원 창립 6주년 고객 감사 대세일’ 행사를 통해 얻은 매출 일부를 기부금으로 조성하여<br>
                                 음성 꽃동네 ‘천사의 집’에서 보호하고 있는 영유아 복지를 위해 ‘희망 나눔 기부금’ 전달.
                             </p>
@@ -231,7 +215,7 @@
                             <div class="csr-timeline-media">
                                 <img src="{{ url_for('static', filename='img/csr/csr_2015.jpg') }}" alt="2015년 CSR 활동 이미지" loading="lazy">
                             </div>
-                            <p class="csr-timeline-text">
+                            <p class="csr-timeline-text" data-i18n="csr_2015" data-i18n-mode="html">
                                 국내 거주 다문화가정 육아지원을 위해 국내 최대 다문화 지원센터 ‘다린’에 유모차 100대 기증.<br><br>
                                 2015년 유모차 업계 최대 규모의 기부 행사로, ‘다린’ 다문화지원센터와 서울글로벌센터,<br>
                                 서울 서남권글로벌센터에서 다양한 피부색의 부모들이 육아의 기쁨을 나누고자 진행한 나눔 캠페인.
@@ -252,7 +236,7 @@
                             <div class="csr-timeline-media">
                                 <img src="{{ url_for('static', filename='img/csr/csr_2014.jpg') }}" alt="2014년 CSR 활동 이미지" loading="lazy">
                             </div>
-                            <p class="csr-timeline-text">
+                            <p class="csr-timeline-text" data-i18n="csr_2014" data-i18n-mode="html">
                                 한국보육진흥원이 위탁 운영하는 ‘드림스타트’ 아동 후원으로 취약 계층 아동에게<br>
                                 1억 원 상당의 육아용품 전달.<br><br>
                                 양천구 SOS어린이마을 자선 바자회 및 플리마켓 참가, 제품 후원과 더불어<br>
@@ -275,8 +259,7 @@
                             <div class="csr-timeline-media">
                                 <img src="{{ url_for('static', filename='img/csr/csr_2013.jpg') }}" alt="2013년 CSR 활동 이미지" loading="lazy">
                             </div>
-                            <p class="csr-timeline-text">
-                                사랑의 유모차 기증식(서울 강북구 나그네다문화센터)을 통해 다문화가정에 유모차 전달.<br>
+                            <p class="csr-timeline-text" data-i18n="csr_2013" data-i18n-mode="html">사랑의 유모차 기증식(서울 강북구 나그네다문화센터)을 통해 다문화가정에 유모차 전달.<br>
                                 사회복지시설 꽃동네 ‘천사의 집’에 유아용품을 후원하는 사랑 나눔 캠페인 진행.
                             </p>
                         </div>
@@ -295,8 +278,7 @@
                             <div class="csr-timeline-media">
                                 <img src="{{ url_for('static', filename='img/csr/csr_2012.jpg') }}" alt="2012년 CSR 활동 이미지" loading="lazy">
                             </div>
-                            <p class="csr-timeline-text">
-                                사랑의 유모차 기증식(서울 수유종합사회복지관)을 통해 저소득층 영유아·노인을 위해<br>
+                            <p class="csr-timeline-text" data-i18n="csr_2012" data-i18n-mode="html">사랑의 유모차 기증식(서울 수유종합사회복지관)을 통해 저소득층 영유아·노인을 위해<br>
                                 유모차와 수유용품 전달.<br><br>
                                 성동구 지역 복지 발전에 기여한 우수 기관으로 선정되었으며,<br>
                                 사회복지시설 꽃동네 ‘천사의 집’ 유아용품 후원, 사회복지법인 ‘위캔’과 함께 한<br>
@@ -314,9 +296,9 @@
 <section class="section-csr section-csr-anchor csr-section csr-hole csr-hole-end" aria-label="CSR 마무리">
     <div class="csr-content">
         <div class="csr-anchor-inner">
-            <span class="csr-anchor-label reveal" data-delay="0">CSR</span>
-            <h2 class="csr-anchor-title reveal" data-delay="80">아이의 오늘을 지키는 일이<br>모두의 내일을 밝힙니다</h2>
-            <p class="csr-anchor-desc reveal" data-delay="160">AONE은 아이와 가족의 건강하고 행복한 미래를 위해<br>지속 가능한 사회적 책임을 실천합니다.<br><br>안전한 제품 개발, 환경 보호, 지역 사회와의 상생을 통해<br>더 나은 내일을 만들어갑니다.</p>
+            <span class="csr-anchor-label reveal" data-delay="0" data-i18n="anchor_label">CSR</span>
+            <h2 class="csr-anchor-title reveal" data-delay="80" data-i18n="anchor_title" data-i18n-mode="html">아이의 오늘을 지키는 일이<br>모두의 내일을 밝힙니다</h2>
+            <p class="csr-anchor-desc reveal" data-delay="160" data-i18n="anchor_desc" data-i18n-mode="html">AONE은 아이와 가족의 건강하고 행복한 미래를 위해<br>지속 가능한 사회적 책임을 실천합니다.<br><br>안전한 제품 개발, 환경 보호, 지역 사회와의 상생을 통해<br>더 나은 내일을 만들어갑니다.</p>
         </div>
     </div>
 </section>

@@ -3,6 +3,7 @@
 {% block title %}PR - AONE{% endblock %}
 
 {% block body_class %}page-pr{% endblock %}
+{% block data_page %}pr{% endblock %}
 
 {% block content %}
 <!-- 1. PR 히어로: 중앙 정렬 슬림 (이미지 없음), COMPANY breathing space -->
@@ -10,29 +11,29 @@
     <div class="pr-hero-inner pr-top">
         <div class="pr-hero-content">
             <h1 class="hero-title-block reveal" data-delay="0">
-                <span class="hero-title-line">PR</span>
+                <span class="hero-title-line" data-i18n="hero_title">PR</span>
             </h1>
-            <p class="hero-title-sub reveal" data-delay="80">브랜드 활동과 미디어 소식</p>
-            <p class="hero-lead hero-lead--sub reveal" data-delay="120">에이원의 공식 채널과 캠페인 이야기를 전합니다.</p>
+            <p class="hero-title-sub reveal" data-delay="80" data-i18n="hero_sub">브랜드 활동과 미디어 소식</p>
+            <p class="hero-lead hero-lead--sub reveal" data-delay="120" data-i18n="hero_lead">에이원의 공식 채널과 캠페인 이야기를 전합니다.</p>
             <div class="pr-hero-boxes">
                 <button type="button" class="company-box pr-box pr-summary-card is-active reveal" data-delay="160" data-panel="connect" aria-pressed="true">
                     <span class="company-box-text">
-                        <span class="company-box-label">CONNECT</span>
-                        <span class="company-box-sub">공식 채널 운영<br>브랜드 공식 SNS 및 미디어 채널</span>
+                        <span class="company-box-label" data-i18n="tab_connect_label">CONNECT</span>
+                        <span class="company-box-sub" data-i18n="tab_connect_sub" data-i18n-mode="html">공식 채널 운영<br>브랜드 공식 SNS 및 미디어 채널</span>
                     </span>
                     <span class="company-box-chevron" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
                 </button>
                 <button type="button" class="company-box pr-box pr-summary-card reveal" data-delay="220" data-panel="campaign" aria-pressed="false">
                     <span class="company-box-text">
-                        <span class="company-box-label">CAMPAIGN</span>
-                        <span class="company-box-sub">광고 및 브랜드 캠페인<br>브랜드 필름 및 다양한 협업 활동</span>
+                        <span class="company-box-label" data-i18n="tab_campaign_label">CAMPAIGN</span>
+                        <span class="company-box-sub" data-i18n="tab_campaign_sub" data-i18n-mode="html">광고 및 브랜드 캠페인<br>브랜드 필름 및 다양한 협업 활동</span>
                     </span>
                     <span class="company-box-chevron" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
                 </button>
                 <button type="button" class="company-box pr-box pr-summary-card reveal" data-delay="280" data-panel="stores" aria-pressed="false">
                     <span class="company-box-text">
-                        <span class="company-box-label">STORES</span>
-                        <span class="company-box-sub">전국 유통 네트워크<br>전국 주요 매장 및 온라인몰 입점</span>
+                        <span class="company-box-label" data-i18n="tab_stores_label">STORES</span>
+                        <span class="company-box-sub" data-i18n="tab_stores_sub" data-i18n-mode="html">전국 유통 네트워크<br>전국 주요 매장 및 온라인몰 입점</span>
                     </span>
                     <span class="company-box-chevron" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
                 </button>
@@ -47,9 +48,9 @@
         <div class="pr-panel is-active pr-panel-enter" id="panel-connect" data-panel="connect" role="tabpanel">
             <div class="pr-panel-body container container-wide">
                 <header class="section-header pr-section-header">
-                    <h2 id="connect-heading" class="company-section-title reveal" data-delay="0">CONNECT</h2>
-                    <p class="company-section-sub reveal" data-delay="40">공식 채널</p>
-                    <p class="section-description pr-section-desc reveal" data-delay="80">
+                    <h2 id="connect-heading" class="company-section-title reveal" data-delay="0" data-i18n="connect_title">CONNECT</h2>
+                    <p class="company-section-sub reveal" data-delay="40" data-i18n="connect_sub">공식 채널</p>
+                    <p class="section-description pr-section-desc reveal" data-delay="80" data-i18n="connect_desc">
                         에이원은 다양한 디지털 채널을 통해 고객과 가장 가까이에서 소통합니다.
                     </p>
                 </header>
@@ -62,10 +63,10 @@
                             <div class="pr-connect-card-body-inner">
                                 <div class="pr-connect-body-top-row">
                                     <span class="pr-connect-channel-icon pr-connect-channel-icon--instagram" aria-hidden="true"></span>
-                                    <h4 class="pr-connect-card-title">Instagram - RYAN</h4>
+                                    <h4 class="pr-connect-card-title" data-i18n="connect_ryan_title">Instagram - RYAN</h4>
                                 </div>
-                                <p class="pr-connect-card-desc">리안 공식 인스타그램</p>
-                                <span class="pr-connect-cta">바로가기</span>
+                                <p class="pr-connect-card-desc" data-i18n="connect_ryan_desc">리안 공식 인스타그램</p>
+                                <span class="pr-connect-cta" data-i18n="connect_cta">바로가기</span>
                             </div>
                             <div class="pr-connect-product-thumb">
                                 <img src="{{ url_for('static', filename='img/pr/ryan_allo.png') }}" alt="" loading="lazy" aria-hidden="true">
@@ -80,10 +81,10 @@
                             <div class="pr-connect-card-body-inner">
                                 <div class="pr-connect-body-top-row">
                                     <span class="pr-connect-channel-icon pr-connect-channel-icon--instagram" aria-hidden="true"></span>
-                                    <h4 class="pr-connect-card-title">Instagram - JOIE</h4>
+                                    <h4 class="pr-connect-card-title" data-i18n="connect_joie_title">Instagram - JOIE</h4>
                                 </div>
-                                <p class="pr-connect-card-desc">조이 공식 인스타그램</p>
-                                <span class="pr-connect-cta">바로가기</span>
+                                <p class="pr-connect-card-desc" data-i18n="connect_joie_desc">조이 공식 인스타그램</p>
+                                <span class="pr-connect-cta" data-i18n="connect_cta">바로가기</span>
                             </div>
                             <div class="pr-connect-product-thumb">
                                 <img src="{{ url_for('static', filename='img/pr/joie_ispin360mesh_signature.png') }}" alt="" loading="lazy" aria-hidden="true">
@@ -98,10 +99,10 @@
                             <div class="pr-connect-card-body-inner">
                                 <div class="pr-connect-body-top-row">
                                     <span class="pr-connect-channel-icon pr-connect-channel-icon--instagram" aria-hidden="true"></span>
-                                    <h4 class="pr-connect-card-title">Instagram - TAVO</h4>
+                                    <h4 class="pr-connect-card-title" data-i18n="connect_tavo_title">Instagram - TAVO</h4>
                                 </div>
-                                <p class="pr-connect-card-desc">타보펫츠 공식 인스타그램</p>
-                                <span class="pr-connect-cta">바로가기</span>
+                                <p class="pr-connect-card-desc" data-i18n="connect_tavo_desc">타보펫츠 공식 인스타그램</p>
+                                <span class="pr-connect-cta" data-i18n="connect_cta">바로가기</span>
                             </div>
                             <div class="pr-connect-product-thumb">
                                 <img src="{{ url_for('static', filename='img/pr/tavo_pets_wind6x.png') }}" alt="" loading="lazy" aria-hidden="true">
@@ -116,11 +117,11 @@
                             <div class="pr-connect-card-body-inner">
                                 <div class="pr-connect-body-top-row">
                                 <span class="pr-connect-channel-icon pr-connect-channel-icon--blog" aria-hidden="true"></span>
-                                <h4 class="pr-connect-card-title">Blog</h4>
+                                <h4 class="pr-connect-card-title" data-i18n="connect_blog_title">Blog</h4>
                                 <span class="pr-connect-mini-badge pr-connect-mini-badge--naver">NAVER</span>
                             </div>
-                            <p class="pr-connect-card-desc">에이원 공식 네이버 블로그</p>
-                            <span class="pr-connect-cta">바로가기</span>
+                            <p class="pr-connect-card-desc" data-i18n="connect_blog_desc">에이원 공식 네이버 블로그</p>
+                            <span class="pr-connect-cta" data-i18n="connect_cta">바로가기</span>
                             </div>
                         </div>
                     </a>
@@ -132,11 +133,11 @@
                             <div class="pr-connect-card-body-inner">
                                 <div class="pr-connect-body-top-row">
                                 <span class="pr-connect-channel-icon pr-connect-channel-icon--youtube" aria-hidden="true"></span>
-                                <h4 class="pr-connect-card-title">YouTube</h4>
+                                <h4 class="pr-connect-card-title" data-i18n="connect_youtube_title">YouTube</h4>
                                 <span class="pr-connect-mini-badge pr-connect-mini-badge--youtube">Official</span>
                             </div>
-                            <p class="pr-connect-card-desc">에이원 공식 유튜브 채널</p>
-                            <span class="pr-connect-cta">바로가기</span>
+                            <p class="pr-connect-card-desc" data-i18n="connect_youtube_desc">에이원 공식 유튜브 채널</p>
+                            <span class="pr-connect-cta" data-i18n="connect_cta">바로가기</span>
                             </div>
                         </div>
                     </a>
@@ -147,14 +148,14 @@
         <div class="pr-panel" id="panel-campaign" data-panel="campaign" role="tabpanel" hidden>
             <div class="pr-panel-body container container-wide">
                 <header class="section-header pr-section-header pr-section-header--campaign">
-                    <h2 id="campaign-heading" class="company-section-title reveal" data-delay="0">CAMPAIGN</h2>
-                    <p class="company-section-sub reveal" data-delay="40">광고 / 미디어</p>
-                    <p class="section-description pr-section-desc reveal" data-delay="80">
+                    <h2 id="campaign-heading" class="company-section-title reveal" data-delay="0" data-i18n="campaign_title">CAMPAIGN</h2>
+                    <p class="company-section-sub reveal" data-delay="40" data-i18n="campaign_sub">광고 / 미디어</p>
+                    <p class="section-description pr-section-desc reveal" data-delay="80" data-i18n="campaign_desc">
                         에이원은 다양한 광고와 협업을 통해 브랜드 가치를 전하고 있습니다.
                     </p>
                 </header>
                 <div class="pr-campaign-group reveal" data-delay="80">
-                    <h3 class="pr-campaign-subtitle">Brand Film</h3>
+                    <h3 class="pr-campaign-subtitle" data-i18n="campaign_brand_film">Brand Film</h3>
                     <div class="pr-campaign-video-grid">
                         <button type="button" class="pr-video-card reveal" data-delay="100" data-video-url="https://www.youtube.com/embed/W6x16sD_SH0">
                             <div class="pr-video-thumb">
@@ -162,7 +163,7 @@
                                 <span class="pr-video-overlay"></span>
                                 <span class="pr-video-play" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
                             </div>
-                            <p class="pr-video-title">안심육아, 관찰육아는 리안 드림콧</p>
+                            <p class="pr-video-title" data-i18n="video_1_title">안심육아, 관찰육아는 리안 드림콧</p>
                             <p class="pr-video-year">2025</p>
                         </button>
                         <button type="button" class="pr-video-card reveal" data-delay="140" data-video-url="https://www.youtube.com/embed/XlJXA7EHuW4">
@@ -171,7 +172,7 @@
                                 <span class="pr-video-overlay"></span>
                                 <span class="pr-video-play" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
                             </div>
-                            <p class="pr-video-title">Brand Story｜PURE Joie편. 30"ver</p>
+                            <p class="pr-video-title" data-i18n="video_2_title">Brand Story｜PURE Joie편. 30"ver</p>
                             <p class="pr-video-year">2025</p>
                         </button>
                         <button type="button" class="pr-video-card reveal" data-delay="180" data-video-url="https://www.youtube.com/embed/neXbCse4xHw">
@@ -180,7 +181,7 @@
                                 <span class="pr-video-overlay"></span>
                                 <span class="pr-video-play" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
                             </div>
-                            <p class="pr-video-title">한혜진이 선택한 대한민국 1등 유모차, RYAN</p>
+                            <p class="pr-video-title" data-i18n="video_3_title">한혜진이 선택한 대한민국 1등 유모차, RYAN</p>
                             <p class="pr-video-year">2018</p>
                         </button>
                         <button type="button" class="pr-video-card reveal" data-delay="220" data-video-url="https://www.youtube.com/embed/Mz9T5l1gAbw">
@@ -189,109 +190,109 @@
                                 <span class="pr-video-overlay"></span>
                                 <span class="pr-video-play" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
                             </div>
-                            <p class="pr-video-title">리안, 업계 최초 엄마의 감성 담은 'TV CF 광고' 실시</p>
+                            <p class="pr-video-title" data-i18n="video_4_title">리안, 업계 최초 엄마의 감성 담은 'TV CF 광고' 실시</p>
                             <p class="pr-video-year">2016, 2017</p>
                         </button>
                     </div>
                 </div>
                 <div class="pr-campaign-group reveal" data-delay="120">
-                    <h3 class="pr-campaign-subtitle">Media & PPL</h3>
+                    <h3 class="pr-campaign-subtitle" data-i18n="campaign_media_ppl">Media & PPL</h3>
                     <div class="pr-campaign-media-grid">
                         <a href="https://youtu.be/U5Q1agMhqFI?t=740" class="ppl-card ppl-card--rect ppl-card--r1 reveal" data-delay="140" target="_blank" rel="noopener noreferrer">
                             <img src="{{ url_for('static', filename='img/pr/ppl_rectangle_01.jpg') }}" alt="유튜브 영상 없섭" loading="lazy">
                             <div class="ppl-overlay">
                                 <div class="ppl-meta">
-                                    <span class="ppl-category">유튜브 영상</span>
+                                    <span class="ppl-category" data-i18n="ppl_category_youtube">유튜브 영상</span>
                                     <span class="ppl-year">2025</span>
                                 </div>
-                                <div class="ppl-title">없섭</div>
+                                <div class="ppl-title" data-i18n="ppl_title_1">없섭</div>
                             </div>
                         </a>
                         <a href="https://youtu.be/noSnq0pStNU?t=563" class="ppl-card ppl-card--rect ppl-card--r2 reveal" data-delay="160" target="_blank" rel="noopener noreferrer">
                             <img src="{{ url_for('static', filename='img/pr/ppl_rectangle_02.jpg') }}" alt="유튜브 영상 엔조이커플" loading="lazy">
                             <div class="ppl-overlay">
                                 <div class="ppl-meta">
-                                    <span class="ppl-category">유튜브 영상</span>
+                                    <span class="ppl-category" data-i18n="ppl_category_youtube">유튜브 영상</span>
                                     <span class="ppl-year">2025</span>
                                 </div>
-                                <div class="ppl-title">엔조이커플</div>
+                                <div class="ppl-title" data-i18n="ppl_title_2">엔조이커플</div>
                             </div>
                         </a>
                         <a href="https://youtu.be/_50U0nD-VU8?t=556" class="ppl-card ppl-card--rect ppl-card--r3 reveal" data-delay="180" target="_blank" rel="noopener noreferrer">
                             <img src="{{ url_for('static', filename='img/pr/ppl_rectangle_03.jpg') }}" alt="SBS 동상이몽 레이디제인" loading="lazy">
                             <div class="ppl-overlay">
                                 <div class="ppl-meta">
-                                    <span class="ppl-category">SBS 동상이몽</span>
+                                    <span class="ppl-category" data-i18n="ppl_category_sbs">SBS 동상이몽</span>
                                     <span class="ppl-year">2025</span>
                                 </div>
-                                <div class="ppl-title">레이디제인</div>
+                                <div class="ppl-title" data-i18n="ppl_title_3">레이디제인</div>
                             </div>
                         </a>
                         <a href="https://blog.naver.com/aonebaby58/220992547813" class="ppl-card ppl-card--s7 reveal" data-delay="200" target="_blank" rel="noopener noreferrer">
                             <img src="{{ url_for('static', filename='img/pr/ppl_square_07.jpg') }}" alt="인터뷰 일라이" loading="lazy">
                             <div class="ppl-overlay">
                                 <div class="ppl-meta">
-                                    <span class="ppl-category">인터뷰</span>
+                                    <span class="ppl-category" data-i18n="ppl_category_interview">인터뷰</span>
                                     <span class="ppl-year">2017</span>
                                 </div>
-                                <div class="ppl-title">일라이</div>
+                                <div class="ppl-title" data-i18n="ppl_title_4">일라이</div>
                             </div>
                         </a>
                         <article class="ppl-card ppl-card--s6 reveal" data-delay="220">
                             <img src="{{ url_for('static', filename='img/pr/ppl_square_06.jpg') }}" alt="협찬 샘 해밍턴" loading="lazy">
                             <div class="ppl-overlay">
                                 <div class="ppl-meta">
-                                    <span class="ppl-category">협찬</span>
+                                    <span class="ppl-category" data-i18n="ppl_category_sponsor">협찬</span>
                                     <span class="ppl-year">2017</span>
                                 </div>
-                                <div class="ppl-title">샘 해밍턴</div>
+                                <div class="ppl-title" data-i18n="ppl_title_5">샘 해밍턴</div>
                             </div>
                         </article>
                         <article class="ppl-card ppl-card--rect ppl-card--r4 reveal" data-delay="240">
                             <img src="{{ url_for('static', filename='img/pr/ppl_rectangle_04.jpg') }}" alt="KBS 슈퍼맨이 돌아왔다 소다남매" loading="lazy">
                             <div class="ppl-overlay">
                                 <div class="ppl-meta">
-                                    <span class="ppl-category">KBS 슈퍼맨이 돌아왔다</span>
+                                    <span class="ppl-category" data-i18n="ppl_category_kbs">KBS 슈퍼맨이 돌아왔다</span>
                                     <span class="ppl-year">2016</span>
                                 </div>
-                                <div class="ppl-title">제주도 특집</div>
+                                <div class="ppl-title" data-i18n="ppl_title_6">제주도 특집</div>
                             </div>
                         </article>
                         <a href="https://www.youtube.com/watch?v=VLkAOIuYx4E" class="ppl-card ppl-card--rect ppl-card--r5 reveal" data-delay="260" target="_blank" rel="noopener noreferrer">
                             <img src="{{ url_for('static', filename='img/pr/ppl_rectangle_05.jpg') }}" alt="광고 추성훈, 추사랑" loading="lazy">
                             <div class="ppl-overlay">
                                 <div class="ppl-meta">
-                                    <span class="ppl-category">광고</span>
+                                    <span class="ppl-category" data-i18n="ppl_category_ad">광고</span>
                                     <span class="ppl-year">2014</span>
                                 </div>
-                                <div class="ppl-title">추사랑&추성훈이 선택한 영국프리미엄 조이 화보</div>
+                                <div class="ppl-title" data-i18n="ppl_title_7">추사랑&추성훈이 선택한 영국프리미엄 조이 화보</div>
                             </div>
                         </a>
                         <article class="ppl-card ppl-card--rect ppl-card--r6 reveal" data-delay="280">
                             <img src="{{ url_for('static', filename='img/pr/ppl_rectangle_06.jpg') }}" alt="제휴 롯데호텔" loading="lazy">
                             <div class="ppl-overlay">
                                 <div class="ppl-meta">
-                                    <span class="ppl-category">제휴</span>
+                                    <span class="ppl-category" data-i18n="ppl_category_partnership">제휴</span>
                                 </div>
-                                <div class="ppl-title">롯데호텔</div>
+                                <div class="ppl-title" data-i18n="ppl_title_8">롯데호텔</div>
                             </div>
                         </article>
                         <article class="ppl-card ppl-card--s5 reveal" data-delay="300">
                             <img src="{{ url_for('static', filename='img/pr/ppl_square_05.jpg') }}" alt="제휴 코코몽" loading="lazy">
                             <div class="ppl-overlay">
                                 <div class="ppl-meta">
-                                    <span class="ppl-category">제휴</span>
+                                    <span class="ppl-category" data-i18n="ppl_category_partnership">제휴</span>
                                 </div>
-                                <div class="ppl-title">코코몽</div>
+                                <div class="ppl-title" data-i18n="ppl_title_9">코코몽</div>
                             </div>
                         </article>
                         <article class="ppl-card ppl-card--s8 reveal" data-delay="320">
                             <img src="{{ url_for('static', filename='img/pr/ppl_square_08.jpg') }}" alt="제휴 롯데월드 아쿠아리움" loading="lazy">
                             <div class="ppl-overlay">
                                 <div class="ppl-meta">
-                                    <span class="ppl-category">제휴</span>
+                                    <span class="ppl-category" data-i18n="ppl_category_partnership">제휴</span>
                                 </div>
-                                <div class="ppl-title">롯데월드 아쿠아리움</div>
+                                <div class="ppl-title" data-i18n="ppl_title_10">롯데월드 아쿠아리움</div>
                             </div>
                         </article>
                         <div class="ppl-media-row-squares">
@@ -316,30 +317,30 @@
         <div class="pr-panel" id="panel-stores" data-panel="stores" role="tabpanel" hidden>
             <div class="pr-panel-body container container-wide">
                 <header class="section-header pr-section-header">
-                    <h2 id="stores-heading" class="company-section-title reveal" data-delay="0">STORES</h2>
-                    <p class="company-section-sub reveal" data-delay="40">유통 / 매장 안내</p>
-                    <p class="section-description pr-section-desc reveal" data-delay="80">
+                    <h2 id="stores-heading" class="company-section-title reveal" data-delay="0" data-i18n="stores_title">STORES</h2>
+                    <p class="company-section-sub reveal" data-delay="40" data-i18n="stores_sub">유통 / 매장 안내</p>
+                    <p class="section-description pr-section-desc reveal" data-delay="80" data-i18n="stores_desc">
                         전국 주요 오프라인 매장과 온라인 채널을 통해 AONE 브랜드를 만나보실 수 있습니다.
                     </p>
                 </header>
                 <div class="pr-stores-offline reveal" data-delay="80">
-                    <h3 class="pr-stores-subtitle">오프라인 매장</h3>
+                    <h3 class="pr-stores-subtitle" data-i18n="stores_offline">오프라인 매장</h3>
                     <div class="pr-store-category-block reveal" data-delay="100">
-                        <h4 class="pr-store-category-title">백화점</h4>
+                        <h4 class="pr-store-category-title" data-i18n="store_category_dept">백화점</h4>
                         <ul class="pr-store-item-list">
                             <li class="pr-store-item"><span class="pr-store-item-icon"><img src="{{ url_for('static', filename='img/pr/lotte_dept_logo.svg') }}" alt="롯데백화점"></span><span class="pr-store-item-name">롯데백화점</span></li>
                             <li class="pr-store-item"><span class="pr-store-item-icon"><img src="{{ url_for('static', filename='img/pr/galleria_logo.png') }}" alt="갤러리아"></span><span class="pr-store-item-name">갤러리아</span></li>
                         </ul>
                     </div>
                     <div class="pr-store-category-block reveal" data-delay="140">
-                        <h4 class="pr-store-category-title">대형마트</h4>
+                        <h4 class="pr-store-category-title" data-i18n="store_category_mart">대형마트</h4>
                         <ul class="pr-store-item-list">
                             <li class="pr-store-item"><span class="pr-store-item-icon"><img src="{{ url_for('static', filename='img/pr/costco_logo.png') }}" alt="코스트코"></span><span class="pr-store-item-name">코스트코</span></li>
                             <li class="pr-store-item"><span class="pr-store-item-icon"><img src="{{ url_for('static', filename='img/pr/starfield_logo.svg') }}" alt="스타필드"></span><span class="pr-store-item-name">스타필드</span></li>
                         </ul>
                     </div>
                     <div class="pr-store-category-block reveal" data-delay="180">
-                        <h4 class="pr-store-category-title">유아용품 전문매장</h4>
+                        <h4 class="pr-store-category-title" data-i18n="store_category_baby">유아용품 전문매장</h4>
                         <ul class="pr-store-item-list">
                             <li class="pr-store-item"><a href="https://www.babyhaus.co.kr/" class="pr-store-item-link" target="_blank" rel="noopener noreferrer"><span class="pr-store-item-icon"><img src="{{ url_for('static', filename='img/pr/baby_haus_logo.png') }}" alt="베이비하우스"></span><span class="pr-store-item-name">베이비하우스</span></a></li>
                             <li class="pr-store-item"><a href="https://www.linkmom.com/" class="pr-store-item-link" target="_blank" rel="noopener noreferrer"><span class="pr-store-item-icon"><img src="{{ url_for('static', filename='img/pr/linkmom_logo.png') }}" alt="링크맘"></span><span class="pr-store-item-name">링크맘</span></a></li>
@@ -349,7 +350,7 @@
                         </ul>
                     </div>
                     <div class="pr-store-category-block reveal" data-delay="220">
-                        <h4 class="pr-store-category-title">베이비페어</h4>
+                        <h4 class="pr-store-category-title" data-i18n="store_category_fair">베이비페어</h4>
                         <ul class="pr-store-item-list">
                             <li class="pr-store-item"><a href="https://befe.co.kr/kr/index.php" class="pr-store-item-link" target="_blank" rel="noopener noreferrer"><span class="pr-store-item-icon"><img src="{{ url_for('static', filename='img/pr/befe_logo.png') }}" alt="베페 베이비페어"></span><span class="pr-store-item-name">베페 베이비페어</span></a></li>
                             <li class="pr-store-item"><a href="https://cobe.co.kr/" class="pr-store-item-link" target="_blank" rel="noopener noreferrer"><span class="pr-store-item-icon"><img src="{{ url_for('static', filename='img/pr/cobe_logo.png') }}" alt="코베 베이비페어"></span><span class="pr-store-item-name">코베 베이비페어</span></a></li>
@@ -358,7 +359,7 @@
                         </ul>
                     </div>
                     <div class="pr-store-category-block reveal" data-delay="260">
-                        <h4 class="pr-store-category-title">펫 전문매장</h4>
+                        <h4 class="pr-store-category-title" data-i18n="store_category_pet">펫 전문매장</h4>
                         <ul class="pr-store-item-list">
                             <li class="pr-store-item"><a href="https://petwalk.kr/" class="pr-store-item-link" target="_blank" rel="noopener noreferrer"><span class="pr-store-item-icon"><img src="{{ url_for('static', filename='img/pr/petwalk_logo.png') }}" alt="펫워크"></span><span class="pr-store-item-name">펫워크</span></a></li>
                             <li class="pr-store-item"><a href="https://www.penefit.co.kr/" class="pr-store-item-link" target="_blank" rel="noopener noreferrer"><span class="pr-store-item-icon"><img src="{{ url_for('static', filename='img/pr/penefit_logo.png') }}" alt="페네핏"></span><span class="pr-store-item-name">페네핏</span></a></li>
@@ -370,7 +371,7 @@
                     </div>
                 </div>
                 <div class="pr-stores-online reveal" data-delay="120">
-                    <h3 class="pr-stores-subtitle">온라인 매장</h3>
+                    <h3 class="pr-stores-subtitle" data-i18n="stores_online">온라인 매장</h3>
                     <div class="pr-mall-box-grid">
                         <div class="pr-mall-box-row">
                             <a href="https://www.cjmall.com" class="pr-mall-box reveal" data-delay="140" target="_blank" rel="noopener noreferrer"><span class="pr-mall-box-logo"><img src="{{ url_for('static', filename='img/pr/cjmall_logo.png') }}" alt="CJ MALL"></span><span class="pr-mall-box-name">CJ MALL</span></a>
@@ -394,17 +395,17 @@
 <!-- 데스크톱: 우측 날개 네비게이션 (COMPANY 구조 동일) -->
 <nav class="pr-wing" id="prWing" aria-label="PR 섹션 이동">
     <ul class="pr-wing-list">
-        <li><button type="button" class="pr-wing-item is-active" data-panel="connect">CONNECT</button></li>
-        <li><button type="button" class="pr-wing-item" data-panel="campaign">CAMPAIGN</button></li>
-        <li><button type="button" class="pr-wing-item" data-panel="stores">STORES</button></li>
+        <li><button type="button" class="pr-wing-item is-active" data-panel="connect" data-i18n="tab_connect_label">CONNECT</button></li>
+        <li><button type="button" class="pr-wing-item" data-panel="campaign" data-i18n="tab_campaign_label">CAMPAIGN</button></li>
+        <li><button type="button" class="pr-wing-item" data-panel="stores" data-i18n="tab_stores_label">STORES</button></li>
     </ul>
 </nav>
 
 <!-- 모바일: 하단 고정 탭 (히어로 구간에서 숨김, 섹션 진입 시 노출) -->
 <nav class="pr-bottom-tabs pr-bottomnav d-lg-none" id="prBottomTabs" aria-label="PR 섹션 이동">
-    <button type="button" class="pr-tab-item is-active" data-panel="connect">CONNECT</button>
-    <button type="button" class="pr-tab-item" data-panel="campaign">CAMPAIGN</button>
-    <button type="button" class="pr-tab-item" data-panel="stores">STORES</button>
+    <button type="button" class="pr-tab-item is-active" data-panel="connect" data-i18n="tab_connect_label">CONNECT</button>
+    <button type="button" class="pr-tab-item" data-panel="campaign" data-i18n="tab_campaign_label">CAMPAIGN</button>
+    <button type="button" class="pr-tab-item" data-panel="stores" data-i18n="tab_stores_label">STORES</button>
 </nav>
 
 <!-- Brand Film 영상 레이어팝업 -->

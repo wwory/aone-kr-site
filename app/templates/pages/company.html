@@ -3,15 +3,16 @@
 {% block title %}COMPANY - AONE{% endblock %}
 
 {% block body_class %}page-company{% endblock %}
+{% block data_page %}company{% endblock %}
 
 {% block content %}
 <section class="company-hero" id="company-hero">
     <div class="company-hero-inner">
         <div class="company-hero-text">
             <div class="company-hero-copy">
-                <h1 class="company-hero-title reveal" data-delay="0">COMPANY</h1>
-                <p class="company-hero-desc reveal" data-delay="120">회사 소개</p>
-                <p class="company-hero-lead reveal" data-delay="240">아이와 가족을 위한 전문성.<br>검증된 기술력과 글로벌 브랜드로 함께합니다.</p>
+                <h1 class="company-hero-title reveal" data-delay="0" data-i18n="hero_title">COMPANY</h1>
+                <p class="company-hero-desc reveal" data-delay="120" data-i18n="hero_desc">회사 소개</p>
+                <p class="company-hero-lead reveal" data-delay="240" data-i18n="hero_lead" data-i18n-mode="html">아이와 가족을 위한 전문성.<br>검증된 기술력과 글로벌 브랜드로 함께합니다.</p>
                 <div class="company-metrics" aria-label="Company highlights">
                 <div class="metric reveal" data-delay="260" data-i18n-metric="1">
                     <span class="metric-value" data-i18n="metric_title_1">1958</span>
@@ -31,7 +32,7 @@
                 </div>
                 </div>
                 <div class="company-our-story reveal" data-delay="300" aria-label="Our Story 타임라인">
-                    <h2 class="company-our-story-title">Our Story</h2>
+                    <h2 class="company-our-story-title" data-i18n="story_title">Our Story</h2>
                     <div class="company-our-story-timeline">
                         <div class="company-our-story-item">
                             <div class="company-our-story-node">
@@ -39,7 +40,7 @@
                                 <span class="company-our-story-line" aria-hidden="true"></span>
                             </div>
                             <span class="company-our-story-year">1958</span>
-                            <span class="company-our-story-keyword">기업 설립</span>
+                            <span class="company-our-story-keyword" data-i18n="story_1958">기업 설립</span>
                         </div>
                         <div class="company-our-story-item">
                             <div class="company-our-story-node">
@@ -47,7 +48,7 @@
                                 <span class="company-our-story-line" aria-hidden="true"></span>
                             </div>
                             <span class="company-our-story-year">1988</span>
-                            <span class="company-our-story-keyword">유아용품 전문화</span>
+                            <span class="company-our-story-keyword" data-i18n="story_1988">유아용품 전문화</span>
                         </div>
                         <div class="company-our-story-item">
                             <div class="company-our-story-node">
@@ -55,7 +56,7 @@
                                 <span class="company-our-story-line" aria-hidden="true"></span>
                             </div>
                             <span class="company-our-story-year">2002</span>
-                            <span class="company-our-story-keyword">글로벌 파트너십</span>
+                            <span class="company-our-story-keyword" data-i18n="story_2002">글로벌 파트너십</span>
                         </div>
                         <div class="company-our-story-item">
                             <div class="company-our-story-node">
@@ -63,7 +64,7 @@
                                 <span class="company-our-story-line" aria-hidden="true"></span>
                             </div>
                             <span class="company-our-story-year">2010</span>
-                            <span class="company-our-story-keyword">AONE 법인 설립</span>
+                            <span class="company-our-story-keyword" data-i18n="story_2010">AONE 법인 설립</span>
                         </div>
                         <div class="company-our-story-item">
                             <div class="company-our-story-node">
@@ -71,7 +72,7 @@
                                 <span class="company-our-story-line" aria-hidden="true"></span>
                             </div>
                             <span class="company-our-story-year">2026</span>
-                            <span class="company-our-story-keyword">지속 성장 중</span>
+                            <span class="company-our-story-keyword" data-i18n="story_2026">지속 성장 중</span>
                         </div>
                     </div>
                 </div>
@@ -79,29 +80,29 @@
             <div class="company-hero-boxes">
                 <button type="button" class="company-box reveal" data-delay="360" data-panel="ideology" aria-pressed="false">
                     <span class="company-box-text">
-                        <span class="company-box-label">기업이념</span>
-                        <span class="company-box-sub">Mission & Vision</span>
+                        <span class="company-box-label" data-i18n="box_ideology_label">기업이념</span>
+                        <span class="company-box-sub" data-i18n="box_ideology_sub">Mission & Vision</span>
                     </span>
                     <span class="company-box-chevron" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
                 </button>
                 <button type="button" class="company-box reveal" data-delay="420" data-panel="history" aria-pressed="false">
                     <span class="company-box-text">
-                        <span class="company-box-label">연혁</span>
-                        <span class="company-box-sub">AONE History</span>
+                        <span class="company-box-label" data-i18n="box_history_label">연혁</span>
+                        <span class="company-box-sub" data-i18n="box_history_sub">AONE History</span>
                     </span>
                     <span class="company-box-chevron" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
                 </button>
                 <button type="button" class="company-box reveal" data-delay="480" data-panel="awards" aria-pressed="false">
                     <span class="company-box-text">
-                        <span class="company-box-label">수상내역</span>
-                        <span class="company-box-sub">Awards & Recognition</span>
+                        <span class="company-box-label" data-i18n="box_awards_label">수상내역</span>
+                        <span class="company-box-sub" data-i18n="box_awards_sub">Awards & Recognition</span>
                     </span>
                     <span class="company-box-chevron" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
                 </button>
                 <button type="button" class="company-box reveal" data-delay="540" data-panel="ci" aria-pressed="false">
                     <span class="company-box-text">
-                        <span class="company-box-label">CI</span>
-                        <span class="company-box-sub">Corporate Identity</span>
+                        <span class="company-box-label" data-i18n="box_ci_label">CI</span>
+                        <span class="company-box-sub" data-i18n="box_ci_sub">Corporate Identity</span>
                     </span>
                     <span class="company-box-chevron" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
                 </button>
@@ -120,21 +121,10 @@
                 <div class="ideology-block ideology-ceo reveal" data-delay="0">
                     <div class="ideology-ceo-inner">
                         <div class="ideology-ceo-text reveal" data-delay="0">
-                            <h2 class="ideology-block-title">CEO 인사말</h2>
-                            <p class="ideology-ceo-lead">아이의 안전과 부모의 신뢰를 기반으로<br>행복한 사회를 만드는 유아용품 전문기업</p>
-                            <div class="ideology-ceo-body">
-                                <p>안녕하십니까.</p>
-                        <p>2010년 설립된 유아용품 전문회사 (주)에이원은 1958년 수출제조업에서 경영을 시작, 1988년 유아 용품만을 전문으로 한 모태기업 계성 산업의 경영 철학과 기업가 정신을 바탕을 두고 있습니다.</p>
-                        <p>20년 넘게 Evenflo, Combi, Bebe, Confort, Pali, Teamtex 등 미국, 유럽, 일본 등 전 세계 굴지의 전문 유아제품 브랜드와 손 잡고 함께 기술 개발에 참여 제조하여 국내에 미개척지인 유아용품의 안전성에 대한 세계적인 기준을 적용하여 선진화된 기술이 적용된 제품으로 시장을 선도해 왔습니다.</p>
-                        <p>이러한 전문성과 기술력을 바탕으로 RYAN 브랜드를 런칭하였고, 경제매거진 포브스(Forbes)지에서 선정한 최고의 브랜드 대상, 대한민국 퍼스트브랜드 13년 연속 대상 등을 수상하며 '국내 1위 안전 유모차'의 자리를 지키고 있습니다.</p>
-                        <p>또한 영국의 GLOBAL NO.1 브랜드 JOIE, 펫 라이프의 새로운 기준 Tavo Pets 제품 등 국내 소비자들이 믿고 구매할 수 있는 제품을 합리적인 가격에 제공하고 있습니다.</p>
-                        <p>(주)에이원은 아이의 행복이 더 나은 미래의 기반을 만든다고 믿습니다.</p>
-                        <p>미래사회를 이끌어나갈 아이들의 안전하고 행복한 삶을 위해 저소득층, 다문화가정의 아이들을 위한 유아용품 기부, 복지기관과의 협약을 통한 기부 등 사회공헌 활동도 지속적으로 진행하고 있습니다.</p>
-                        <p>기업의 가장 큰 핵심역량인 임직원들의 행복 기반 조성을 위해 아낌없는 투자와 조직문화 개선의 노력으로 2014년 노동부에서 주최하는 '가족친화 인증기업'으로 선정되어 지금까지 이어오고 있습니다.</p>
-                        <p>아기 한 명 한 명의 소중함을 바탕으로, 부모의 한결같은 사랑과 마음으로 "경험, 그 이상의 가치"를 주기위한 (주)에이원의 노력은 멈추지 않겠습니다.</p>
-                                <p>그 길을 함께 해주셔서 감사합니다.</p>
-                            </div>
-                            <p class="ideology-ceo-sign">(주)에이원 대표이사 이의환 및 임직원 일동</p>
+                            <h2 class="ideology-block-title" data-i18n="ideology_ceo_title">CEO 인사말</h2>
+                            <p class="ideology-ceo-lead" data-i18n="ideology_ceo_lead" data-i18n-mode="html">아이의 안전과 부모의 신뢰를 기반으로<br>행복한 사회를 만드는 유아용품 전문기업</p>
+                            <div class="ideology-ceo-body" data-i18n="ideology_ceo_body" data-i18n-mode="html">안녕하십니까.</div>
+                            <p class="ideology-ceo-sign" data-i18n="ideology_ceo_sign">(주)에이원 대표이사 이의환 및 임직원 일동</p>
                         </div>
                         <div class="ideology-ceo-logo reveal" data-delay="120" aria-hidden="true">
                             <img src="{{ url_for('static', filename='img/company/aone_logo_white.png') }}" alt="" class="ideology-ceo-logo-img" width="1174" height="817">
@@ -145,9 +135,9 @@
                 <div class="ideology-block ideology-mission reveal" data-delay="0">
                     <div class="ideology-mission-inner">
                         <div class="ideology-mission-text-wrap reveal" data-delay="40">
-                            <h2 class="ideology-block-title">MISSION</h2>
-                            <p class="ideology-mission-sub">아이의 안전과 부모의 신뢰를 담은 기업</p>
-                            <p class="ideology-mission-text">자체 기술력으로 개발된 대한민국 대표 유모차 브랜드 '리안(RYAN)'과 해외 유수 유아용품<br>업체들과의 파트너쉽을 통해 글로벌 유아용품 전문 기업체로 성장을 목표로 삼고 있습니다.</p>
+                            <h2 class="ideology-block-title" data-i18n="ideology_mission_title">MISSION</h2>
+                            <p class="ideology-mission-sub" data-i18n="ideology_mission_sub">아이의 안전과 부모의 신뢰를 담은 기업</p>
+                            <p class="ideology-mission-text" data-i18n="ideology_mission_text" data-i18n-mode="html">자체 기술력으로 개발된 대한민국 대표 유모차 브랜드 '리안(RYAN)'과 해외 유수 유아용품<br>업체들과의 파트너쉽을 통해 글로벌 유아용품 전문 기업체로 성장을 목표로 삼고 있습니다.</p>
                         </div>
                         <div class="ideology-mission-visual reveal" data-delay="120">
                             <img src="{{ url_for('static', filename='img/company/company_mission_01.png') }}" alt="">
@@ -156,32 +146,32 @@
                 </div>
                 <div class="ideology-divider" aria-hidden="true"></div>
                 <div class="ideology-block ideology-vision reveal" data-delay="0">
-                    <h2 class="ideology-block-title reveal" data-delay="0">VISION</h2>
+                    <h2 class="ideology-block-title reveal" data-delay="0" data-i18n="ideology_vision_title">VISION</h2>
                     <div class="ideology-vision-text reveal" data-delay="60">
-                        <p>정직, 신뢰, 창의와 소통을 핵심 가치로 고객의 신뢰를 담은 유아용품 제품을 통하여, 아이들의 더 나은 행복한 사회 기반 형성을 만드는데 앞장서고자 합니다.</p>
+                        <p data-i18n="ideology_vision_text">정직, 신뢰, 창의와 소통을 핵심 가치로 고객의 신뢰를 담은 유아용품 제품을 통하여, 아이들의 더 나은 행복한 사회 기반 형성을 만드는데 앞장서고자 합니다.</p>
                     </div>
                     <div class="ideology-vision-divider" aria-hidden="true"></div>
-                    <h3 class="ideology-values-title reveal" data-delay="0">CORE VALUES</h3>
+                    <h3 class="ideology-values-title reveal" data-delay="0" data-i18n="ideology_values_title">CORE VALUES</h3>
                     <div class="ideology-values-grid ideology-values-grid--four">
                         <div class="ideology-value-item reveal" data-delay="40">
                             <div class="ideology-value-icon"><img src="{{ url_for('static', filename='img/company/company_vision_01.png') }}" alt="" width="48" height="48"></div>
-                            <h4 class="ideology-value-name">정직</h4>
-                            <p class="ideology-value-desc">아이의 성장과 꿈을 함께하는 기업으로, 정직하고 성실한 자세로 고객이 믿을 수 있는 제품만을 개발합니다.</p>
+                            <h4 class="ideology-value-name" data-i18n="ideology_value_honesty">정직</h4>
+                            <p class="ideology-value-desc" data-i18n="ideology_value_honesty_desc">아이의 성장과 꿈을 함께하는 기업으로, 정직하고 성실한 자세로 고객이 믿을 수 있는 제품만을 개발합니다.</p>
                         </div>
                         <div class="ideology-value-item reveal" data-delay="80">
                             <div class="ideology-value-icon"><img src="{{ url_for('static', filename='img/company/company_vision_02.png') }}" alt="" width="48" height="48"></div>
-                            <h4 class="ideology-value-name">창의</h4>
-                            <p class="ideology-value-desc">창의적인 인재와 열린 소통 속에 혁신적인 제품과 서비스를 제공하는 기업문화를 만들어 갑니다.</p>
+                            <h4 class="ideology-value-name" data-i18n="ideology_value_creativity">창의</h4>
+                            <p class="ideology-value-desc" data-i18n="ideology_value_creativity_desc">창의적인 인재와 열린 소통 속에 혁신적인 제품과 서비스를 제공하는 기업문화를 만들어 갑니다.</p>
                         </div>
                         <div class="ideology-value-item reveal" data-delay="120">
                             <div class="ideology-value-icon"><img src="{{ url_for('static', filename='img/company/company_vision_03.png') }}" alt="" width="48" height="48"></div>
-                            <h4 class="ideology-value-name">신뢰</h4>
-                            <p class="ideology-value-desc">고객과의 신뢰를 가장 우선으로 생각하며, 최고의 기술력과 최상의 서비스로 고객이 신뢰할 수 있는 기업이 되고자 합니다.</p>
+                            <h4 class="ideology-value-name" data-i18n="ideology_value_trust">신뢰</h4>
+                            <p class="ideology-value-desc" data-i18n="ideology_value_trust_desc">고객과의 신뢰를 가장 우선으로 생각하며, 최고의 기술력과 최상의 서비스로 고객이 신뢰할 수 있는 기업이 되고자 합니다.</p>
                         </div>
                         <div class="ideology-value-item reveal" data-delay="160">
                             <div class="ideology-value-icon"><img src="{{ url_for('static', filename='img/company/company_vision_04.png') }}" alt="" width="48" height="48"></div>
-                            <h4 class="ideology-value-name">소통</h4>
-                            <p class="ideology-value-desc">조직 내부적으로 빠르고 정확한 정보 공유와 소통을, 고객과는 지속적이고 즉각적인 대화 창구를 열어 필요한 제품과 서비스로 고객만족에 최선의 노력과 책임을 다하고 있습니다.</p>
+                            <h4 class="ideology-value-name" data-i18n="ideology_value_communication">소통</h4>
+                            <p class="ideology-value-desc" data-i18n="ideology_value_communication_desc">조직 내부적으로 빠르고 정확한 정보 공유와 소통을, 고객과는 지속적이고 즉각적인 대화 창구를 열어 필요한 제품과 서비스로 고객만족에 최선의 노력과 책임을 다하고 있습니다.</p>
                         </div>
                     </div>
                 </div>
@@ -190,9 +180,9 @@
 
         <div class="company-panel" id="panel-history" data-panel="history" role="tabpanel" hidden>
             <div class="company-panel-body history-panel-body company-history container container-wide">
-                <h2 class="company-section-title reveal" data-delay="0">AONE HISTORY</h2>
+                <h2 class="company-section-title reveal" data-delay="0" data-i18n="history_title">AONE HISTORY</h2>
                 <div class="history-intro reveal" data-delay="80">
-                    <p class="history-intro-lead">(주)에이원의 시작과 성장</p>
+                    <p class="history-intro-lead" data-i18n="history_intro">(주)에이원의 시작과 성장</p>
                 </div>
                 <div class="history-timeline">
                     <div class="history-decade reveal" data-delay="0" aria-hidden="true">1900´s</div>
@@ -203,21 +193,14 @@
                         </div>
                         <div class="history-entry-main">
                             <span class="history-entry-year">1958</span>
-                            <div class="history-entry-content">
-                                <p>계성산업 설립</p>
-                                <p>일본 시장에 섬유 제품 수출</p>
-                            </div>
+                            <div class="history-entry-content" data-i18n="history_timeline_1958" data-i18n-mode="html">계성산업 설립<br>일본 시장에 섬유 제품 수출</div>
                         </div>
                     </div>
 
                     <div class="history-entry history-entry--right reveal" data-delay="40">
                         <div class="history-entry-main">
                             <span class="history-entry-year">1988</span>
-                            <div class="history-entry-content">
-                                <p>계성산업(주) 사명 변경</p>
-                                <p>유아용품 전문회사로 도약</p>
-                                <p>Evenflo·Cosco(미국), Combi(일본) 한국 독점 총판 계약</p>
-                            </div>
+                            <div class="history-entry-content" data-i18n="history_timeline_1988" data-i18n-mode="html">계성산업(주) 사명 변경<br>유아용품 전문회사로 도약<br>Evenflo·Cosco(미국), Combi(일본) 한국 독점 총판 계약</div>
                         </div>
                         <div class="history-entry-media"></div>
                     </div>
@@ -228,18 +211,14 @@
                         <div class="history-entry-media"></div>
                         <div class="history-entry-main">
                             <span class="history-entry-year">2002</span>
-                            <div class="history-entry-content">
-                                <p>세계 최대 카시트 전문업체 TEAMTEX 수입·판매 시작</p>
-                            </div>
+                            <div class="history-entry-content" data-i18n="history_timeline_2002" data-i18n-mode="html">세계 최대 카시트 전문업체 TEAMTEX 수입·판매 시작</div>
                         </div>
                     </div>
 
                     <div class="history-entry history-entry--right reveal" data-delay="40">
                         <div class="history-entry-main">
                             <span class="history-entry-year">2008</span>
-                            <div class="history-entry-content">
-                                <p>국내 유모차 브랜드 RYAN 런칭</p>
-                            </div>
+                            <div class="history-entry-content" data-i18n="history_timeline_2008" data-i18n-mode="html">국내 유모차 브랜드 RYAN 런칭</div>
                         </div>
                         <div class="history-entry-media"></div>
                     </div>
@@ -250,25 +229,20 @@
                         </div>
                         <div class="history-entry-main">
                             <span class="history-entry-year">2010</span>
-                            <div class="history-entry-content">
-                                <p>TEAMTEX 카시트 Nania 출시</p>
-                                <p>유아용품 전문회사 ㈜에이원으로 새로운 도약 선언</p>
-                            </div>
+                            <div class="history-entry-content" data-i18n="history_timeline_2010" data-i18n-mode="html">TEAMTEX 카시트 Nania 출시<br>유아용품 전문회사 ㈜에이원으로 새로운 도약 선언</div>
                         </div>
                     </div>
 
                     <div class="history-decade reveal" data-delay="0" aria-hidden="true">2010´s</div>
 
                     <div class="history-quote reveal" data-delay="40">
-                        <p>아기와 엄마를 생각하는 기업,<br>유아용품 전문회사 (주)에이원 새로운 도약</p>
+                        <p data-i18n="history_quote" data-i18n-mode="html">아기와 엄마를 생각하는 기업,<br>유아용품 전문회사 (주)에이원 새로운 도약</p>
                     </div>
 
                     <div class="history-entry history-entry--right reveal" data-delay="40">
                         <div class="history-entry-main">
                             <span class="history-entry-year">2011</span>
-                            <div class="history-entry-content">
-                                <p>네덜란드 프리미엄 브랜드 NUNA 총판 계약</p>
-                            </div>
+                            <div class="history-entry-content" data-i18n="history_timeline_2011" data-i18n-mode="html">네덜란드 프리미엄 브랜드 NUNA 총판 계약</div>
                         </div>
                         <div class="history-entry-media"></div>
                     </div>
@@ -281,23 +255,14 @@
                         </div>
                         <div class="history-entry-main">
                             <span class="history-entry-year">2012</span>
-                            <div class="history-entry-content">
-                                <p>RYAN SPIN LX – 국내 최초 소비자시민모임 별 3개 획득</p>
-                                <p>JOIE 총판 계약 및 글로벌 디자인 어워드 수상 시작</p>
-                            </div>
+                            <div class="history-entry-content" data-i18n="history_timeline_2012" data-i18n-mode="html">RYAN SPIN LX – 국내 최초 소비자시민모임 별 3개 획득<br>JOIE 총판 계약 및 글로벌 디자인 어워드 수상 시작</div>
                         </div>
                     </div>
 
                     <div class="history-entry history-entry--right reveal" data-delay="40">
                         <div class="history-entry-main">
                             <span class="history-entry-year">2013</span>
-                            <div class="history-entry-content">
-                                <p>RYAN 2013 소비자가 선정한 최고의 브랜드 대상 수상</p>
-                                <p>RYAN, JOIE 주요 제품 연속 완판</p>
-                                <p>JOIE 2013 한국소비자 만족지수 1위</p>
-                                <p>JOIE 2013 레드닷 디자인 어워드 특별수상</p>
-                                <p>JOIE 2013 Baby & Nursery Trade Awards 수상</p>
-                            </div>
+                            <div class="history-entry-content" data-i18n="history_timeline_2013" data-i18n-mode="html">RYAN 2013 소비자가 선정한 최고의 브랜드 대상 수상<br>RYAN, JOIE 주요 제품 연속 완판<br>JOIE 2013 한국소비자 만족지수 1위<br>JOIE 2013 레드닷 디자인 어워드 특별수상<br>JOIE 2013 Baby & Nursery Trade Awards 수상</div>
                         </div>
                         <div class="history-entry-media history-entry-media--grid">
                             <img src="{{ url_for('static', filename='img/company/history/history_2013_01.png') }}" alt="">
@@ -316,25 +281,14 @@
                         </div>
                         <div class="history-entry-main">
                             <span class="history-entry-year">2014</span>
-                            <div class="history-entry-content">
-                                <p>RYAN 2014 소비자가 선정한 최고의 브랜드 2년 연속 대상 수상</p>
-                                <p>RYAN, JOIE 주요 제품 연속 완판</p>
-                                <p>JOIE i-anchor 2014 레드닷 디자인 어워드 수상</p>
-                                <p>JOIE Mother&Baby Awards 2014 Gold 수상</p>
-                                <p>(주)에이원 여성가족부 지정 가족 친화 인증 기업 선정</p>
-                            </div>
+                            <div class="history-entry-content" data-i18n="history_timeline_2014" data-i18n-mode="html">RYAN 2014 소비자가 선정한 최고의 브랜드 2년 연속 대상 수상<br>RYAN, JOIE 주요 제품 연속 완판<br>JOIE i-anchor 2014 레드닷 디자인 어워드 수상<br>JOIE Mother&Baby Awards 2014 Gold 수상<br>(주)에이원 여성가족부 지정 가족 친화 인증 기업 선정</div>
                         </div>
                     </div>
 
                     <div class="history-entry history-entry--right reveal" data-delay="40">
                         <div class="history-entry-main">
                             <span class="history-entry-year">2015</span>
-                            <div class="history-entry-content">
-                                <p>RYAN 2015 소비자가 선정 최고의 대상 3년 연속 수상</p>
-                                <p>RYAN 2015 퍼스트 브랜드 대상 2년 연속 수상</p>
-                                <p>RYAN, JOIE 주요 제품 연속 완판</p>
-                                <p>JOIE Mother & Baby Awards 2015 Gold 수상</p>
-                            </div>
+                            <div class="history-entry-content" data-i18n="history_timeline_2015" data-i18n-mode="html">RYAN 2015 소비자가 선정 최고의 대상 3년 연속 수상<br>RYAN 2015 퍼스트 브랜드 대상 2년 연속 수상<br>RYAN, JOIE 주요 제품 연속 완판<br>JOIE Mother & Baby Awards 2015 Gold 수상</div>
                         </div>
                         <div class="history-entry-media history-entry-media--grid">
                             <img src="{{ url_for('static', filename='img/company/history/history_2015_01.png') }}" alt="">
@@ -352,21 +306,14 @@
                         </div>
                         <div class="history-entry-main">
                             <span class="history-entry-year">2016</span>
-                            <div class="history-entry-content">
-                                <p>RYAN 대한민국 퍼스트 브랜드대상 3년 연속 수상(유모차 부분 1위)</p>
-                                <p>RYAN 조선일보, 소비자가 신뢰하는 브랜드대상 수상</p>
-                                <p>JOIE 대한민국 퍼스트 브랜드대상 2년 연속 수상(카시트 부분 1위)</p>
-                            </div>
+                            <div class="history-entry-content" data-i18n="history_timeline_2016" data-i18n-mode="html">RYAN 대한민국 퍼스트 브랜드대상 3년 연속 수상(유모차 부분 1위)<br>RYAN 조선일보, 소비자가 신뢰하는 브랜드대상 수상<br>JOIE 대한민국 퍼스트 브랜드대상 2년 연속 수상(카시트 부분 1위)</div>
                         </div>
                     </div>
 
                     <div class="history-entry history-entry--right reveal" data-delay="40">
                         <div class="history-entry-main">
                             <span class="history-entry-year">2017</span>
-                            <div class="history-entry-content">
-                                <p>RYAN 대한민국 퍼스트 브랜드대상 4년 연속 수상(유모차 부분 1위)</p>
-                                <p>JOIE 대한민국 퍼스트 브랜드대상 3년 연속 수상(카시트 부분 1위)</p>
-                            </div>
+                            <div class="history-entry-content" data-i18n="history_timeline_2017" data-i18n-mode="html">RYAN 대한민국 퍼스트 브랜드대상 4년 연속 수상(유모차 부분 1위)<br>JOIE 대한민국 퍼스트 브랜드대상 3년 연속 수상(카시트 부분 1위)</div>
                         </div>
                         <div class="history-entry-media history-entry-media--grid">
                             <img src="{{ url_for('static', filename='img/company/history/history_2017_01.png') }}" alt="">
@@ -381,23 +328,14 @@
                         </div>
                         <div class="history-entry-main">
                             <span class="history-entry-year">2018</span>
-                            <div class="history-entry-content">
-                                <p>RYAN 대한민국 퍼스트 브랜드대상 5년 연속 수상(유모차 부분 1위)</p>
-                                <p>JOIE 대한민국 퍼스트 브랜드대상 4년 연속 수상(카시트 부분 1위)</p>
-                            </div>
+                            <div class="history-entry-content" data-i18n="history_timeline_2018" data-i18n-mode="html">RYAN 대한민국 퍼스트 브랜드대상 5년 연속 수상(유모차 부분 1위)<br>JOIE 대한민국 퍼스트 브랜드대상 4년 연속 수상(카시트 부분 1위)</div>
                         </div>
                     </div>
 
                     <div class="history-entry history-entry--right reveal" data-delay="40">
                         <div class="history-entry-main">
                             <span class="history-entry-year">2019</span>
-                            <div class="history-entry-content">
-                                <p>RYAN 대한민국 퍼스트 브랜드대상 6년 연속 수상(유모차 부분 1위)</p>
-                                <p>RYAN 소비자가 선정한 최고의 브랜드 대상 4년 수상</p>
-                                <p>JOIE 대한민국 퍼스트 브랜드대상 5년 연속 수상(카시트 부분 1위)</p>
-                                <p>JOIE 소비자가 선정한 최고의 브랜드 대상 수상</p>
-                                <p>JOIE 고객 감동 브랜드 지수 1위 수상</p>
-                            </div>
+                            <div class="history-entry-content" data-i18n="history_timeline_2019" data-i18n-mode="html">RYAN 대한민국 퍼스트 브랜드대상 6년 연속 수상(유모차 부분 1위)<br>RYAN 소비자가 선정한 최고의 브랜드 대상 4년 수상<br>JOIE 대한민국 퍼스트 브랜드대상 5년 연속 수상(카시트 부분 1위)<br>JOIE 소비자가 선정한 최고의 브랜드 대상 수상<br>JOIE 고객 감동 브랜드 지수 1위 수상</div>
                         </div>
                         <div class="history-entry-media history-entry-media--grid">
                             <img src="{{ url_for('static', filename='img/company/history/history_2019_01.png') }}" alt="">
@@ -415,22 +353,14 @@
                         </div>
                         <div class="history-entry-main">
                             <span class="history-entry-year">2020</span>
-                            <div class="history-entry-content">
-                                <p>RYAN 대한민국 퍼스트 브랜드대상 7년 연속 수상(유모차 부분 1위)</p>
-                                <p>RYAN 소비자가 선정한 최고의 브랜드 대상 5년 수상</p>
-                                <p>JOIE 대한민국 퍼스트 브랜드대상 6년 연속 수상(카시트 부분 1위)</p>
-                                <p>JOIE 소비자가 선정한 최고의 브랜드 대상 2년 수상</p>
-                            </div>
+                            <div class="history-entry-content" data-i18n="history_timeline_2020" data-i18n-mode="html">RYAN 대한민국 퍼스트 브랜드대상 7년 연속 수상(유모차 부분 1위)<br>RYAN 소비자가 선정한 최고의 브랜드 대상 5년 수상<br>JOIE 대한민국 퍼스트 브랜드대상 6년 연속 수상(카시트 부분 1위)<br>JOIE 소비자가 선정한 최고의 브랜드 대상 2년 수상</div>
                         </div>
                     </div>
 
                     <div class="history-entry history-entry--right reveal" data-delay="40">
                         <div class="history-entry-main">
                             <span class="history-entry-year">2021</span>
-                            <div class="history-entry-content">
-                                <p>RYAN 대한민국 퍼스트 브랜드대상 8년 연속 수상(유모차 부분 1위)</p>
-                                <p>JOIE 대한민국 퍼스트 브랜드대상 7년 연속 수상(카시트 부분 1위)</p>
-                            </div>
+                            <div class="history-entry-content" data-i18n="history_timeline_2021" data-i18n-mode="html">RYAN 대한민국 퍼스트 브랜드대상 8년 연속 수상(유모차 부분 1위)<br>JOIE 대한민국 퍼스트 브랜드대상 7년 연속 수상(카시트 부분 1위)</div>
                         </div>
                         <div class="history-entry-media history-entry-media--grid">
                             <img src="{{ url_for('static', filename='img/company/history/history_2021.png') }}" alt="">
@@ -444,23 +374,14 @@
                         </div>
                         <div class="history-entry-main">
                             <span class="history-entry-year">2022</span>
-                            <div class="history-entry-content">
-                                <p>㈜에이원 신사옥 'aone청담' 준공</p>
-                                <p>RYAN 대한민국 퍼스트 브랜드대상 9년 연속 수상(유모차 부분 1위)</p>
-                                <p>JOIE 대한민국 퍼스트 브랜드대상 8년 연속 수상(카시트 부분 1위)</p>
-                            </div>
+                            <div class="history-entry-content" data-i18n="history_timeline_2022" data-i18n-mode="html">㈜에이원 신사옥 'aone청담' 준공<br>RYAN 대한민국 퍼스트 브랜드대상 9년 연속 수상(유모차 부분 1위)<br>JOIE 대한민국 퍼스트 브랜드대상 8년 연속 수상(카시트 부분 1위)</div>
                         </div>
                     </div>
 
                     <div class="history-entry history-entry--right reveal" data-delay="40">
                         <div class="history-entry-main">
                             <span class="history-entry-year">2023</span>
-                            <div class="history-entry-content">
-                                <p>RYAN, 대한민국 퍼스트 브랜드 대상 '유모차 부문 1위' 10년 연속 수상</p>
-                                <p>업계 최초 '퍼스트클래스 브랜드' 인증</p>
-                                <p>Joie, 대한민국 퍼스트 브랜드 대상 '카시트 부문 1위' 9년 연속 수상</p>
-                                <p>㈜에이원 물류센터 준공</p>
-                            </div>
+                            <div class="history-entry-content" data-i18n="history_timeline_2023" data-i18n-mode="html">RYAN, 대한민국 퍼스트 브랜드 대상 '유모차 부문 1위' 10년 연속 수상<br>업계 최초 '퍼스트클래스 브랜드' 인증<br>Joie, 대한민국 퍼스트 브랜드 대상 '카시트 부문 1위' 9년 연속 수상<br>㈜에이원 물류센터 준공</div>
                         </div>
                         <div class="history-entry-media history-entry-media--grid">
                             <img src="{{ url_for('static', filename='img/company/history/history_2023_01.png') }}" alt="">
@@ -475,20 +396,14 @@
                         </div>
                         <div class="history-entry-main">
                             <span class="history-entry-year">2024</span>
-                            <div class="history-entry-content">
-                                <p>RYAN 유모차 부문 퍼스트 브랜드 대상 11년 연속 1위</p>
-                                <p>JOIE 카시트 부문 10년 연속 1위</p>
-                            </div>
+                            <div class="history-entry-content" data-i18n="history_timeline_2024" data-i18n-mode="html">RYAN 유모차 부문 퍼스트 브랜드 대상 11년 연속 1위<br>JOIE 카시트 부문 10년 연속 1위</div>
                         </div>
                     </div>
 
                     <div class="history-entry history-entry--right reveal" data-delay="40">
                         <div class="history-entry-main">
                             <span class="history-entry-year">2025</span>
-                            <div class="history-entry-content">
-                                <p>RYAN 유모차 부문 퍼스트 브랜드 대상 12년 연속 1위</p>
-                                <p>JOIE 카시트 부문 11년 연속 1위</p>
-                            </div>
+                            <div class="history-entry-content" data-i18n="history_timeline_2025" data-i18n-mode="html">RYAN 유모차 부문 퍼스트 브랜드 대상 12년 연속 1위<br>JOIE 카시트 부문 11년 연속 1위</div>
                         </div>
                         <div class="history-entry-media history-entry-media--grid">
                             <img src="{{ url_for('static', filename='img/company/history/history_2025_01.png') }}" alt="">
@@ -504,10 +419,7 @@
                         </div>
                         <div class="history-entry-main">
                             <span class="history-entry-year">2026</span>
-                            <div class="history-entry-content">
-                                <p>RYAN 유모차 부문 퍼스트 브랜드 대상 13년 연속 1위</p>
-                                <p>JOIE 카시트 부문 12년 연속 1위</p>
-                            </div>
+                            <div class="history-entry-content" data-i18n="history_timeline_2026" data-i18n-mode="html">RYAN 유모차 부문 퍼스트 브랜드 대상 13년 연속 1위<br>JOIE 카시트 부문 12년 연속 1위</div>
                         </div>
                     </div>
                 </div>
@@ -516,7 +428,7 @@
 
         <div class="company-panel" id="panel-awards" data-panel="awards" role="tabpanel" hidden>
             <div class="company-panel-body company-awards container container-wide">
-                <h2 class="company-section-title reveal" data-delay="0">AWARDS</h2>
+                <h2 class="company-section-title reveal" data-delay="0" data-i18n="awards_title">AWARDS</h2>
                 <div class="awards-grid">
                     <div class="award-item reveal" data-delay="40"><img src="{{ url_for('static', filename='img/company/awards/esg.png') }}" alt="ESG"></div>
                     <div class="award-item reveal" data-delay="80"><img src="{{ url_for('static', filename='img/company/awards/sosimo.png') }}" alt="SOSIMO"></div>
@@ -548,8 +460,8 @@
 
         <div class="company-panel" id="panel-ci" data-panel="ci" role="tabpanel" hidden>
             <div class="company-panel-body container container-wide">
-                <h2 class="company-section-title">CI</h2>
-                <p class="company-section-sub">Corporate Identity</p>
+                <h2 class="company-section-title" data-i18n="ci_title">CI</h2>
+                <p class="company-section-sub" data-i18n="ci_sub">Corporate Identity</p>
                 <!-- 1. 상단: 중앙 로고(그리드 배경) + 태그라인 + 설명 -->
                 <section class="ci-hero">
                 <div class="ci-hero-inner">
@@ -557,9 +469,9 @@
                         <img src="{{ url_for('static', filename='img/company/ci/aone_logo.png') }}" alt="AONE" class="ci-hero-logo-img">
                     </div>
                     <p class="ci-hero-slogan" aria-hidden="false">
-                        <span class="ci-hero-a">a</span><span class="ci-hero-middle"> baby but the only </span><span class="ci-hero-one">ONE</span>
+                        <span class="ci-hero-a">a</span><span class="ci-hero-middle"> baby but the only </span><span class="ci-hero-one">One</span>
                     </p>
-                    <p class="ci-hero-desc">한 아기의 탄생이 특별하고 가치있는 삶으로,<br>그리고 나아가 세상을 만들 수 있다는 신념으로 에이원이 탄생하였습니다.</p>
+                    <p class="ci-hero-desc" data-i18n="ci_desc" data-i18n-mode="html">한 아기의 탄생이 특별하고 가치있는 삶으로,<br>그리고 나아가 세상을 만들 수 있다는 신념으로 에이원이 탄생하였습니다.</p>
                 </div>
             </section>
             <!-- 2. Color System: 스와치 위 → 타이틀 → 설명 -->
@@ -585,8 +497,8 @@
                             </div>
                         </div>
                     </div>
-                    <h3 class="ci-colorsystem-title">Color System</h3>
-                    <p class="ci-colorsystem-desc">에이원의 CI에 사용되는 색상체계는 로고와 함께 에이원의 이미지를 전달하는 매우 중요한 요소로써, 기업의 대표색상인 에이원 ORANGE와 BLACK을 중심으로 고객에게 한 아기의 탄생을 진정성을 드리고자 하는 마음을 담고 있습니다.</p>
+                    <h3 class="ci-colorsystem-title" data-i18n="ci_colorsystem_title">Color System</h3>
+                    <p class="ci-colorsystem-desc" data-i18n="ci_colorsystem_desc">에이원의 CI에 사용되는 색상체계는 로고와 함께 에이원의 이미지를 전달하는 매우 중요한 요소로써, 기업의 대표색상인 에이원 ORANGE와 BLACK을 중심으로 고객에게 한 아기의 탄생을 진정성을 드리고자 하는 마음을 담고 있습니다.</p>
                 </div>
             </section>
             </div>
@@ -597,18 +509,18 @@
 <!-- 데스크톱: 오른쪽 날개 배너 (스크롤 시 표시) -->
 <nav class="company-wing" id="companyWing" aria-label="COMPANY 섹션 이동">
     <ul class="company-wing-list">
-        <li><button type="button" class="company-wing-item" data-panel="ideology">기업이념</button></li>
-        <li><button type="button" class="company-wing-item" data-panel="history">연혁</button></li>
-        <li><button type="button" class="company-wing-item" data-panel="awards">수상내역</button></li>
-        <li><button type="button" class="company-wing-item" data-panel="ci">CI</button></li>
+        <li><button type="button" class="company-wing-item" data-panel="ideology" data-i18n="wing_ideology">기업이념</button></li>
+        <li><button type="button" class="company-wing-item" data-panel="history" data-i18n="wing_history">연혁</button></li>
+        <li><button type="button" class="company-wing-item" data-panel="awards" data-i18n="wing_awards">수상내역</button></li>
+        <li><button type="button" class="company-wing-item" data-panel="ci" data-i18n="wing_ci">CI</button></li>
     </ul>
 </nav>
 
 <!-- 모바일: 하단 고정 탭 -->
 <nav class="company-bottom-tabs d-lg-none" id="companyBottomTabs" aria-label="COMPANY 섹션 이동">
-    <button type="button" class="company-tab-item" data-panel="ideology">기업이념</button>
-    <button type="button" class="company-tab-item" data-panel="history">연혁</button>
-    <button type="button" class="company-tab-item" data-panel="awards">수상내역</button>
-    <button type="button" class="company-tab-item" data-panel="ci">CI</button>
+    <button type="button" class="company-tab-item" data-panel="ideology" data-i18n="wing_ideology">기업이념</button>
+    <button type="button" class="company-tab-item" data-panel="history" data-i18n="wing_history">연혁</button>
+    <button type="button" class="company-tab-item" data-panel="awards" data-i18n="wing_awards">수상내역</button>
+    <button type="button" class="company-tab-item" data-panel="ci" data-i18n="wing_ci">CI</button>
 </nav>
 {% endblock %}

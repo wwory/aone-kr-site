@@ -16,7 +16,7 @@
     
     {% block extra_head %}{% endblock %}
 </head>
-<body class="{% block body_class %}{% endblock %}">
+<body class="{% block body_class %}{% endblock %}" data-page="{% block data_page %}index{% endblock %}">
     {% include 'partials/header.html' %}
     
     <main>

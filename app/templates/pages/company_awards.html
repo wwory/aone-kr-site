@@ -1,40 +1,42 @@
 {% extends "base.html" %}
 
 {% block title %}수상내역 - COMPANY - AONE{% endblock %}
+{% block body_class %}page-company page-company-awards{% endblock %}
+{% block data_page %}company_awards{% endblock %}
 
 {% block content %}
 <nav class="company-breadcrumb" aria-label="Breadcrumb">
     <div class="container">
         <a href="{{ url_for('company.company') }}">COMPANY</a>
         <span aria-hidden="true">/</span>
-        <span>수상내역</span>
+        <span data-i18n="breadcrumb">수상내역</span>
     </div>
 </nav>
 
 <section class="page-header page-header--sub">
     <div class="container">
-        <h1>수상내역</h1>
-        <p>Awards & Recognition</p>
+        <h1 data-i18n="page_title">수상내역</h1>
+        <p data-i18n="page_sub">Awards & Recognition</p>
     </div>
 </section>
 
 <section class="company-awards page-content">
     <div class="container container-wide">
-        <h2 class="company-section-title reveal" data-delay="0">AWARDS</h2>
+        <h2 class="company-section-title reveal" data-delay="0" data-i18n="section_title">AWARDS</h2>
         <div class="awards-grid">
-            <div class="award-item reveal" data-delay="80"><span class="award-placeholder">Forbes</span></div>
-            <div class="award-item reveal" data-delay="120"><span class="award-placeholder">First Brand Award</span></div>
-            <div class="award-item reveal" data-delay="160"><span class="award-placeholder">reddot design award</span></div>
-            <div class="award-item reveal" data-delay="200"><span class="award-placeholder">K-CSBI</span></div>
-            <div class="award-item reveal" data-delay="240"><span class="award-placeholder">Mother & Baby</span></div>
-            <div class="award-item reveal" data-delay="280"><span class="award-placeholder">Baby Innovation</span></div>
+            <div class="award-item reveal" data-delay="80"><span class="award-placeholder" data-i18n="award_forbes">Forbes</span></div>
+            <div class="award-item reveal" data-delay="120"><span class="award-placeholder" data-i18n="award_first_brand">First Brand Award</span></div>
+            <div class="award-item reveal" data-delay="160"><span class="award-placeholder" data-i18n="award_reddot">reddot design award</span></div>
+            <div class="award-item reveal" data-delay="200"><span class="award-placeholder" data-i18n="award_kcsbi">K-CSBI</span></div>
+            <div class="award-item reveal" data-delay="240"><span class="award-placeholder" data-i18n="award_mother_baby">Mother & Baby</span></div>
+            <div class="award-item reveal" data-delay="280"><span class="award-placeholder" data-i18n="award_baby_innovation">Baby Innovation</span></div>
         </div>
     </div>
 </section>
 
 <div class="company-back-wrap">
     <div class="container">
-        <a href="{{ url_for('company.company') }}" class="company-back-link">← COMPANY</a>
+        <a href="{{ url_for('company.company') }}" class="company-back-link" data-i18n="back_link">← COMPANY</a>
     </div>
 </div>
 {% endblock %}

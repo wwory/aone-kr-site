@@ -3,6 +3,7 @@
 {% block title %}RECRUIT - AONE{% endblock %}
 
 {% block body_class %}page-recruit{% endblock %}
+{% block data_page %}recruit{% endblock %}
 
 {% block content %}
 <!-- 1. Hero: 브랜드와 동일 구조 (hero-fullbleed), 텍스트만 채용용 -->
@@ -20,10 +21,10 @@
                 <div class="hero-text-group">
                     <div class="hero-copy-inner">
                         <h1 class="hero-title-block reveal" data-delay="0">
-                            <span class="hero-title-line">RECRUIT</span>
+                            <span class="hero-title-line" data-i18n="hero_title">RECRUIT</span>
                         </h1>
-                        <p class="hero-title-sub reveal" data-delay="80">채용정보</p>
-                        <p class="hero-lead reveal" data-delay="120">
+                        <p class="hero-title-sub reveal" data-delay="80" data-i18n="hero_sub">채용정보</p>
+                        <p class="hero-lead reveal" data-delay="120" data-i18n="hero_lead" data-i18n-mode="html">
                             여러분의 상상력과 창의력을 (주)에이원에서 펼쳐보세요.<br>
                             에이원은 아이의 안전과 행복을 위한 더 나은 경험을 만들어갑니다.<br><br>
                             어린 시절 품었던 상상과 아이디어가 현실이 될 수 있도록,<br>
@@ -32,8 +33,8 @@
                             꿈과 희망을 함께 키워나갈 인재를 기다립니다.
                         </p>
                         <div class="hero-cta reveal" data-delay="280">
-                            <a href="mailto:service@aone.co.kr" class="btn-hero btn-hero-outline">채용 문의</a>
-                            <a href="{{ url_for('contact.contact') }}" class="btn-hero btn-hero-outline">회사 위치</a>
+                            <a href="mailto:service@aone.co.kr" class="btn-hero btn-hero-outline" data-i18n="hero_cta_inquiry">채용 문의</a>
+                            <a href="{{ url_for('contact.contact') }}" class="btn-hero btn-hero-outline" data-i18n="hero_cta_location">회사 위치</a>
                         </div>
                     </div>
                 </div>
@@ -46,19 +47,19 @@
 <section class="page-content section-recruit-intro">
     <div class="container container-wide">
         <header class="section-header">
-            <h2 class="company-section-title reveal" data-delay="0">채용 안내</h2>
-            <p class="company-section-sub reveal" data-delay="40">Recruit Guide</p>
-            <p class="section-description reveal" data-delay="80">
+            <h2 class="company-section-title reveal" data-delay="0" data-i18n="section_guide_title">채용 안내</h2>
+            <p class="company-section-sub reveal" data-delay="40" data-i18n="section_guide_sub">Recruit Guide</p>
+            <p class="section-description reveal" data-delay="80" data-i18n="section_guide_desc" data-i18n-mode="html">
                 채용은 수시로 진행되며, 공고 오픈 시 아래 채용 플랫폼을 통해 안내드립니다.<br>
                 채용 관련 문의는 <a href="mailto:service@aone.co.kr">service@aone.co.kr</a>로 보내주세요.
             </p>
         </header>
         <div class="recruit-platform-buttons">
             <a href="https://www.jobkorea.co.kr/Recruit/Co_Read/C/33969" class="btn-hero btn-recruit-jobkorea reveal" data-delay="120" target="_blank" rel="noopener noreferrer">
-                잡코리아에서 확인
+                <span data-i18n="platform_jobkorea">잡코리아에서 확인</span>
             </a>
             <a href="https://www.saramin.co.kr/zf_user/company-info/view?csn=QjMzVXpNNldSdHlka0dBUHBJR25Wdz09" class="btn-hero btn-recruit-saramin reveal" data-delay="160" target="_blank" rel="noopener noreferrer">
-                사람인에서 확인
+                <span data-i18n="platform_saramin">사람인에서 확인</span>
             </a>
         </div>
     </div>
@@ -68,30 +69,30 @@
 <section class="page-content section-recruit-talent">
     <div class="container container-wide">
         <header class="section-header">
-            <h2 class="company-section-title reveal" data-delay="0">인재상</h2>
-            <p class="company-section-sub reveal" data-delay="40">Who We Look For</p>
+            <h2 class="company-section-title reveal" data-delay="0" data-i18n="section_talent_title">인재상</h2>
+            <p class="company-section-sub reveal" data-delay="40" data-i18n="section_talent_sub">Who We Look For</p>
         </header>
         <div class="recruit-talent-grid">
             <article class="recruit-talent-card reveal" data-delay="80">
                 <div class="recruit-talent-icon">
                     <img src="{{ url_for('static', filename='img/recruit/recruit_icon_01.png') }}" alt="" loading="lazy">
                 </div>
-                <h3 class="recruit-talent-title">정직</h3>
-                <p class="recruit-talent-desc">정직한 태도로 동료와 고객의 신뢰를 쌓는 사람</p>
+                <h3 class="recruit-talent-title" data-i18n="talent_honesty_title">정직</h3>
+                <p class="recruit-talent-desc" data-i18n="talent_honesty_desc">정직한 태도로 동료와 고객의 신뢰를 쌓는 사람</p>
             </article>
             <article class="recruit-talent-card reveal" data-delay="120">
                 <div class="recruit-talent-icon">
                     <img src="{{ url_for('static', filename='img/recruit/recruit_icon_02.png') }}" alt="" loading="lazy">
                 </div>
-                <h3 class="recruit-talent-title">성실</h3>
-                <p class="recruit-talent-desc">기본에 충실하며 맡은 바 책임을 끝까지 다하는 사람</p>
+                <h3 class="recruit-talent-title" data-i18n="talent_sincerity_title">성실</h3>
+                <p class="recruit-talent-desc" data-i18n="talent_sincerity_desc">기본에 충실하며 맡은 바 책임을 끝까지 다하는 사람</p>
             </article>
             <article class="recruit-talent-card reveal" data-delay="160">
                 <div class="recruit-talent-icon">
                     <img src="{{ url_for('static', filename='img/recruit/recruit_icon_03.png') }}" alt="" loading="lazy">
                 </div>
-                <h3 class="recruit-talent-title">창의</h3>
-                <p class="recruit-talent-desc">아이와 가족의 삶을 더 좋게 만드는 새로운 아이디어를 제안하는 사람</p>
+                <h3 class="recruit-talent-title" data-i18n="talent_creativity_title">창의</h3>
+                <p class="recruit-talent-desc" data-i18n="talent_creativity_desc">아이와 가족의 삶을 더 좋게 만드는 새로운 아이디어를 제안하는 사람</p>
             </article>
         </div>
     </div>
@@ -111,22 +112,22 @@
                 <img src="{{ url_for('static', filename='img/recruit/best_family_friendly_management.png') }}" alt="가족친화 우수기업 인증" class="recruit-family-emblem-desktop reveal" data-delay="40">
                 <div class="recruit-family-heading-row">
                     <div class="recruit-family-heading-text">
-                        <h2 class="company-section-title recruit-family-title reveal" data-delay="40">가족친화 우수기업</h2>
-                        <p class="company-section-sub recruit-family-sub reveal" data-delay="80">Family-friendly Company</p>
+                        <h2 class="company-section-title recruit-family-title reveal" data-delay="40" data-i18n="section_family_title">가족친화 우수기업</h2>
+                        <p class="company-section-sub recruit-family-sub reveal" data-delay="80" data-i18n="section_family_sub">Family-friendly Company</p>
                     </div>
                     <img src="{{ url_for('static', filename='img/recruit/best_family_friendly_management.png') }}" alt="가족친화 우수기업 인증" class="recruit-family-emblem-mobile">
                 </div>
             </header>
-            <p class="section-description reveal" data-delay="80">
+            <p class="section-description reveal" data-delay="80" data-i18n="family_desc_1" data-i18n-mode="html">
                 (주)에이원은 성평등가족부가 주관하는 가족친화 인증제도에 선정된 기업으로,
                 근무 제도와 조직 문화, 직원 만족도, CEO의 경영 리더십 등을 종합적으로 평가받아
                 가족친화 제도를 모범적으로 운영하고 있습니다.
             </p>
-            <p class="section-description reveal" data-delay="120">
+            <p class="section-description reveal" data-delay="120" data-i18n="family_desc_2" data-i18n-mode="html">
                 에이원은 일과 가정의 균형이 직장 만족과 업무 집중도를 높이고,
                 나아가 조직 전체의 성장을 이끈다고 믿습니다.
             </p>
-            <p class="section-description reveal" data-delay="160">
+            <p class="section-description reveal" data-delay="160" data-i18n="family_desc_3" data-i18n-mode="html">
                 직원 개개인의 역량 강화를 위한 교육 지원을 장려하고,
                 지속적인 조직 문화 개선을 통해 아이들의 안전과 행복을 바탕으로
                 임직원과 그 가족 모두가 함께 성장할 수 있는 기업을 지향합니다.

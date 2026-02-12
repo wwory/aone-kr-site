@@ -6629,10 +6629,11 @@ main .brand-logo img {
   }
 }
 
-/* 모바일 컴퍼니/브랜드: TOP 버튼을 하단 네비 바로 위에 배치 */
+/* 모바일 컴퍼니/브랜드/PR: TOP 버튼을 하단 네비 바로 위에 배치 */
 @media (max-width: 991.98px) {
   .page-company .btn-top,
-  .page-brand .btn-top {
+  .page-brand .btn-top,
+  .page-pr .btn-top {
     bottom: 5rem;
   }
 }

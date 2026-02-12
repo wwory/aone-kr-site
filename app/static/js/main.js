@@ -4,101 +4,76 @@
     document.documentElement.classList.add('js');
 
     // ============================================================
-    // 다국어(버블포인트): localStorage + data-lang + data-i18n
+    // 다국어(i18n): localStorage + data-lang + data-i18n, 페이지별 JSON fetch
     // ============================================================
     var LANG_STORAGE_KEY = 'aone_lang';
+    var I18N_BASE = '/static/i18n';
 
-    var I18N = {
-      KR: {
-        hero_title_1: 'BABY IS OUR',
-        hero_title_2: 'FUTURE',
-        hero_lead: '대한민국 1등 육아 파트너.\n검증된 자체 기술력과 엄선된 글로벌 브랜드를 만나보세요.',
-        hero_cta_primary: 'View Brands',
-        hero_cta_outline: 'About Company',
-        hero_who_title: 'Who we are',
-        hero_who_sub: 'Our Philosophy',
-        philosophy_honesty_en: 'Honesty',
-        philosophy_honesty_key: '진심을 담은 약속',
-        philosophy_honesty_desc: '보이지 않는 과정까지 정직하게, 부모의 마음으로 만듭니다.',
-        philosophy_quality_en: 'Quality',
-        philosophy_quality_key: '안전을 향한 고집',
-        philosophy_quality_desc: '가장 소중한 우리 아이를 위해 작은 디테일도 놓치지 않습니다.',
-        philosophy_people_en: 'People',
-        philosophy_people_key: '함께하는 행복',
-        philosophy_people_desc: '단순한 제품 판매를 넘어, 행복한 육아 문화를 만들어갑니다.',
-        brands_title: 'Our Brands',
-        brand_ryan_desc: '아이의 안전과 편안함을 최우선으로\n하는 유아용품 브랜드입니다.',
-        brand_joie_desc: '세계적인 디자인과 안전성을 갖춘\n프리미엄 유아용품 브랜드입니다.',
-        brand_tavo_desc: '반려동물과 가족이 함께하는 행복한\n일상을 만들어가는 브랜드입니다.',
-        brand_cta: 'View brand',
-        csr_label: 'CSR',
-        csr_title: '아이의 오늘을 지키는 일이\n모두의 내일을 밝힙니다',
-        csr_desc: 'AONE은 아이와 가족의 건강하고 행복한 미래를 위해\n지속 가능한 사회적 책임을 실천합니다.\n\n안전한 제품 개발, 환경 보호, 지역 사회와의 상생을 통해\n더 나은 내일을 만들어갑니다.',
-        csr_btn: 'CSR 이야기 보기 →'
-      },
-      EN: {
-        hero_title_1: 'BABY IS OUR',
-        hero_title_2: 'FUTURE',
-        hero_lead: 'Korea\'s leading baby gear company\nwith trusted in-house and global imported brands.',
-        hero_cta_primary: 'View Brands',
-        hero_cta_outline: 'About Company',
-        hero_who_title: 'Who we are',
-        hero_who_sub: 'Our Philosophy',
-        philosophy_honesty_en: 'Honesty',
-        philosophy_honesty_key: 'A promise with sincerity',
-        philosophy_honesty_desc: 'We act with integrity through every step, with the heart of parents.',
-        philosophy_quality_en: 'Quality',
-        philosophy_quality_key: 'Obsession with safety',
-        philosophy_quality_desc: 'We never overlook the smallest detail for our precious children.',
-        philosophy_people_en: 'People',
-        philosophy_people_key: 'Happiness together',
-        philosophy_people_desc: 'Beyond selling products, we create a culture of happy parenting.',
-        brands_title: 'Our Brands',
-        brand_ryan_desc: 'A baby care brand that puts\nchildren\'s safety and comfort first.',
-        brand_joie_desc: 'A premium baby care brand with\nworld-class design and safety.',
-        brand_tavo_desc: 'A brand that creates a happy daily life\nwith pets and family together.',
-        brand_cta: 'View brand',
-        csr_label: 'CSR',
-        csr_title: 'Protecting children today\nbrightens everyone\'s tomorrow',
-        csr_desc: 'AONE practices sustainable social responsibility for the healthy, happy future of children and families.\n\nWe create a better tomorrow through safe product development, environmental protection, and coexistence with local communities.',
-        csr_btn: 'See CSR story →'
-      },
-      CN: {
-        hero_title_1: 'BABY IS OUR',
-        hero_title_2: 'FUTURE',
-        hero_lead: '韩国第一育儿伙伴。\n遇见经认证的自主技术与严选全球品牌。',
-        hero_cta_primary: 'View Brands',
-        hero_cta_outline: 'About Company',
-        hero_who_title: 'Who we are',
-        hero_who_sub: 'Our Philosophy',
-        philosophy_honesty_en: 'Honesty',
-        philosophy_honesty_key: '真诚的承诺',
-        philosophy_honesty_desc: '连看不见的过程也诚实以对，以父母之心制造。',
-        philosophy_quality_en: 'Quality',
-        philosophy_quality_key: '对安全的执着',
-        philosophy_quality_desc: '为了最珍贵的我们的孩子，连细小细节也不放过。',
-        philosophy_people_en: 'People',
-        philosophy_people_key: '共同的幸福',
-        philosophy_people_desc: '超越单纯的产品销售，创造幸福的育儿文化。',
-        brands_title: 'Our Brands',
-        brand_ryan_desc: '将孩子的安全与舒适放在首位的\n婴幼儿用品品牌。',
-        brand_joie_desc: '拥有世界级设计与安全性的\n高端婴幼儿用品品牌。',
-        brand_tavo_desc: '与伴侣动物和家人一起创造幸福\n日常的品牌。',
-        brand_cta: 'View brand',
-        csr_label: 'CSR',
-        csr_title: '守护孩子的今天\n照亮所有人的明天',
-        csr_desc: 'AONE为儿童与家庭的健康幸福未来，实践可持续的社会责任。\n\n通过安全产品开发、环境保护、与地区社会的共赢，创造更美好的明天。',
-        csr_btn: '查看CSR故事 →'
+    function getPageKey() {
+      var body = document.body;
+      var page = body && body.getAttribute ? body.getAttribute('data-page') : '';
+      return page || 'index';
+    }
+
+    function getStoredLang() {
+      return localStorage.getItem(LANG_STORAGE_KEY) || 'KR';
+    }
+
+    function setStoredLang(lang) {
+      if (lang) localStorage.setItem(LANG_STORAGE_KEY, lang);
+    }
+
+    function normalizeLangToPath(lang) {
+      var m = { KR: 'kr', EN: 'en', CN: 'cn' };
+      return m[lang] || 'kr';
+    }
+
+    function fetchJSON(url) {
+      return fetch(url, { cache: 'no-store' })
+        .then(function (res) {
+          if (!res.ok) throw new Error('fetch failed: ' + url);
+          return res.json();
+        })
+        .catch(function (err) {
+          console.error('[i18n]', err);
+          return {};
+        });
+    }
+
+    function loadAndApplyI18n(lang) {
+      var path = normalizeLangToPath(lang);
+      var pageKey = getPageKey();
+      var commonUrl = I18N_BASE + '/' + path + '/common.json';
+      var pageUrl = I18N_BASE + '/' + path + '/' + pageKey + '.json';
+
+      Promise.all([
+        fetchJSON(commonUrl),
+        fetchJSON(pageUrl)
+      ]).then(function (results) {
+        var common = results[0] || {};
+        var page = results[1] || {};
+        var dict = {};
+        for (var k in common) dict[k] = common[k];
+        for (var k in page) dict[k] = page[k];
+        applyI18n(dict, lang);
+      });
+    }
+
+    function applyI18n(dict, lang) {
+      if (lang) {
+        document.documentElement.setAttribute('data-lang', lang);
+        syncLangButtons(lang);
       }
-    };
-
-    function applyI18n(lang) {
-      var map = I18N[lang] || I18N.KR;
       document.querySelectorAll('[data-i18n]').forEach(function (el) {
         var key = el.getAttribute('data-i18n');
-        if (!key || !map[key]) return;
-        var text = map[key];
-        el.innerHTML = text.replace(/\n/g, '<br>');
+        if (!key || dict[key] === undefined) return;
+        var text = String(dict[key]);
+        var useHtml = el.getAttribute('data-i18n-mode') === 'html';
+        if (useHtml) {
+          el.innerHTML = text.replace(/\n/g, '<br>');
+        } else {
+          el.textContent = text;
+        }
       });
     }
 
@@ -111,10 +86,10 @@
     }
 
     (function initLang() {
-      var lang = localStorage.getItem(LANG_STORAGE_KEY) || 'KR';
+      var lang = getStoredLang();
       document.documentElement.setAttribute('data-lang', lang);
       syncLangButtons(lang);
-      applyI18n(lang);
+      loadAndApplyI18n(lang);
     })();
 
     function isMobileViewport() {
@@ -251,8 +226,8 @@
         item.addEventListener('click', function () {
           var selectedLang = item.getAttribute('data-lang');
           if (selectedLang) {
-            localStorage.setItem(LANG_STORAGE_KEY, selectedLang);
-            location.reload();
+            setStoredLang(selectedLang);
+            loadAndApplyI18n(selectedLang);
           }
           toggleLangMenu(false);
         });
@@ -297,8 +272,8 @@
         item.addEventListener('click', function () {
           var selectedLang = item.getAttribute('data-lang');
           if (selectedLang) {
-            localStorage.setItem(LANG_STORAGE_KEY, selectedLang);
-            location.reload();
+            setStoredLang(selectedLang);
+            loadAndApplyI18n(selectedLang);
           }
           toggleMobileLangMenu(false);
         });
@@ -830,9 +805,6 @@
       }
 
       function goToPrPanel(panelKey) {
-        if (prBottomTabs && window.innerWidth <= 768) {
-          prBottomTabs.classList.add('is-visible');
-        }
         setActivePrPanel(panelKey);
         if (history.replaceState) {
           var newHash = panelKey === 'connect' ? '' : '#' + panelKey;
@@ -851,20 +823,7 @@
         });
       }
 
-      /* 모바일: 히어로 영역에서 bottom nav 숨김, 섹션 진입 시 노출 */
-      var prHero = document.getElementById('pr-hero');
-      if (prHero && prBottomTabs && window.innerWidth <= 768) {
-        var io = new IntersectionObserver(function (entries) {
-          var e = entries[0];
-          if (!e || window.innerWidth > 768) return;
-          if (e.intersectionRatio >= 0.2) {
-            prBottomTabs.classList.remove('is-visible');
-          } else {
-            prBottomTabs.classList.add('is-visible');
-          }
-        }, { threshold: [0, 0.2, 0.5], rootMargin: '-10% 0px 0px 0px' });
-        io.observe(prHero);
-      }
+      /* 모바일: bottom nav는 탑버튼과 동일한 스크롤 기준(300px)으로 노출 (updateTopBtn에서 처리) */
 
       document.querySelectorAll('.pr-box').forEach(function (btn) {
         btn.addEventListener('click', function () {
@@ -1595,10 +1554,20 @@
       if (!btnTop) return;
       var topThreshold = 300;
       function updateTopBtn() {
-        if ((window.pageYOffset || document.documentElement.scrollTop) > topThreshold) {
+        var scrollY = window.pageYOffset || document.documentElement.scrollTop;
+        var show = scrollY > topThreshold;
+        if (show) {
           btnTop.classList.add('is-visible');
         } else {
           btnTop.classList.remove('is-visible');
+        }
+        var prBottomTabs = document.getElementById('prBottomTabs');
+        if (prBottomTabs && document.body.classList.contains('page-pr') && window.innerWidth <= 768) {
+          if (show) {
+            prBottomTabs.classList.add('is-visible');
+          } else {
+            prBottomTabs.classList.remove('is-visible');
+          }
         }
       }
       function scrollToTop(isMobile) {

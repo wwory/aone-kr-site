@@ -1,46 +1,48 @@
 {% extends "base.html" %}
 
 {% block title %}연혁 - COMPANY - AONE{% endblock %}
+{% block body_class %}page-company page-company-history{% endblock %}
+{% block data_page %}company_history{% endblock %}
 
 {% block content %}
 <nav class="company-breadcrumb" aria-label="Breadcrumb">
     <div class="container">
         <a href="{{ url_for('company.company') }}">COMPANY</a>
         <span aria-hidden="true">/</span>
-        <span>연혁</span>
+        <span data-i18n="breadcrumb">연혁</span>
     </div>
 </nav>
 
 <section class="page-header page-header--sub">
     <div class="container">
-        <h1>연혁</h1>
-        <p>AONE History</p>
+        <h1 data-i18n="page_title">연혁</h1>
+        <p data-i18n="page_sub">AONE History</p>
     </div>
 </section>
 
 <section class="company-history page-content">
     <div class="container container-wide">
-        <h2 class="company-section-title reveal" data-delay="0">AONE HISTORY</h2>
+        <h2 class="company-section-title reveal" data-delay="0" data-i18n="section_title">AONE HISTORY</h2>
         <div class="history-timeline">
             <div class="history-item reveal" data-delay="80">
                 <span class="history-year">2010</span>
-                <p class="history-desc">(주)에이원 설립</p>
+                <p class="history-desc" data-i18n="history_2010">(주)에이원 설립</p>
             </div>
             <div class="history-item reveal" data-delay="120">
                 <span class="history-year">2013</span>
-                <p class="history-desc">리안(RYAN) 브랜드 런칭, 국내 유모차 시장 진출</p>
+                <p class="history-desc" data-i18n="history_2013">리안(RYAN) 브랜드 런칭, 국내 유모차 시장 진출</p>
             </div>
             <div class="history-item reveal" data-delay="160">
                 <span class="history-year">2016</span>
-                <p class="history-desc">Joie, NUNA 등 글로벌 브랜드 파트너십</p>
+                <p class="history-desc" data-i18n="history_2016">Joie, NUNA 등 글로벌 브랜드 파트너십</p>
             </div>
             <div class="history-item reveal" data-delay="200">
                 <span class="history-year">2020</span>
-                <p class="history-desc">Forbes Korea 수상, K-CSBI 인증</p>
+                <p class="history-desc" data-i18n="history_2020">Forbes Korea 수상, K-CSBI 인증</p>
             </div>
             <div class="history-item reveal" data-delay="240">
                 <span class="history-year">2023</span>
-                <p class="history-desc">대한민국 1등 안전 유모차 6년 연속, Tavo Pets 브랜드 확장</p>
+                <p class="history-desc" data-i18n="history_2023">대한민국 1등 안전 유모차 6년 연속, Tavo Pets 브랜드 확장</p>
             </div>
         </div>
     </div>
@@ -48,7 +50,7 @@
 
 <div class="company-back-wrap">
     <div class="container">
-        <a href="{{ url_for('company.company') }}" class="company-back-link">← COMPANY</a>
+        <a href="{{ url_for('company.company') }}" class="company-back-link" data-i18n="back_link">← COMPANY</a>
     </div>
 </div>
 {% endblock %}
