@@ -469,9 +469,9 @@
       }
     });
 
-    // RECRUIT / CSR 페이지: 섹션 reveal 요소 수집 (CSR 웹 히어로는 제외하고 컨테이너 관찰로 별도 처리)
-    ['.section-recruit-intro', '.section-recruit-talent', '.section-recruit-family', '.section-csr-timeline'].forEach(function(sel) {
-      var parent = document.querySelector(sel);
+    // RECRUIT / CSR / PR 페이지: 섹션 reveal 요소 수집 (CSR 웹 히어로는 제외하고 컨테이너 관찰로 별도 처리)
+    ['.section-recruit-intro', '.section-recruit-talent', '.section-recruit-family', '.section-csr-timeline', '#pr-content'].forEach(function(sel) {
+      var parent = sel.charAt(0) === '#' ? document.getElementById(sel.slice(1)) : document.querySelector(sel);
       if (parent) {
         var isCsrTimeline = sel === '.section-csr-timeline';
         parent.querySelectorAll('.reveal').forEach(function(el) {
@@ -762,6 +762,181 @@
       }
       window.addEventListener('scroll', onBrandPageScroll, { passive: true });
       onBrandPageScroll();
+    }
+
+    // ============================================================
+    // H0-1) PR 페이지: 3버튼 패널 전환 + wing nav (COMPANY 구조 동일)
+    // ============================================================
+    var prContent = document.getElementById('pr-content');
+    var prWing = document.getElementById('prWing');
+    var prBottomTabs = document.getElementById('prBottomTabs');
+
+    if (document.body.classList.contains('page-pr')) {
+      var prHeroSlim = document.querySelector('.pr-hero-slim');
+      if (prHeroSlim) prHeroSlim.classList.add('is-visible');
+
+      if (prContent) {
+        var prPanels = prContent.querySelectorAll('.pr-panel');
+        var prPanelIds = ['connect', 'campaign', 'stores'];
+
+        var hashPanel = window.location.hash.slice(1).toLowerCase();
+        var initialPanel = (hashPanel && prPanelIds.indexOf(hashPanel) !== -1) ? hashPanel : 'connect';
+        setActivePrPanel(initialPanel);
+        if (initialPanel !== 'connect') {
+          requestAnimationFrame(function () {
+            var panel = document.getElementById('panel-' + initialPanel);
+            if (panel) {
+              var header = document.getElementById('main-header');
+              var headerH = header ? header.offsetHeight : 88;
+              var extra = window.innerWidth <= 768 ? 20 : 28;
+              var top = panel.getBoundingClientRect().top + (window.pageYOffset || document.documentElement.scrollTop) - (headerH + extra);
+              window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+            }
+          });
+        }
+
+      function setActivePrPanel(panelKey) {
+        var idx = prPanelIds.indexOf(panelKey);
+        if (idx === -1) return;
+        prPanels.forEach(function (p) {
+          var isActive = p.getAttribute('data-panel') === panelKey;
+          p.classList.toggle('is-active', isActive);
+          p.classList.remove('pr-panel-enter');
+          if (isActive) {
+            p.removeAttribute('hidden');
+          } else {
+            p.setAttribute('hidden', '');
+          }
+        });
+        var activePanel = document.getElementById('panel-' + panelKey);
+        if (activePanel) {
+          activePanel.offsetHeight;
+          activePanel.classList.add('pr-panel-enter');
+        }
+        document.querySelectorAll('.pr-box').forEach(function (b) {
+          b.classList.toggle('is-active', b.getAttribute('data-panel') === panelKey);
+          b.setAttribute('aria-pressed', b.getAttribute('data-panel') === panelKey ? 'true' : 'false');
+        });
+        if (prWing) {
+          prWing.querySelectorAll('.pr-wing-item').forEach(function (b) {
+            b.classList.toggle('is-active', b.getAttribute('data-panel') === panelKey);
+          });
+        }
+        if (prBottomTabs) {
+          prBottomTabs.querySelectorAll('.pr-tab-item').forEach(function (b) {
+            b.classList.toggle('is-active', b.getAttribute('data-panel') === panelKey);
+          });
+        }
+      }
+
+      function goToPrPanel(panelKey) {
+        if (prBottomTabs && window.innerWidth <= 768) {
+          prBottomTabs.classList.add('is-visible');
+        }
+        setActivePrPanel(panelKey);
+        if (history.replaceState) {
+          var newHash = panelKey === 'connect' ? '' : '#' + panelKey;
+          history.replaceState(null, '', window.location.pathname + newHash);
+        }
+        requestAnimationFrame(function () {
+          var panel = document.getElementById('panel-' + panelKey);
+          if (panel) {
+            var header = document.getElementById('main-header');
+            var headerH = header ? header.offsetHeight : 88;
+            var extra = window.innerWidth <= 768 ? 20 : 28;
+            var offset = headerH + extra;
+            var top = panel.getBoundingClientRect().top + (window.pageYOffset || document.documentElement.scrollTop) - offset;
+            window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+          }
+        });
+      }
+
+      /* 모바일: 히어로 영역에서 bottom nav 숨김, 섹션 진입 시 노출 */
+      var prHero = document.getElementById('pr-hero');
+      if (prHero && prBottomTabs && window.innerWidth <= 768) {
+        var io = new IntersectionObserver(function (entries) {
+          var e = entries[0];
+          if (!e || window.innerWidth > 768) return;
+          if (e.intersectionRatio >= 0.2) {
+            prBottomTabs.classList.remove('is-visible');
+          } else {
+            prBottomTabs.classList.add('is-visible');
+          }
+        }, { threshold: [0, 0.2, 0.5], rootMargin: '-10% 0px 0px 0px' });
+        io.observe(prHero);
+      }
+
+      document.querySelectorAll('.pr-box').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          goToPrPanel(btn.getAttribute('data-panel'));
+        });
+      });
+      if (prWing) {
+        prWing.querySelectorAll('.pr-wing-item').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            goToPrPanel(btn.getAttribute('data-panel'));
+          });
+        });
+      }
+      if (prBottomTabs) {
+        prBottomTabs.querySelectorAll('.pr-tab-item').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            goToPrPanel(btn.getAttribute('data-panel'));
+          });
+        });
+      }
+
+      /* Brand Film 영상 레이어팝업 */
+      var prVideoPopup = document.getElementById('prVideoPopupLayer');
+      var prVideoIframe = document.getElementById('prVideoPopupIframe');
+      var prVideoClose = prVideoPopup && prVideoPopup.querySelector('.pr-video-popup__close');
+      var prVideoBackdrop = prVideoPopup && prVideoPopup.querySelector('.pr-video-popup__backdrop');
+
+      function openPrVideoPopup(url) {
+        if (!prVideoPopup || !prVideoIframe || !url) return;
+        prVideoIframe.src = url + '?autoplay=1';
+        prVideoPopup.removeAttribute('hidden');
+        prVideoPopup.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+        prVideoClose && prVideoClose.focus();
+      }
+
+      function closePrVideoPopup() {
+        if (!prVideoPopup) return;
+        prVideoPopup.classList.remove('is-open');
+        prVideoPopup.setAttribute('hidden', '');
+        document.body.style.overflow = '';
+        if (prVideoIframe) prVideoIframe.src = '';
+      }
+
+      document.querySelectorAll('.pr-video-card[data-video-url]').forEach(function (card) {
+        card.addEventListener('click', function () {
+          var url = card.getAttribute('data-video-url');
+          if (url) openPrVideoPopup(url);
+        });
+      });
+
+      prVideoClose && prVideoClose.addEventListener('click', closePrVideoPopup);
+      prVideoBackdrop && prVideoBackdrop.addEventListener('click', closePrVideoPopup);
+      document.addEventListener('keydown', function (e) {
+        if (prVideoPopup && prVideoPopup.classList.contains('is-open') && e.key === 'Escape') {
+          closePrVideoPopup();
+        }
+      });
+
+      if (prWing) {
+        var prWingThreshold = 400;
+        function onPrScrollWing() {
+          if (window.pageYOffset > prWingThreshold) {
+            prWing.classList.add('is-visible');
+          } else {
+            prWing.classList.remove('is-visible');
+          }
+        }
+        window.addEventListener('scroll', onPrScrollWing, { passive: true });
+        onPrScrollWing();
+      }
+      }
     }
 
     // ============================================================
@@ -1206,7 +1381,7 @@
           if (e.persisted) setTimeout(applyHeroVisibleIfInView, 100);
         });
       }
-      if (document.body.classList.contains('page-index') || document.body.classList.contains('page-contact') || document.body.classList.contains('page-recruit') || document.body.classList.contains('page-brand')) {
+      if (document.body.classList.contains('page-index') || document.body.classList.contains('page-contact') || document.body.classList.contains('page-recruit') || document.body.classList.contains('page-brand') || document.body.classList.contains('page-pr')) {
         setTimeout(applyHeroVisibleIfInView, 400);
         window.addEventListener('pageshow', function(e) {
           if (e.persisted) setTimeout(applyHeroVisibleIfInView, 100);
