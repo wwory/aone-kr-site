@@ -100,7 +100,6 @@
     const hasLang = !!document.getElementById('langBtn');
     const hasMobileLang = !!document.getElementById('mLangBtn');
     const hasMobileMenu = !!document.getElementById('mobileMenu');
-    console.log('[main.js] bound', { hasHamburger, hasLang, hasMobileLang, hasMobileMenu, viewportWidth: window.innerWidth });
   
     // ============================================================
     // A) Header Scroll Effect

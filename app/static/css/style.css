@@ -4802,42 +4802,60 @@ section {
 .btn-footer-shop {
   display: inline-block;
   padding: 0.38rem 0.95rem;
-  background: #fff;
-  color: #2c2c2c;
-  border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 999px;
   font-size: 0.8125rem;
   font-weight: 500;
   letter-spacing: 0.02em;
   text-decoration: none;
-  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  color: #fff;
+  border: none;
+  transition: background 0.2s ease, opacity 0.2s ease;
 }
-.btn-footer-shop:hover {
-  border-color: transparent;
-}
-/* 에이원베이비 / 리안 / 조이 호버: 브랜드 컬러 배경 + 흰색 텍스트 */
-.footer-shop-btns .btn-footer-shop:nth-child(1):hover {
+/* 데스크톱: 브랜드 컬러 배경 + 흰색 텍스트 */
+.footer-shop-row:nth-child(1) .btn-footer-shop:nth-child(1) {
   background: var(--color-primary);
-  border-color: var(--color-primary);
-  color: #fff;
 }
-.footer-shop-btns .btn-footer-shop:nth-child(2):hover {
+.footer-shop-row:nth-child(1) .btn-footer-shop:nth-child(2) {
   background: #452200;
-  border-color: #452200;
-  color: #fff;
 }
-.footer-shop-btns .btn-footer-shop:nth-child(3):hover {
+.footer-shop-row:nth-child(2) .btn-footer-shop:nth-child(1) {
   background: #f7a81b;
-  border-color: #f7a81b;
+}
+.footer-shop-row:nth-child(2) .btn-footer-shop:nth-child(2) {
+  background: #1f3034;
+}
+/* 에이원베이비 / 리안 / 조이 / 타보펫츠 호버: 살짝 밝게 */
+.footer-shop-row:nth-child(1) .btn-footer-shop:nth-child(1):hover {
+  background: var(--color-primary);
   color: #fff;
+  opacity: 0.9;
+}
+.footer-shop-row:nth-child(1) .btn-footer-shop:nth-child(2):hover {
+  background: #452200;
+  color: #fff;
+  opacity: 0.9;
+}
+.footer-shop-row:nth-child(2) .btn-footer-shop:nth-child(1):hover {
+  background: #f7a81b;
+  color: #fff;
+  opacity: 0.9;
+}
+.footer-shop-row:nth-child(2) .btn-footer-shop:nth-child(2):hover {
+  background: #1f3034;
+  color: #fff;
+  opacity: 0.9;
 }
 .footer-shop-btns {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
   gap: 0.45rem;
 }
-/* 모바일: Official Shoppingmall 버튼 일렬 배치 */
+.footer-shop-row {
+  display: contents;
+}
+/* 모바일: Official Shoppingmall 버튼 일렬 배치 + 브랜드 컬러 배경 */
 @media (max-width: 991.98px) {
   .footer-shop-btns {
     flex-direction: row;
@@ -4845,10 +4863,33 @@ section {
     align-items: center;
     gap: 0.35rem;
   }
+  .footer-shop-row {
+    display: contents;
+  }
   .footer-shop-btns .btn-footer-shop {
     padding: 0.3rem 0.5rem;
     font-size: 0.6875rem;
     white-space: nowrap;
+    color: #fff;
+    border-color: transparent;
+  }
+  .footer-shop-row:nth-child(1) .btn-footer-shop:nth-child(1) {
+    background: var(--color-primary);
+  }
+  .footer-shop-row:nth-child(1) .btn-footer-shop:nth-child(2) {
+    background: #452200;
+  }
+  .footer-shop-row:nth-child(2) .btn-footer-shop:nth-child(1) {
+    background: #f7a81b;
+  }
+  .footer-shop-row:nth-child(2) .btn-footer-shop:nth-child(2) {
+    background: #1f3034;
+  }
+  .footer-shop-row:nth-child(1) .btn-footer-shop:nth-child(1):hover,
+  .footer-shop-row:nth-child(1) .btn-footer-shop:nth-child(2):hover,
+  .footer-shop-row:nth-child(2) .btn-footer-shop:nth-child(1):hover,
+  .footer-shop-row:nth-child(2) .btn-footer-shop:nth-child(2):hover {
+    color: #fff;
   }
 }
 /* 초소형 모바일에서도 한 줄 유지 */
