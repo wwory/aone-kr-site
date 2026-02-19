@@ -24,7 +24,7 @@
     }
 
     function normalizeLangToPath(lang) {
-      var m = { KR: 'kr', EN: 'en', CN: 'cn' };
+      var m = { KR: 'kr', EN: 'en', CN: 'cn', JP: 'jp' };
       return m[lang] || 'kr';
     }
 
